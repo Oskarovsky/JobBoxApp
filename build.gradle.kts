@@ -20,12 +20,21 @@ repositories {
 }
 
 dependencies {
+
+    // KOTLIN
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // SPRING
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // OTHER
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
+
+    // TEST
+    implementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+    }}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
