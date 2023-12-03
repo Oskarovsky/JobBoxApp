@@ -16,6 +16,7 @@ class OfferGateway(
 ) {
 
     @GetMapping
+    @CrossOrigin(origins = ["*"])
     fun getAllOffers(): List<Offer> = offerRepository.findAll()
 
     @GetMapping("/{id}")

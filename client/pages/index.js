@@ -1,11 +1,7 @@
 ﻿/* eslint-disable @next/next/no-img-element */
 import Layout from "../components/Layout/Layout";
 import CategorySlider from "./../components/sliders/Category";
-import TopRekruterSlider from "./../components/sliders/TopRekruter";
-import BlogSlider from "./../components/sliders/Blog";
-import CategoryTab from "./../components/elements/CategoryTab";
 import Link from "next/link";
-import CategoryTab2 from "../components/elements/CategoryTab2";
 import CategoryTab3 from "../components/elements/CategoryTab3";
 
 export default function Home() {

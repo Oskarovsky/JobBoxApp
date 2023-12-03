@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 
 const CategoryTab3 = () => {
     const [active, setActive] = useState(1);
 
-    const handleOnClick = (index) => {
-        setActive(index); // remove the curly braces
-    };
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://www.localhost:8080/api/offer');
+                const jsonData = await response.json();
+                setData(jsonData);
+                console.log(jsonData.toString())
+            } catch (error) {
+                console.error('Błąd podczas pobierania danych z API', error);
+            }
+        };
+
+        fetchData();
+    }, []); // Pusta tablica dependencies sprawi, że useEffect zadziała tylko raz po zamontowaniu komponentu
+
+
     return (
         <>
+            {data ? (
+                <pre>{JSON.stringify(data, null, 2)}</pre>
+            ) : (
+                <p>Ładowanie danych...</p>
+            )}
             <div className="tab-content mt-50" id="myTabContent-1">
                 <div className={`tab-pane fade ${active == 1 && "show active"}`}>
                     <div className="row">
