@@ -21,7 +21,7 @@ class EmployerGateway(
             .findById(id)
             .orElseThrow { NoSuchElementException("There is no employer with id: $id") }
 
-    @PostMapping
+    @PostMapping(consumes = ["application/json"])
     fun createEmployer(@RequestBody employer: Employer): Employer =
         employerRepository.save(employer)
 

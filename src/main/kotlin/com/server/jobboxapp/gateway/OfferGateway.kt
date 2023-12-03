@@ -28,7 +28,7 @@ class OfferGateway(
     fun createOffer(@RequestBody offer: Offer): Offer =
         offerRepository.save(offer)
 
-    @PostMapping("/create")
+    @PostMapping("/create", consumes = ["application/json"])
     fun createNewOffer(@RequestBody offerRequest: OfferRequest): ResponseEntity<Offer> {
         val employer = employerRepository.findById(offerRequest.employerId)
             .orElseThrow { NoSuchElementException("Employer with ID ${offerRequest.employerId} not found") }
