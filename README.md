@@ -1,5 +1,6 @@
-## JobBox backend
+## JobBox front
+Front lezy w folderze /client (docelowo wrzucimy go do nowego modulu)
 
-### Docker build:  
-docker build -t mypostgresdb .  
-docker run -p 5432:5432 mypostgresdb
+### Docker build: 
+Skrypt uruchamia psql na porcie 5439  
+**docker compose up** 
