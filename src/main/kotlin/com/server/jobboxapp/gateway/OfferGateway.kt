@@ -40,14 +40,14 @@ class OfferGateway(
         )
 
         val savedOffer = offerRepository.save(offer)
-        return ResponseEntity.ok(savedOffer)
+        return ResponseEntity.ok(offer)
     }
 
     @PutMapping("/{id}")
     fun updateOffer(@PathVariable id: Long, @RequestBody updatedOffer: Offer): Offer {
         val offer = offerRepository.findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
-        offer.title = updatedOffer.title
-        offer.employer = updatedOffer.employer
+//        offer.title = updatedOffer.title
+//        offer.employer = updatedOffer.employer
         return offerRepository.save(offer)
     }
 

@@ -30,8 +30,8 @@ class EmployerGateway(
         val employer = employerRepository
             .findById(id)
             .orElseThrow { NoSuchElementException("There is no employer with id: $id") }
-        employer.name = updatedEmployer.name
-        employer.description = updatedEmployer.description
+//        employer.name = updatedEmployer.name
+//        employer.description = updatedEmployer.description
         return employerRepository.save(employer)
     }
 

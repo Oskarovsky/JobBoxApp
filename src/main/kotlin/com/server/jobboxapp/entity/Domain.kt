@@ -6,14 +6,14 @@ import java.time.LocalDate
 @Entity
 data class Offer(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long? = null,
 
-    var title: String,
-    var description: String,
+    val title: String,
+    val description: String,
 
     @ManyToOne
     @JoinColumn(name = "employer_id")
-    var employer: Employer,
+    val employer: Employer,
 
 ////    @Column(nullable = false)
 //    val creationDate: LocalDate = LocalDate.now(),
@@ -30,10 +30,10 @@ data class Offer(
 @Entity
 data class Employer(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long? = null,
 
-    var name: String,
-    var description: String,
+    val name: String,
+    val description: String,
 
     @OneToMany(mappedBy = "employer")
     val offers: List<Offer> = mutableListOf()
