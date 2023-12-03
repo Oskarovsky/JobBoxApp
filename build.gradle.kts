@@ -25,17 +25,18 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     // SPRING
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.0.4")
+    implementation("org.springframework.boot:spring-boot-starter-web:3.1.0")
 
     // OTHER
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
 
     // DB
-    implementation("org.postgresql:postgresql:42.2.27")
+    implementation("org.postgresql:postgresql:42.5.4")
 
     // TEST
-    implementation("org.springframework.boot:spring-boot-starter-test") {
+    implementation("org.springframework.boot:spring-boot-starter-test:3.1.0") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }}
 

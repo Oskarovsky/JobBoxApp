@@ -15,14 +15,14 @@ data class Offer(
     @JoinColumn(name = "employer_id")
     var employer: Employer,
 
-    @Column(nullable = false)
-    val creationDate: LocalDate = LocalDate.now(),
-
-    @Column(nullable = false)
-    val lastModificationDate: LocalDate = LocalDate.now(),
-
-    @Column(nullable = false)
-    val expirationDate: LocalDate
+////    @Column(nullable = false)
+//    val creationDate: LocalDate = LocalDate.now(),
+//
+////    @Column(nullable = false)
+//    val lastModificationDate: LocalDate = LocalDate.now(),
+//
+////    @Column(nullable = false)
+//    val expirationDate: LocalDate = LocalDate.now().plusDays(30)
 
 
 )
@@ -37,4 +37,10 @@ data class Employer(
 
     @OneToMany(mappedBy = "employer")
     val offers: List<Offer> = mutableListOf()
+)
+
+data class OfferRequest(
+    val title: String,
+    val description: String,
+    val employerId: Long
 )

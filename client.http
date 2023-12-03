@@ -1,0 +1,49 @@
+// API OFFERS
+
+### get all offers
+GET http://localhost:8080/api/offer
+Accept: application/json
+
+### get offer by id
+< {%
+    request.variables.set("id", "1")
+%}
+GET http://localhost:8080/api/offer/{{id}}
+Accept: application/json
+
+### add new offer
+POST http://localhost:8080/api/offer
+Accept: application/json
+Content-Type: application/json
+
+{ "title": "First one", "description": "basic info" }
+
+### add new offer for author
+POST http://localhost:8080/api/offer/create
+Accept: application/json
+Content-Type: application/json
+
+{ "title": "nowa oferta", "description": "good job", "employerId": 1 }
+
+###
+
+// API EMPLOYERS
+
+### get all employers
+GET http://localhost:8080/api/employer
+Accept: application/json
+
+### get employer by id
+< {%
+    request.variables.set("id", "1")
+%}
+GET http://localhost:8080/api/employer/{{id}}
+Accept: application/json
+
+### create employer
+POST http://localhost:8080/api/employer
+Content-Type: application/json
+
+{ "name": "TestCompany", "description": "hehehee" }
+
+###

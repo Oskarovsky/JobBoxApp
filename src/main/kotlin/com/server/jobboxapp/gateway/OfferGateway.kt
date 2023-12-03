@@ -1,13 +1,18 @@
 package com.server.jobboxapp.gateway
 
 import com.server.jobboxapp.entity.Offer
+import com.server.jobboxapp.entity.OfferRequest
+import com.server.jobboxapp.repository.EmployerRepository
 import com.server.jobboxapp.repository.OfferRepository
+import org.springframework.http.RequestEntity
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/offer")
 class OfferGateway(
-    private val offerRepository: OfferRepository
+    private val offerRepository: OfferRepository,
+    private val employerRepository: EmployerRepository
 ) {
 
     @GetMapping
@@ -19,9 +24,24 @@ class OfferGateway(
             .findById(id)
             .orElseThrow { NoSuchElementException("There is no offer with id: $id") }
 
-    @PostMapping
+    @PostMapping(consumes = ["application/json"])
     fun createOffer(@RequestBody offer: Offer): Offer =
         offerRepository.save(offer)
+
+    @PostMapping("/create")
+    fun createNewOffer(@RequestBody offerRequest: OfferRequest): ResponseEntity<Offer> {
+        val employer = employerRepository.findById(offerRequest.employerId)
+            .orElseThrow { NoSuchElementException("Employer with ID ${offerRequest.employerId} not found") }
+
+        val offer = Offer(
+            title = offerRequest.title,
+            description = offerRequest.description,
+            employer = employer
+        )
+
+        val savedOffer = offerRepository.save(offer)
+        return ResponseEntity.ok(savedOffer)
+    }
 
     @PutMapping("/{id}")
     fun updateOffer(@PathVariable id: Long, @RequestBody updatedOffer: Offer): Offer {
