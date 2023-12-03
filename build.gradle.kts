@@ -31,6 +31,9 @@ dependencies {
     // OTHER
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
+    // DB
+    implementation("org.postgresql:postgresql:42.2.27")
+
     // TEST
     implementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
