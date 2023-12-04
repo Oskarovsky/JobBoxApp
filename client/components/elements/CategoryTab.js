@@ -119,13 +119,7 @@ const CategoryTab = () => {
                                 <div className="card-block-info">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -761,13 +755,7 @@ const CategoryTab = () => {
                                 <div className="card-block-info">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -1247,13 +1235,7 @@ const CategoryTab = () => {
                                 <div className="card-block-info">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -1681,13 +1663,7 @@ const CategoryTab = () => {
                                 <div className="card-block-info">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -2115,13 +2091,7 @@ const CategoryTab = () => {
                                 <div className="card-block-info">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -2345,13 +2315,7 @@ const CategoryTab = () => {
                                 <div className="card-block-info">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">

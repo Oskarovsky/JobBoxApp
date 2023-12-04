@@ -5,32 +5,22 @@ const CategoryTab3 = () => {
     const [active, setActive] = useState(1);
 
     const [data, setData] = useState(null);
+    const [isLoading, setLoading] = useState(true)
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('http://www.localhost:8080/api/offer');
-                const jsonData = await response.json();
-                setData(jsonData);
-                console.log(jsonData.toString())
-            } catch (error) {
-                console.error('Błąd podczas pobierania danych z API', error);
-            }
-        };
+        fetch('http://www.localhost:8080/api/offer')
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data)
+                setLoading(false)
+            })
+    }, []);
 
-        fetchData();
-    }, []); // Pusta tablica dependencies sprawi, że useEffect zadziała tylko raz po zamontowaniu komponentu
-
+    if (isLoading) return <p>Loading...</p>
+    if (!data) return <p>No profile data</p>
 
     return (
         <>
-            {data ? (
-                <pre>
-                    {data[3].title} <br/>
-                    {JSON.stringify(data, null, 2)}
-                </pre>
-            ) : (
-                <p>Ładowanie danych...</p>
-            )}
             <div className="tab-content mt-50" id="myTabContent-1">
                 <div className={`tab-pane fade ${active == 1 && "show active"}`}>
                     <div className="row">
@@ -40,11 +30,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[3].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                                {/*{data[3].title}*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -99,11 +85,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                               {/*data[4].title*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -211,11 +193,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                               {/*data[4].title*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -804,11 +782,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                               {/*data[4].title*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -916,11 +890,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                               {/*data[4].title*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -1456,11 +1426,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                               {/*data[4].title*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -1567,13 +1533,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+                                           {/*data[4].title*/}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -2108,11 +2068,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                               {/*data[4].title*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -2220,11 +2176,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
+                                               {/*data[4].title*/}
                                             </a>
                                         </Link>
                                     </h6>
@@ -2707,13 +2659,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -2819,13 +2765,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -3359,13 +3299,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -3471,13 +3405,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {data ? (
-                                                    <pre>{data[4].title}</pre>
-                                                ) : (
-                                                    <p>Ładowanie danych...</p>
-                                                )}
-                                            </a>
+{data[4].title}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
