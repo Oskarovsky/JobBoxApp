@@ -1,9 +1,7 @@
 package com.server.jobboxapp.gateway
 
 import com.server.jobboxapp.entity.Employer
-import com.server.jobboxapp.entity.Offer
 import com.server.jobboxapp.repository.EmployerRepository
-import com.server.jobboxapp.repository.OfferRepository
 import org.springframework.web.bind.annotation.*
 
 @RestController

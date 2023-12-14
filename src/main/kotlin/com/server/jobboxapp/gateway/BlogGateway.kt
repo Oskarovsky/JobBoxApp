@@ -36,8 +36,8 @@ class BlogGateway(
     fun updateOffer(@PathVariable id: Long, @RequestBody  updatedBlogPost:BlogPost): BlogPost {
         var blogPost =
             blogRepository.findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
-        blogPost.headline = updatedBlogPost.headline
-        offer.employer = updatedBlogPost.employer
+//        blogPost.headline = updatedBlogPost.headline
+//        offer.employer = updatedBlogPost.employer
         return blogRepository.save(blogPost)
 
     }

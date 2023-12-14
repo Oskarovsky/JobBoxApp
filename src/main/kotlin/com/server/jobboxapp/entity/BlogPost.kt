@@ -16,9 +16,3 @@ data class BlogPost(
     @Column(nullable = false)
     val urlToImage: String,
 )
-
-data class BlogToPost(
-    val headline: String,
-    val text: String,
-    val urlToImage: String,
-)
