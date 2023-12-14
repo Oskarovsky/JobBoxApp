@@ -445,13 +445,14 @@ export default function JobGrid() {
                                                     <div className="card-block-info">
                                                         <h6>
                                                             <Link legacyBehavior href="/job-details">
-                   {/*data[4].title*/}
+                                                                <a>Java Software Engineer</a>
+                                                                {/*<a>{data[4].title}</a>*/}
                                                             </Link>
                                                         </h6>
                                                         <div className="mt-5">
                                                             <span className="card-briefcase">Part time</span>
                                                             <span className="card-time">
-                                                                5<span> minutes ago</span>
+                                                                <span> minutes ago</span>
                                                             </span>
                                                         </div>
                                                         <p className="font-sm color-text-paragraph mt-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.</p>

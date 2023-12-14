@@ -49,7 +49,6 @@ const FeaturedSlider = ({ products }) => {
                                     <Link legacyBehavior href="/job-details">
                                         <a className="btn btn-grey-small mr-5">PHP</a>
                                     </Link>
-
                                     <Link legacyBehavior href="/job-details">
                                         <a className="btn btn-grey-small mr-5">Android </a>
                                     </Link>

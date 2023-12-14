@@ -119,7 +119,8 @@ const CategoryTab = () => {
                                 <div className="card-block-info">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-{data[4].title}
+                                            <a>Java Software Engineer</a>
+                                            {/*<a>{data[4].title}</a>*/}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -445,11 +446,9 @@ const CategoryTab = () => {
                                         <Link legacyBehavior href="/job-details">
                                             <a className="btn btn-grey-small mr-5">iOS</a>
                                         </Link>
-
                                         <Link legacyBehavior href="/job-details">
                                             <a className="btn btn-grey-small mr-5">Laravel</a>
                                         </Link>
-
                                         <Link legacyBehavior href="/job-details">
                                             <a className="btn btn-grey-small mr-5">Golang</a>
                                         </Link>
