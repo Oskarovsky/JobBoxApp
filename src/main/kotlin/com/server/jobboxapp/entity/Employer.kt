@@ -9,19 +9,19 @@ data class Employer(
     val id: Long = 0,
 
     @Column(nullable = false)
-    val employerName: String,
+    var employerName: String,
 
     @Column(nullable = false)
-    val industry: String,
+    var industry: String,
 
     @Column(nullable = false)
-    val employerDescription: String,
+    var employerDescription: String,
 
     @Column(nullable = false)
-    val urlToWebsite: String,
+    var urlToWebsite: String,
 
     @Column(nullable = false)
-    val urlToImage: String,
+    var urlToImage: String,
 
     @OneToMany(mappedBy = "employer", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JsonIgnore

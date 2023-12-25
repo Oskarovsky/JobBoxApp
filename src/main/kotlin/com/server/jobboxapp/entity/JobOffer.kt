@@ -27,8 +27,9 @@ data class JobOffer(
     @Column(nullable = false)
     val categoryToBrowse: String,
 
+    @ElementCollection
     @Column(nullable = false)
-    val technologyStack: String,
+    val technologyStack: List<String>,
 
     @Column(nullable = false)
     val jobOfferDescription: String,
@@ -38,6 +39,9 @@ data class JobOffer(
 
     @Column(nullable = false)
     val city: String,
+
+    @Column(nullable = false)
+    val postCode: String,
 
     @Column(nullable = false)
     val street: String,
@@ -60,16 +64,17 @@ data class JobOffer(
 
 data class OfferRequest(
     val positionTitle: String,
+    val employer: Employer,
     val experienceLevel: String,
     val employmentType: String,
     val employmentModel: String,
     val categoryToBrowse: String,
-    val technologyStack: String,
+    val technologyStack: List<String>,
     val jobOfferDescription: String,
     val country: String,
     val city: String,
+    val postCode: String,
     val street: String,
     val urlToApply: String,
-    val promotedFlag: Int,
-    val employerId: Long
+    val promotedFlag: Int
 )

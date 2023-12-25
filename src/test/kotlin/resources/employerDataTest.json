@@ -1,0 +1,23 @@
+[
+  {
+    "employerName": "Apple",
+    "industry": "IT",
+    "employerDescription": "opis Apple",
+    "urlToWebsite": "apple.pl",
+    "urlToImage": "1.png"
+  },
+  {
+    "employerName": "Maersk",
+    "industry": "Shipping",
+    "employerDescription": "opis Maersk",
+    "urlToWebsite": "maersk.pl",
+    "urlToImage": "2.png"
+  },
+  {
+    "employerName": "Nordea",
+    "industry": "Finance",
+    "employerDescription": "opis Nordea",
+    "urlToWebsite": "nordea.pl",
+    "urlToImage": "3.png"
+  }
+]

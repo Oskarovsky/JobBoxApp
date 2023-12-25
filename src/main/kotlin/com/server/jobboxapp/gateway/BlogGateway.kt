@@ -1,4 +1,5 @@
 package com.server.jobboxapp.gateway
+
 import com.server.jobboxapp.entity.*
 import com.server.jobboxapp.repository.BlogRepository
 import com.server.jobboxapp.service.BlogService
@@ -8,44 +9,25 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/api/blog")
 class BlogGateway(
-    private val blogRepository: BlogRepository
+    private val blogService: BlogService
 ) {
-
     @GetMapping
     @CrossOrigin(origins = ["*"])
-    fun getAllBlogPosts(): List<BlogPost> = blogRepository.findAll()
+    fun getAllBlogPosts(): List<BlogPost> = blogService.returnAllBlogPosts()
 
     @GetMapping("/{id}")
     fun getBlogPostById(@PathVariable id: Long): BlogPost =
-        blogRepository
-            .findById(id)
-            .orElseThrow { NoSuchElementException("There is no offer with id: $id") }
+        blogService.returnBlogPostById(id)
 
-    @PostMapping(consumes = ["application/json"])
-    fun createOffer(@RequestBody blogPost: BlogPost): BlogPost =
-        blogRepository.save(blogPost)
-
-    @PostMapping("/createJobOffer", consumes = ["application/json"])
-    fun createNewOffer(@RequestBody blogPost: BlogPost): ResponseEntity<BlogPost> {
-
-        val savedBlogPost = blogRepository.save(blogPost)
-        return ResponseEntity.ok(savedBlogPost)
-    }
+    @PostMapping("/createBlogPost", consumes = ["application/json"])
+    fun createBlogPost(@RequestBody blogPost: BlogPost): ResponseEntity<BlogPost> = blogService.createBlogPost(blogPost)
 
     @PutMapping("/{id}")
-    fun updateOffer(@PathVariable id: Long, @RequestBody  updatedBlogPost:BlogPost): BlogPost {
-        var blogPost =
-            blogRepository.findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
-//        blogPost.headline = updatedBlogPost.headline
-//        offer.employer = updatedBlogPost.employer
-        return blogRepository.save(blogPost)
-
-    }
+    fun updateBlogPost(@PathVariable id: Long, @RequestBody updatedBlogPost: BlogPost): ResponseEntity<BlogPost> =
+        blogService.updateBlogPost(id, updatedBlogPost)
 
     @DeleteMapping("/{id}")
-    fun deleteOffer(@PathVariable id: Long) {
-        blogRepository.deleteById(id)
-    }
-
+    fun deleteOffer(@PathVariable id: Long): ResponseEntity<Long> =
+        blogService.deleteOffer(id)
 }
 

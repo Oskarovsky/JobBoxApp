@@ -1,0 +1,153 @@
+[
+  {
+    "positionTitle": "Senior Cloud Engineer",
+    "employerName": "Apple",
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Backend",
+    "technologyStack": [
+      "Python",
+      "AWS",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis1",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "postCode": "2450",
+    "street": "Pladehals Alle 1 st th",
+    "urlToApply": "apple.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Senior Cloud Engineer",
+    "employerName": "Apple",
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Backend",
+    "technologyStack": [
+      "JavaScript",
+      "Node.js",
+      "TypeScript"
+    ],
+    "jobOfferDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "postCode": "2450",
+    "street": "Pladehals Alle 1 st th",
+    "urlToApply": "apple.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Senior Cloud Engineer",
+    "employerName": "Apple",
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Backend",
+    "technologyStack": [
+      "Java",
+      "Python",
+      "Google"
+    ],
+    "jobOfferDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "postCode": "2450",
+    "street": "Pladehals Alle 1 st th",
+    "urlToApply": "apple.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Senior Cloud Engineer",
+    "employerName": "Apple",
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Backend",
+    "technologyStack": [
+      "Go",
+      "Lang",
+      "Dupa"
+    ],
+    "jobOfferDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "postCode": "2450",
+    "street": "Pladehals Alle 1 st th",
+    "urlToApply": "apple.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Senior Cloud Engineer",
+    "employerName": "Apple",
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Backend",
+    "technologyStack": [
+      "Python",
+      "AWS",
+      "Azure",
+      "JavaScript",
+      "Node.js",
+      "TypeScript"
+    ],
+    "jobOfferDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "postCode": "2450",
+    "street": "Pladehals Alle 1 st th",
+    "urlToApply": "apple.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Senior Cloud Engineer",
+    "employerName": "Apple",
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Backend",
+    "technologyStack": [
+      "Python",
+      "AWS",
+      "Azure",
+      "JavaScript",
+      "Node.js",
+      "TypeScript"
+    ],
+    "jobOfferDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "postCode": "2450",
+    "street": "Pladehals Alle 1 st th",
+    "urlToApply": "apple.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Senior Cloud Engineer",
+    "employerName": "Apple",
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Backend",
+    "technologyStack": [
+      "Python",
+      "AWS",
+      "Azure",
+      "JavaScript",
+      "Node.js",
+      "TypeScript"
+    ],
+    "jobOfferDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "postCode": "2450",
+    "street": "Pladehals Alle 1 st th",
+    "urlToApply": "apple.com/job-newJob",
+    "promotedFlag": 1
+  }
+]
+
+
