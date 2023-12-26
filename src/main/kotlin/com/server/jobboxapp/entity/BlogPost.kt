@@ -8,11 +8,14 @@ data class BlogPost(
     val id: Long = 0,
 
     @Column(nullable = false)
-    val headline: String,
+    var headline: String,
 
     @Column(nullable = false)
-    val text: String,
+    var text: String,
 
     @Column(nullable = false)
-    val urlToImage: String,
+    var author: String,
+
+    @Column(nullable = false)
+    var urlToImage: String,
 )

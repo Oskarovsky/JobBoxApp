@@ -1,7 +1,6 @@
 package com.server.jobboxapp.gateway
 
 import com.server.jobboxapp.entity.*
-import com.server.jobboxapp.repository.BlogRepository
 import com.server.jobboxapp.service.BlogService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -28,6 +27,6 @@ class BlogGateway(
 
     @DeleteMapping("/{id}")
     fun deleteOffer(@PathVariable id: Long): ResponseEntity<Long> =
-        blogService.deleteOffer(id)
+        blogService.deleteBlogPost(id)
 }
 

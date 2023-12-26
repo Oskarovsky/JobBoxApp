@@ -4,10 +4,11 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.server.jobboxapp.entity.Employer
-import com.server.jobboxapp.entity.JobOffer
+import com.server.jobboxapp.entity.OfferRequest
 import com.server.jobboxapp.repository.EmployerRepository
-import com.server.jobboxapp.repository.OfferRepository
+import com.server.jobboxapp.repository.JobOfferRepository
 import com.server.jobboxapp.service.EmployerService
+import com.server.jobboxapp.service.JobOfferService
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -20,22 +21,25 @@ import java.net.URL
 class EmployerServiceTests {
 
     lateinit var employerList: List<Employer>
-    lateinit var jobOfferList: List<JobOffer>
+    lateinit var offerRequestList: List<OfferRequest>
     lateinit var jsonMapper: ObjectMapper
     lateinit var employerService: EmployerService
+    lateinit var jobOfferService: JobOfferService
 
     @Autowired
     lateinit var employerRepository: EmployerRepository
 
     @Autowired
-    lateinit var offerRepository: OfferRepository
+    lateinit var jobOfferRepository: JobOfferRepository
 
 
     @BeforeEach
     fun setUp() {
         jsonMapper = jacksonObjectMapper()
-        employerService = EmployerService(employerRepository, offerRepository)
+        employerService = EmployerService(employerRepository, jobOfferRepository)
+        jobOfferService = JobOfferService(jobOfferRepository, employerService)
         employerRepository.deleteAll()
+        jobOfferRepository.deleteAll()
     }
 
     @Test
@@ -60,47 +64,19 @@ class EmployerServiceTests {
 
 
     @Test
-    fun updateEmployerName() {
+    fun testJpaQuery() {
         loadEmployerDataToDatabase()
 
         employerService.updateEmployerName(1, "Apple1")
-
-        Assertions.assertEquals("Apple1", employerService.returnEmployeeById(1).employerName)
-    }
-
-    @Test
-    fun updateIndustry() {
-        loadEmployerDataToDatabase()
-
         employerService.updateIndustry(1, "IT1")
-
-        Assertions.assertEquals("IT1", employerService.returnEmployeeById(1).industry)
-    }
-
-    @Test
-    fun updateEmployerDescription() {
-        loadEmployerDataToDatabase()
-
         employerService.updateEmployerDescription(1, "opis1")
-
-        Assertions.assertEquals("opis1", employerService.returnEmployeeById(1).employerDescription)
-    }
-
-    @Test
-    fun updateUrlToWebsite() {
-        loadEmployerDataToDatabase()
-
         employerService.updateUrlToWebsite(1, "apple.pl1")
-
-        Assertions.assertEquals("apple.pl1", employerService.returnEmployeeById(1).urlToWebsite)
-    }
-
-    @Test
-    fun updateUrlToImage() {
-        loadEmployerDataToDatabase()
-
         employerService.updateUrlToImage(1, "11.png")
 
+        Assertions.assertEquals("Apple1", employerService.returnEmployeeById(1).employerName)
+        Assertions.assertEquals("IT1", employerService.returnEmployeeById(1).industry)
+        Assertions.assertEquals("opis1", employerService.returnEmployeeById(1).employerDescription)
+        Assertions.assertEquals("apple.pl1", employerService.returnEmployeeById(1).urlToWebsite)
         Assertions.assertEquals("11.png", employerService.returnEmployeeById(1).urlToImage)
     }
 
@@ -112,24 +88,34 @@ class EmployerServiceTests {
         val employerToUpdate =
             jsonMapper.readValue<Employer>(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTestUpdate.json"))
 
-        employerService.updateEmployerEntity(1,employerToUpdate)
+        employerService.updateEmployerEntity(1, employerToUpdate)
 
-        Assertions.assertEquals(employerToUpdate.employerName, employerService.returnEmployerByName("Apple1").employerName)
-        Assertions.assertEquals(employerToUpdate.employerDescription, employerService.returnEmployerByName("Apple1").employerDescription)
+        Assertions.assertEquals(
+            employerToUpdate.employerName,
+            employerService.returnEmployerByName("Apple1").employerName
+        )
+        Assertions.assertEquals(
+            employerToUpdate.employerDescription,
+            employerService.returnEmployerByName("Apple1").employerDescription
+        )
     }
 
     @Test
     fun mapEmployerToCount() {
         loadEmployerDataToDatabase()
+        createOffersAndLoadToDatabase()
 
-        var jobOffer =
-            jsonMapper.readValue<JobOffer>(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/jobOfferDataTest.json"))
+        val mapOfEmployerToCount = employerService.mapOfEmployerToCount()
+
+        val appleEmployer = employerList.get(0)
+        val maerskEmployer = employerList.get(1)
+        val nordeaEmployer = employerList.get(2)
 
 
-        employerService.mapOfEmployerToCount()
-
+        Assertions.assertEquals(3, mapOfEmployerToCount.get(appleEmployer))
+        Assertions.assertEquals(3, mapOfEmployerToCount.get(maerskEmployer))
+        Assertions.assertEquals(2, mapOfEmployerToCount.get(nordeaEmployer))
     }
-
 
     @Test
     @Transactional
@@ -161,8 +147,16 @@ class EmployerServiceTests {
             employerService.saveEmployerEntity(it)
         }
     }
-    fun loadJobOfferList() {
-        jobOfferList =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTest.json"))
+
+    fun loadJobOfferRequest() {
+        offerRequestList =
+            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/jobOfferDataTest.json"))
+    }
+
+    fun createOffersAndLoadToDatabase() {
+        loadJobOfferRequest()
+        offerRequestList.stream().forEach {
+            jobOfferService.createNewOffer(it)
+        }
     }
 }

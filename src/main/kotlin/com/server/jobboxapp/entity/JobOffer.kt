@@ -8,63 +8,63 @@ data class JobOffer(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "employer_id")
-    val employer: Employer,
+    var employer: Employer,
 
     @Column(nullable = false)
-    val positionTitle: String,
+    var positionTitle: String,
 
     @Column(nullable = false)
-    val experienceLevel: String,
+    var experienceLevel: String,
 
     @Column(nullable = false)
-    val employmentType: String,
+    var employmentType: String,
 
     @Column(nullable = false)
-    val employmentModel: String,
+    var employmentModel: String,
 
     @Column(nullable = false)
-    val categoryToBrowse: String,
+    var categoryToBrowse: String,
 
     @ElementCollection
     @Column(nullable = false)
-    val technologyStack: List<String>,
+    var technologyStack: List<String>,
 
     @Column(nullable = false)
-    val jobOfferDescription: String,
+    var jobOfferDescription: String,
 
     @Column(nullable = false)
-    val country: String,
+    var country: String,
 
     @Column(nullable = false)
-    val city: String,
+    var city: String,
 
     @Column(nullable = false)
-    val postCode: String,
+    var postCode: String,
 
     @Column(nullable = false)
-    val street: String,
+    var street: String,
 
     @Column(nullable = false)
-    val urlToApply: String,
+    var urlToApply: String,
 
     @Column(nullable = false)
-    val promotedFlag: Int,
+    var promotedFlag: Int,
 
     @Column(nullable = false)
-    val creationDate: LocalDate = LocalDate.now(),
+    var creationDate: LocalDate = LocalDate.now(),
 
     @Column(nullable = false)
-    val lastModificationDate: LocalDate = LocalDate.now(),
+    var lastModificationDate: LocalDate = LocalDate.now(),
 
     @Column(nullable = false)
-    val expirationDate: LocalDate = LocalDate.now().plusDays(30)
+    var expirationDate: LocalDate = LocalDate.now().plusDays(30)
 )
 
 data class OfferRequest(
     val positionTitle: String,
-    val employer: Employer,
+    val employerId: Long,
     val experienceLevel: String,
     val employmentType: String,
     val employmentModel: String,

@@ -2,14 +2,14 @@ package com.server.jobboxapp.service
 
 import com.server.jobboxapp.entity.Employer
 import com.server.jobboxapp.repository.EmployerRepository
-import com.server.jobboxapp.repository.OfferRepository
+import com.server.jobboxapp.repository.JobOfferRepository
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 
 @Service
 class EmployerService(
     private val employerRepository: EmployerRepository,
-    private val offerRepository: OfferRepository
+    private val jobOfferRepository: JobOfferRepository
 ) {
     fun returnAllEmployees(): List<Employer> =
         employerRepository.findAll()
@@ -80,7 +80,7 @@ class EmployerService(
     fun mapOfEmployerToCount(): Map<Employer, Int> {
         val employers = employerRepository.findAll()
         return employers.map {
-            it to offerRepository.countJobsByEmployerId(it.id)
+            it to jobOfferRepository.countJobsByEmployerId(it.id)
         }.toMap()
     }
 }

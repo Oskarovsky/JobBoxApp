@@ -23,8 +23,8 @@ data class Employer(
     @Column(nullable = false)
     var urlToImage: String,
 
-    @OneToMany(mappedBy = "employer", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    @JsonIgnore
-    val jobOffers: List<JobOffer> = mutableListOf()
+//    @OneToMany(mappedBy = "employer", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+//    @JsonIgnore
+//    val jobOffers: List<JobOffer> = mutableListOf()
 )
 
