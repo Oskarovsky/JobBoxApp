@@ -9,13 +9,13 @@ data class Employer(
     val id: Long = 0,
 
     @Column(nullable = false)
-    var employerName: String,
+    var name: String,
 
     @Column(nullable = false)
     var industry: String,
 
     @Column(nullable = false)
-    var employerDescription: String,
+    var description: String,
 
     @Column(nullable = false)
     var urlToWebsite: String,
@@ -23,8 +23,8 @@ data class Employer(
     @Column(nullable = false)
     var urlToImage: String,
 
-//    @OneToMany(mappedBy = "employer", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-//    @JsonIgnore
-//    val jobOffers: List<JobOffer> = mutableListOf()
+    @OneToMany(mappedBy = "employer", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    @JsonIgnore
+    val jobOffers: List<JobOffer> = mutableListOf()
 )
 

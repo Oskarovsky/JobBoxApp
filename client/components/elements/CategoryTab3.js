@@ -5,19 +5,20 @@ const CategoryTab3 = () => {
     const [active, setActive] = useState(1);
 
     const [data, setData] = useState(null);
+    const [offers, setOffers] = useState(null);
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch('http://www.localhost:8080/api/offer')
             .then((res) => res.json())
-            .then((data) => {
-                // setData(data)
+            .then((offer) => {
+                setOffers(offer)
                 setLoading(false)
             })
     }, []);
 
     if (isLoading) return <p>Loading...</p>
-    if (!data) return <p>No profile data</p>
+    if (!offers) return <p>No profile data</p>
 
     return (
         <>
@@ -29,9 +30,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                                <a>Java Software Engineer</a>
-                                                {/*<a>{data[3].title}</a>*/}
-                                            <a>Java Software Engineer</a>
+                                            <a>{offers[0].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -84,10 +83,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            {/*<a>*/}
-                                            {/*    {data[4].title}*/}
-                                            {/*</a>*/}
-                                            <a>Java Software Engineer</a>
+                                            <a>{offers[1].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -140,7 +136,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>UI / UX Designer fulltime</a>
+                                            <a>{offers[2].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -193,10 +189,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            {/*<a>*/}
-                                            {/*    {data[4].title}*/}
-                                            {/*</a>*/}
-                                            <a>Java Software Engineer</a>
+                                            <a>{offers[3].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -249,7 +242,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>Java Software Engineer</a>
+                                            <a>{offers[4].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -302,7 +295,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>Frontend Developer</a>
+                                            <a>{offers[5].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -355,7 +348,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>React Native Web Developer</a>
+                                            <a>{offers[6].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -408,7 +401,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>Senior System Engineer</a>
+                                            <a>{offers[7].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -461,7 +454,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>Lead Quality Control QA</a>
+                                            <a>{offers[8].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -514,7 +507,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>UX Designer &amp; Researcher</a>
+                                            <a>{offers[9].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -567,7 +560,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>React Native Web Developer</a>
+                                            <a>{offers[10].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -620,7 +613,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>Senior System Engineer</a>
+                                            <a>{offers[11].positionTitle}</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -784,7 +777,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                               {/*data[4].title*/}
+                                               {offers[0].positionTitle}
                                             </a>
                                         </Link>
                                     </h6>
@@ -892,7 +885,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                               {/*data[4].title*/}
+                                               {offers[0].positionTitle}
                                             </a>
                                         </Link>
                                     </h6>
@@ -1428,7 +1421,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                               {/*data[4].title*/}
+                                               {offers[0].positionTitle}
                                             </a>
                                         </Link>
                                     </h6>
@@ -1535,7 +1528,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                           {/*data[4].title*/}
+                                           {offers[0].positionTitle}
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -2070,7 +2063,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                               {/*data[4].title*/}
+                                               {offers[0].positionTitle}
                                             </a>
                                         </Link>
                                     </h6>
@@ -2178,7 +2171,7 @@ const CategoryTab3 = () => {
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
                                             <a>
-                                               {/*data[4].title*/}
+                                               {offers[0].positionTitle}
                                             </a>
                                         </Link>
                                     </h6>
@@ -2661,7 +2654,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-{data[4].title}
+                                            <a>TEST</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -2767,7 +2760,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-{data[4].title}
+                                            <a>TEST</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -3301,7 +3294,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-{data[4].title}
+                                            <a>TEST</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -3407,7 +3400,7 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-{data[4].title}
+                                            <a>TEST</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">

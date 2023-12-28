@@ -20,11 +20,11 @@ class JobOfferGateway(
     fun getOfferById(@PathVariable id: Long): JobOffer =
         jobOfferService.returnOfferById(id)
 
-    @GetMapping("/{jobsOfTheDay}")
+    @GetMapping("/jobsOfTheDay")
     fun getJobsOfTheDay(): List<JobOffer> =
         jobOfferService.returnOffersOfTheDay()
 
-    @GetMapping("/{browseByCategory}")
+    @GetMapping("/browseByCategory")
     fun getBrowseByCategory(): Map<String, Int> =
         jobOfferService.returnMapOfBrowseCategoryAndCount()
 

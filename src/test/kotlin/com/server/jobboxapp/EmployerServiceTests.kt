@@ -59,7 +59,7 @@ class EmployerServiceTests {
 
         val Employer = employerService.returnEmployeeById(2)
 
-        Assertions.assertEquals("Maersk", Employer.employerName)
+        Assertions.assertEquals("Maersk", Employer.name)
     }
 
 
@@ -73,9 +73,9 @@ class EmployerServiceTests {
         employerService.updateUrlToWebsite(1, "apple.pl1")
         employerService.updateUrlToImage(1, "11.png")
 
-        Assertions.assertEquals("Apple1", employerService.returnEmployeeById(1).employerName)
+        Assertions.assertEquals("Apple1", employerService.returnEmployeeById(1).name)
         Assertions.assertEquals("IT1", employerService.returnEmployeeById(1).industry)
-        Assertions.assertEquals("opis1", employerService.returnEmployeeById(1).employerDescription)
+        Assertions.assertEquals("opis1", employerService.returnEmployeeById(1).description)
         Assertions.assertEquals("apple.pl1", employerService.returnEmployeeById(1).urlToWebsite)
         Assertions.assertEquals("11.png", employerService.returnEmployeeById(1).urlToImage)
     }
@@ -91,12 +91,12 @@ class EmployerServiceTests {
         employerService.updateEmployerEntity(1, employerToUpdate)
 
         Assertions.assertEquals(
-            employerToUpdate.employerName,
-            employerService.returnEmployerByName("Apple1").employerName
+            employerToUpdate.name,
+            employerService.returnEmployerByName("Apple1").name
         )
         Assertions.assertEquals(
-            employerToUpdate.employerDescription,
-            employerService.returnEmployerByName("Apple1").employerDescription
+            employerToUpdate.description,
+            employerService.returnEmployerByName("Apple1").description
         )
     }
 
@@ -133,7 +133,7 @@ class EmployerServiceTests {
 
         val employer = employerService.returnEmployerByName("Maersk")
 
-        Assertions.assertEquals("Maersk", employer.employerName)
+        Assertions.assertEquals("Maersk", employer.name)
     }
 
     fun loadEmployerList() {

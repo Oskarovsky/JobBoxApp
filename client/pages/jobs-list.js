@@ -222,8 +222,7 @@ export default function JobList() {
                                                     <div className="card-block-info">
                                                         <h4>
                                                             <Link legacyBehavior href="/job-details">
-                                                                <a>Java Software Engineer</a>
-                                                                {/*<a>{data[4].title}</a>*/}
+                                                                <a>TEST</a>
                                                             </Link>
                                                         </h4>
                                                         <div className="mt-5">

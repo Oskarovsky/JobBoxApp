@@ -29,9 +29,9 @@ class EmployerService(
             .findById(id)
             .orElseThrow { NoSuchElementException("There is no employer with id: $id") }
 
-        employerToUpdate.employerName = updatedEmployer.employerName
+        employerToUpdate.name = updatedEmployer.name
         employerToUpdate.industry = updatedEmployer.industry
-        employerToUpdate.employerDescription = updatedEmployer.employerDescription
+        employerToUpdate.description = updatedEmployer.description
         employerToUpdate.urlToImage = updatedEmployer.urlToImage
         employerToUpdate.urlToWebsite = updatedEmployer.urlToWebsite
 

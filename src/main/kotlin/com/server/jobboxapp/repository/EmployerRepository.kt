@@ -11,16 +11,16 @@ import org.springframework.transaction.annotation.Transactional
 
 @Repository
 interface EmployerRepository : JpaRepository<Employer, Long> {
-    @Query("SELECT * FROM employer e WHERE e.employer_name = ?1", nativeQuery = true)
+    @Query("SELECT * FROM employer e WHERE e.name = ?1", nativeQuery = true)
     fun returnEmployerByEmployerName(employerName: String): Employer
 
     @Modifying
-    @Query("DELETE FROM employer e WHERE e.employer_name = ?1", nativeQuery = true)
+    @Query("DELETE FROM employer e WHERE e.name = ?1", nativeQuery = true)
     fun deleteEmployerByEmployerName(employerName: String)
 
     @Transactional
     @Modifying
-    @Query("UPDATE Employer e SET e.employerName = ?2 WHERE e.id = ?1")
+    @Query("UPDATE Employer e SET e.name = ?2 WHERE e.id = ?1")
     fun updateEmployerName(id: Long, employerName: String)
 
     @Transactional
@@ -30,7 +30,7 @@ interface EmployerRepository : JpaRepository<Employer, Long> {
 
     @Transactional
     @Modifying
-    @Query("UPDATE Employer e SET e.employerDescription = ?2 WHERE e.id = ?1")
+    @Query("UPDATE Employer e SET e.description = ?2 WHERE e.id = ?1")
     fun updateEmployerDescription(id: Long, employerDescription: String)
 
     @Transactional

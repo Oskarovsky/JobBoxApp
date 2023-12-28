@@ -17,7 +17,7 @@ class EmployerGateway(
     fun getEmployerById(@PathVariable id: Long): Employer =
         employerService.returnEmployeeById(id)
 
-    @GetMapping("/{employersAndCount}")
+    @GetMapping("/employersAndCount")
     fun getEmployersAndCount(): Map<Employer, Int> =
         employerService.mapOfEmployerToCount()
 
