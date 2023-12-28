@@ -1,0 +1,20 @@
+[
+  {
+    "headline": "Nowy post1",
+    "text": "text1",
+    "author": "autor1",
+    "urlToImage": "image1"
+  },
+  {
+    "headline": "Nowy post2",
+    "text": "text2",
+    "author": "autor2",
+    "urlToImage": "image2"
+  },
+  {
+    "headline": "Nowy post3",
+    "text": "text3",
+    "author": "autor3",
+    "urlToImage": "image3"
+  }
+]

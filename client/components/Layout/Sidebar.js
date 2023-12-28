@@ -64,7 +64,7 @@ const Sidebar = ({ openClass }) => {
                                                     <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>
                                                     </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2            </a></Link>
+                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2 </a></Link>
                                                     </li>
                                             </ul>
                                         </li>

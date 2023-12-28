@@ -11,7 +11,7 @@ const CategoryTab3 = () => {
         fetch('http://www.localhost:8080/api/offer')
             .then((res) => res.json())
             .then((data) => {
-                setData(data)
+                // setData(data)
                 setLoading(false)
             })
     }, []);
@@ -29,9 +29,9 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                                {/*{data[3].title}*/}
-                                            </a>
+                                                <a>Java Software Engineer</a>
+                                                {/*<a>{data[3].title}</a>*/}
+                                            <a>Java Software Engineer</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -84,9 +84,10 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                               {/*data[4].title*/}
-                                            </a>
+                                            {/*<a>*/}
+                                            {/*    {data[4].title}*/}
+                                            {/*</a>*/}
+                                            <a>Java Software Engineer</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">
@@ -192,9 +193,10 @@ const CategoryTab3 = () => {
                                 <div className="card-block-info pt-25">
                                     <h6>
                                         <Link legacyBehavior href="/job-details">
-                                            <a>
-                                               {/*data[4].title*/}
-                                            </a>
+                                            {/*<a>*/}
+                                            {/*    {data[4].title}*/}
+                                            {/*</a>*/}
+                                            <a>Java Software Engineer</a>
                                         </Link>
                                     </h6>
                                     <div className="mt-5">

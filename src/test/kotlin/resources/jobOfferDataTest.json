@@ -1,0 +1,157 @@
+[
+  {
+    "positionTitle": "Junior Cloud Developer",
+    "employerId": 1,
+    "experienceLevel": "Junior",
+    "employmentType": "Part Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Frontend",
+    "technologyStack": [
+      "JavaScript",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis2",
+    "country": "Germany",
+    "city": "Berlin",
+    "postCode": "10115",
+    "street": "Techstrasse 123",
+    "urlToApply": "microsoft.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Architect",
+    "employerId": 1,
+    "experienceLevel": "Senior",
+    "employmentType": "Contract",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Full Stack",
+    "technologyStack": [
+      "Java",
+      "GCP"
+    ],
+    "jobOfferDescription": "opis3",
+    "country": "France",
+    "city": "Paris",
+    "postCode": "75001",
+    "street": "Cloud Boulevard 42",
+    "urlToApply": "google.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud Security Specialist",
+    "employerId": 1,
+    "experienceLevel": "Mid-Level",
+    "employmentType": "Freelance",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Security",
+    "technologyStack": [
+      "C#",
+      "AWS"
+    ],
+    "jobOfferDescription": "opis4",
+    "country": "United Kingdom",
+    "city": "London",
+    "postCode": "SW1A 1AA",
+    "street": "Secure Street 7",
+    "urlToApply": "amazon.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud DevOps Engineer",
+    "employerId": 2,
+    "experienceLevel": "Mid-Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "DevOps",
+    "technologyStack": [
+      "Python",
+      "IBM Cloud"
+    ],
+    "jobOfferDescription": "opis5",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "postCode": "1012 AB",
+    "street": "DevOps Lane 88",
+    "urlToApply": "ibm.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud DevOps Data Engineer",
+    "employerId": 2,
+    "experienceLevel": "Senior",
+    "employmentType": "Contract",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "DevOps",
+    "technologyStack": [
+      "SQL",
+      "Oracle Cloud"
+    ],
+    "jobOfferDescription": "opis6",
+    "country": "Italy",
+    "city": "Rome",
+    "postCode": "00100",
+    "street": "Data Street 15",
+    "urlToApply": "oracle.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Solutions Architect",
+    "employerId": 2,
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Architecture",
+    "technologyStack": [
+      "JavaScript",
+      "AWS",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis7",
+    "country": "Spain",
+    "city": "Barcelona",
+    "postCode": "08001",
+    "street": "Solution Street 5",
+    "urlToApply": "cisco.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud Automation Engineer",
+    "employerId": 3,
+    "experienceLevel": "Mid-Level",
+    "employmentType": "Part Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Automation",
+    "technologyStack": [
+      "Python",
+      "VMware Cloud"
+    ],
+    "jobOfferDescription": "opis8",
+    "country": "Sweden",
+    "city": "Stockholm",
+    "postCode": "11120",
+    "street": "Automation Avenue 22",
+    "urlToApply": "vmware.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Network Engineer",
+    "employerId": 3,
+    "experienceLevel": "Junior",
+    "employmentType": "Full Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Networking",
+    "technologyStack": [
+      "Java",
+      "HP Cloud"
+    ],
+    "jobOfferDescription": "opis9",
+    "country": "Poland",
+    "city": "Warsaw",
+    "postCode": "00-001",
+    "street": "Network Street 10",
+    "urlToApply": "hp.com/job-newJob",
+    "promotedFlag": 1
+  }
+]
+
+

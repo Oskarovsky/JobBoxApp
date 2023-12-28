@@ -65,6 +65,10 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                         {/*    </li>*/}
                                         {/*</ul>*/}
                                     </li>
+                                    <li>
+                                        <Link legacyBehavior href="/blog-grid"><a>Blog</a></Link>
+
+                                    </li>
                                     {/*<li className="has-children">*/}
                                     {/*    <Link legacyBehavior href="/candidates-grid"><a>Candidates</a></Link>*/}
 
@@ -162,8 +166,7 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                                     <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details
-                                                        2 </a></Link>
+                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2 </a></Link>
                                                 </li>
                                             </ul>
                                         </li>

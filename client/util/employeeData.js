@@ -111,7 +111,6 @@ const data = [
         id: 7,
         title: "Car Toys",
         position: "Front end Developer",
-        position: "Front end Developer",
         img: "1.png",
         location: "gulshan, dhaka",
         phone: "+123-456789",

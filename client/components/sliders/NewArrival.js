@@ -153,11 +153,9 @@ const NewArrivalSlider = ({ products }) => {
                                     <Link legacyBehavior href="/job-details">
                                         <a className="btn btn-grey-small mr-5">iOS</a>
                                     </Link>
-
                                     <Link legacyBehavior href="/job-details">
                                         <a className="btn btn-grey-small mr-5">Laravel</a>
                                     </Link>
-
                                     <Link legacyBehavior href="/job-details">
                                         <a className="btn btn-grey-small mr-5">Golang</a>
                                     </Link>

@@ -16,26 +16,16 @@ export default function Home() {
                                 <div className="col-xl-7 col-lg-12">
                                     <div className="block-banner">
                                         <h1 className="heading-banner wow animate__animated animate__fadeInUp">
-                                            Find your new  <span className="color-brand-2">job in tech</span> now!
+                                            <span className="color-brand-2">Find</span> your new  <span className="color-brand-2">job in tech</span> now!
                                             <br className="d-none d-lg-block" />
                                         </h1>
                                         <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
-                                          Gdybys mogl to wyposrodkowac
+                                          To na srodek, zmiana w wyszukiwaniu
                                             <br className="d-none d-lg-block" />
                                         </div>
                                         <div className="form-find mt-40 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
                                             <form>
-                                                <div className="box-industry">
-                                                    <select className="form-input mr-10 select-active input-industry">
-                                                        <option value={0}>Industry</option>
-                                                        <option value={1}>Software</option>
-                                                        <option value={2}>Finance</option>
-                                                        <option value={3}>Recruting</option>
-                                                        <option value={4}>Management</option>
-                                                        <option value={5}>Advertising</option>
-                                                        <option value={6}>Development</option>
-                                                    </select>
-                                                </div>
+                                                <input className="form-input input-keysearch mr-10" type="text" placeholder="Your keyword... " />
                                                 <div className="box-industry">
                                                     <select className="form-input mr-10 select-active input-location">
                                                         <option value="DK">Denmark</option>
@@ -45,7 +35,6 @@ export default function Home() {
                                                         <option value="Remote">Remote</option>
                                                     </select>
                                                 </div>
-                                                <input className="form-input input-keysearch mr-10" type="text" placeholder="Your keyword... " />
                                                 <button className="btn btn-default btn-find font-sm">Search</button>
                                             </form>
                                         </div>
