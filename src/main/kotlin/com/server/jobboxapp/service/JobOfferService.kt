@@ -21,7 +21,7 @@ class JobOfferService(
     }
 
     fun createNewOffer(offerRequest: OfferRequest): ResponseEntity<JobOffer> {
-        var employer = employerService.returnEmployeeById(offerRequest.employerId)
+        val employer = employerService.returnEmployeeById(offerRequest.employerId)
 
         val offer = JobOffer(
             positionTitle = offerRequest.positionTitle,

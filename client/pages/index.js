@@ -2,7 +2,7 @@
 import Layout from "../components/Layout/Layout";
 import CategorySlider from "./../components/sliders/Category";
 import Link from "next/link";
-import CategoryTab3 from "../components/elements/CategoryTab3";
+import CategoryTab from "../components/elements/CategoryTab";
 
 export default function Home() {
     return (
@@ -88,7 +88,7 @@ export default function Home() {
                             <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs of the day</h2>
                             <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Search and connect with the right candidates faster.</p>
                         </div>
-                        <CategoryTab3 />
+                        <CategoryTab />
                     </div>
                 </section>
             </Layout>

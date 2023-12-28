@@ -71,11 +71,11 @@ const Sidebar = ({ openClass }) => {
                                          <li className={isActive.key == 3 ? "has-children active" : "has-children"}>
                                             <span onClick={() => handleToggle(3)} className="menu-expand"><i className="fi-rr-angle-small-down"></i></span>
 
-                                            <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
+                                            <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
 
                                             <ul className={isActive.key == 3 ? "sub-menu d-block" : "sub-menu d-none"}>
                                                 <li>
-                                                    <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
+                                                    <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
                                                     </li>
                                                 <li>
                                                     <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>

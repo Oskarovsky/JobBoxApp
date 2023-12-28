@@ -6,6 +6,7 @@ import com.server.jobboxapp.service.JobOfferService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin(origins = ["*"])
 @RestController
 @RequestMapping("/api/offer")
 class JobOfferGateway(
@@ -13,7 +14,6 @@ class JobOfferGateway(
 ) {
 
     @GetMapping
-    @CrossOrigin(origins = ["*"])
     fun getAllOffers(): List<JobOffer> = jobOfferService.returnAllOffers()
 
     @GetMapping("/{id}")

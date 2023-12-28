@@ -17,6 +17,18 @@ data class Employer(
     @Column(nullable = false)
     var description: String,
 
+    @Column(nullable = true)
+    var country: String,
+
+    @Column(nullable = true)
+    var city: String,
+
+    @Column(nullable = true)
+    var postCode: String,
+
+    @Column(nullable = true)
+    var street: String,
+
     @Column(nullable = false)
     var urlToWebsite: String,
 
