@@ -1,7 +1,7 @@
 package com.server.jobboxapp.service
 
-import com.server.jobboxapp.entity.JobOffer
-import com.server.jobboxapp.entity.OfferRequest
+import com.server.jobboxapp.entity.Country
+import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
@@ -67,10 +67,6 @@ class JobOfferService(
         return ResponseEntity.ok(offerToUpdate)
     }
 
-    fun returnOffersOfTheDay(): List<JobOffer> =
-        jobOfferRepository
-            .findJobsOfTheDay()
-
     fun updatePositionTitle(id: Long, positionTitle: String) {
         jobOfferRepository.updatePositionTitle(id, positionTitle)
     }
@@ -121,13 +117,6 @@ class JobOfferService(
 
     fun updatePromotedFlag(id: Long, promotedFlag: Int) {
         jobOfferRepository.updatePromotedFlag(id, promotedFlag)
-    }
-
-    fun returnMapOfBrowseCategoryAndCount(): Map<String, Int> {
-        val categoriesToBrowse = jobOfferRepository.findAllCategoriesToBrowse()
-        return categoriesToBrowse.map {
-            it to jobOfferRepository.countJobsByCategoriesToBrowse(it)
-        }.toMap()
     }
 
     fun deleteOffer(id: Long): ResponseEntity<Long> {

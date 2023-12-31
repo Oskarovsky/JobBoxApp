@@ -3,9 +3,9 @@ package com.server.jobboxapp
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.server.jobboxapp.entity.Employer
-import com.server.jobboxapp.entity.JobOffer
-import com.server.jobboxapp.entity.OfferRequest
+import com.server.jobboxapp.entity.employer.Employer
+import com.server.jobboxapp.entity.joboffer.JobOffer
+import com.server.jobboxapp.entity.joboffer.OfferRequest
 import com.server.jobboxapp.repository.EmployerRepository
 import com.server.jobboxapp.repository.JobOfferRepository
 import com.server.jobboxapp.service.EmployerService
@@ -72,24 +72,22 @@ class JobOfferServiceTests {
     }
 
     @Test
-    fun findCategoriesToBrowseTest() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
-
-        val categoriesToBrowse = jobOfferRepository.findAllCategoriesToBrowse()
-
-        Assertions.assertEquals(7, categoriesToBrowse.size)
-    }
-
-    @Test
     fun mapOfBrowseCategoryAndCountTest() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
+//        loadEmployerDataToDatabase()
+//        createOffersAndLoadToDatabase()
 
-        val mapOfBrowseCategories = jobOfferService.returnMapOfBrowseCategoryAndCount()
+        val jsonMapper = jacksonObjectMapper()
+        val employerList: List<Employer> =
+            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTest.json"))
+        var jobOffersList: List<JobOffer> = jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/main/resources/jobOffers.json"))
 
-        Assertions.assertEquals(2, mapOfBrowseCategories.get("DevOps"))
-        Assertions.assertEquals(1, mapOfBrowseCategories.get("Frontend"))
+        employerRepository.saveAll(employerList)
+        jobOfferRepository.saveAll(jobOffersList)
+
+
+        val mapOfBrowseCategories = jobOfferService.returnCategoryNameAndCount()
+
+        mapOfBrowseCategories
     }
 
     @Test

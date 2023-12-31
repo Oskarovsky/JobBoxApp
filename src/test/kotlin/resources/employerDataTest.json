@@ -1,23 +1,146 @@
 [
   {
-    "employerName": "Apple",
-    "industry": "IT",
-    "employerDescription": "opis Apple",
-    "urlToWebsite": "apple.pl",
-    "urlToImage": "1.png"
+    "name": "Tech Solutions Inc.",
+    "industry": "Information Technology",
+    "description": "Leading provider of innovative IT solutions",
+    "country": "USA",
+    "city": "San Francisco",
+    "postCode": "94105",
+    "street": "Main Street",
+    "urlToWebsite": "http://www.techsolutions.com",
+    "urlToMiniatureImage": "http://www.techsolutions.com/image.jpg",
+    "urlToBackgroundImage": "http://www.techsolutions.com/image.jpg"
   },
   {
-    "employerName": "Maersk",
-    "industry": "Shipping",
-    "employerDescription": "opis Maersk",
-    "urlToWebsite": "maersk.pl",
-    "urlToImage": "2.png"
-  },
-  {
-    "employerName": "Nordea",
+    "name": "Finance Dynamics Ltd.",
     "industry": "Finance",
-    "employerDescription": "opis Nordea",
-    "urlToWebsite": "nordea.pl",
-    "urlToImage": "3.png"
+    "description": "Specializing in financial services",
+    "country": "UK",
+    "city": "London",
+    "postCode": "WC1E 6BT",
+    "street": "High Street",
+    "urlToWebsite": "http://www.financedynamics.com",
+    "urlToMiniatureImage": "http://www.financedynamics.com/image.jpg",
+    "urlToBackgroundImage": "http://www.financedynamics.com/image.jpg"
+  },
+  {
+    "name": "Global Logistics Group",
+    "industry": "Logistics",
+    "description": "Providing efficient logistics solutions worldwide",
+    "country": "Germany",
+    "city": "Berlin",
+    "postCode": "10117",
+    "street": "Kurfürstendamm",
+    "urlToWebsite": "http://www.logisticsgroup.com",
+    "urlToMiniatureImage": "http://www.logisticsgroup.com/image.jpg",
+    "urlToBackgroundImage": "http://www.logisticsgroup.com/image.jpg"
+  },
+  {
+    "name": "Healthcare Innovations Ltd.",
+    "industry": "Healthcare",
+    "description": "Innovating healthcare with cutting-edge solutions",
+    "country": "Canada",
+    "city": "Toronto",
+    "postCode": "M5J 2S1",
+    "street": "Bay Street",
+    "urlToWebsite": "http://www.healthcareinnovations.com",
+    "urlToMiniatureImage": "http://www.healthcareinnovations.com/image.jpg",
+    "urlToBackgroundImage": "http://www.healthcareinnovations.com/image.jpg"
+  },
+  {
+    "name": "Green Energy Solutions LLC",
+    "industry": "Renewable Energy",
+    "description": "Leading the way in sustainable energy solutions",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "postCode": "1012JS",
+    "street": "Herengracht",
+    "urlToWebsite": "http://www.greenenergysolutions.com",
+    "urlToMiniatureImage": "http://www.greenenergysolutions.com/image.jpg",
+    "urlToBackgroundImage": "http://www.greenenergysolutions.com/image.jpg"
+  },
+  {
+    "name": "Food Delights International",
+    "industry": "Food and Beverage",
+    "description": "Delivering international culinary experiences",
+    "country": "France",
+    "city": "Paris",
+    "postCode": "75001",
+    "street": "Rue de Rivoli",
+    "urlToWebsite": "http://www.fooddelights.com",
+    "urlToMiniatureImage": "http://www.fooddelights.com/image.jpg",
+    "urlToBackgroundImage": "http://www.fooddelights.com/image.jpg"
+  },
+  {
+    "name": "Fashion Trends Ltd.",
+    "industry": "Fashion",
+    "description": "Setting trends in the fashion industry",
+    "country": "Italy",
+    "city": "Milan",
+    "postCode": "20121",
+    "street": "Via Montenapoleone",
+    "urlToWebsite": "http://www.fashiontrends.com",
+    "urlToMiniatureImage": "http://www.fashiontrends.com/image.jpg",
+    "urlToBackgroundImage": "http://www.fashiontrends.com/image.jpg"
+  },
+  {
+    "name": "Education Dynamics Group",
+    "industry": "Education",
+    "description": "Transforming education through dynamic solutions",
+    "country": "Australia",
+    "city": "Sydney",
+    "postCode": "2000",
+    "street": "George Street",
+    "urlToWebsite": "http://www.educationdynamics.com",
+    "urlToMiniatureImage": "http://www.educationdynamics.com/image.jpg",
+    "urlToBackgroundImage": "http://www.educationdynamics.com/image.jpg"
+  },
+  {
+    "name": "Sports Unlimited Inc.",
+    "industry": "Sports and Recreation",
+    "description": "Unlimited possibilities in sports and recreation",
+    "country": "Spain",
+    "city": "Barcelona",
+    "postCode": "08002",
+    "street": "Passeig de Gràcia",
+    "urlToWebsite": "http://www.sportsunlimited.com",
+    "urlToMiniatureImage": "http://www.sportsunlimited.com/image.jpg",
+    "urlToBackgroundImage": "http://www.sportsunlimited.com/image.jpg"
+  },
+  {
+    "name": "Artistic Creations Studio",
+    "industry": "Arts and Culture",
+    "description": "Creating art that inspires and captivates",
+    "country": "Japan",
+    "city": "Tokyo",
+    "postCode": "100-0005",
+    "street": "Ginza",
+    "urlToWebsite": "http://www.artisticcreations.com",
+    "urlToMiniatureImage": "http://www.artisticcreations.com/image.jpg",
+    "urlToBackgroundImage": "http://www.artisticcreations.com/image.jpg"
+  },
+  {
+    "name": "Travel Adventures Ltd.",
+    "industry": "Travel and Tourism",
+    "description": "Embark on unforgettable travel adventures",
+    "country": "Brazil",
+    "city": "Rio de Janeiro",
+    "postCode": "20081-040",
+    "street": "Avenida Atlântica",
+    "urlToWebsite": "http://www.traveladventures.com",
+    "urlToMiniatureImage": "http://www.traveladventures.com/image.jpg",
+    "urlToBackgroundImage": "http://www.traveladventures.com/image.jpg"
+  },
+  {
+    "name": "Automotive Innovations Inc.",
+    "industry": "Automotive",
+    "description": "Driving innovation in the automotive industry",
+    "country": "Germany",
+    "city": "Stuttgart",
+    "postCode": "70173",
+    "street": "Königstraße",
+    "urlToWebsite": "http://www.automotiveinnovations.com",
+    "urlToMiniatureImage": "http://www.automotiveinnovations.com/image.jpg",
+    "urlToBackgroundImage": "http://www.automotiveinnovations.com/image.jpg"
   }
 ]

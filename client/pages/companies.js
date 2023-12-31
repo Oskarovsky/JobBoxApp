@@ -31,9 +31,6 @@ export default function Companies() {
                                     <h3 className="wow animate__animated animate__fadeInUp">
                                         <span className="color-brand-2">22 Companies</span> Available Now
                                     </h3>
-                                    <div className="font-sm color-text-paragraph-2 mt-10 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
-                                       Ta wyszukiwarka jest opcjonalna, jak bedzie za duzo roboty to damy sobie luz
-                                    </div>
                                     <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                                         <form>
                                             <div className="box-industry">

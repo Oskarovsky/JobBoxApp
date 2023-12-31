@@ -1,11 +1,9 @@
 package com.server.jobboxapp.repository
 
-import com.server.jobboxapp.entity.Employer
-import jakarta.persistence.Column
+import com.server.jobboxapp.entity.employer.Employer
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
-import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Transactional
 
@@ -38,8 +36,8 @@ interface EmployerRepository : JpaRepository<Employer, Long> {
     @Query("UPDATE Employer e SET e.urlToWebsite = ?2 WHERE e.id = ?1")
     fun updateUrlToWebsite(id: Long, urlToWebsite: String)
 
-    @Transactional
-    @Modifying
-    @Query("UPDATE Employer e SET e.urlToImage = ?2 WHERE e.id = ?1")
-    fun updaterUrlToImage(id: Long, urlToImage: String)
+//    @Transactional
+//    @Modifying
+//    @Query("UPDATE Employer e SET e.urlToImage = ?2 WHERE e.id = ?1")
+//    fun updaterUrlToImage(id: Long, urlToImage: String)
 }

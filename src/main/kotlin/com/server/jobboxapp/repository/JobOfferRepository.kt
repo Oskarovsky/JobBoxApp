@@ -1,6 +1,6 @@
 package com.server.jobboxapp.repository
 
-import com.server.jobboxapp.entity.JobOffer
+import com.server.jobboxapp.entity.joboffer.JobOffer
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
@@ -9,14 +9,24 @@ import org.springframework.transaction.annotation.Transactional
 
 @Repository
 interface JobOfferRepository : JpaRepository<JobOffer, Long> {
-    @Query("SELECT DISTINCT(CATEGORY_TO_BROWSE) FROM job_offer", nativeQuery = true)
-    fun findAllCategoriesToBrowse(): List<String>
 
     @Query("SELECT COUNT(CATEGORY_TO_BROWSE) FROM job_offer o where o.category_to_browse = ?1", nativeQuery = true)
-    fun countJobsByCategoriesToBrowse(categoryToBrowse: String): Int
+    fun countJobsByCategoriesToBrowse(categoryToBrowse: String): Long
 
-    @Query("SELECT * FROM job_offer o ORDER BY RANDOM() LIMIT 6", nativeQuery = true)
-    fun findJobsOfTheDay(): List<JobOffer>
+    @Query("SELECT COUNT(COUNTRY) FROM job_offer o where o.country = ?1", nativeQuery = true)
+    fun countJobsByCountry(country: String): Long
+
+    @Query("SELECT COUNT(EXPERIENCE_LEVEL) FROM job_offer o where o.experience_level = ?1", nativeQuery = true)
+    fun countJobsByExperienceLevel(country: String): Long
+
+    @Query("SELECT COUNT(EMPLOYMENT_MODEL) FROM job_offer o where o.employment_model = ?1", nativeQuery = true)
+    fun countJobsByEmploymentModel(employmentModel: String): Long
+
+    @Query("SELECT COUNT(EMPLOYMENT_TYPE) FROM job_offer o where o.employment_type = ?1", nativeQuery = true)
+    fun countJobsByEmploymentType(employmentType: String): Long
+
+    @Query("SELECT * FROM job_offer o where o.promoted_flag = ?1", nativeQuery = true)
+    fun findJobsOfTheDay(promotedFlag: Int): List<JobOffer>
 
     @Query("SELECT COUNT(EMPLOYER_ID) FROM job_offer o WHERE o.employer_id = ?1", nativeQuery = true)
     fun countJobsByEmployerId(employerId: Long): Int
