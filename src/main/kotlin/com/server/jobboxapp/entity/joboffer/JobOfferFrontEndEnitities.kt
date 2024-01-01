@@ -8,4 +8,3 @@ data class JobsAvailable(val countOfJobs: Int)
 
 
 
-

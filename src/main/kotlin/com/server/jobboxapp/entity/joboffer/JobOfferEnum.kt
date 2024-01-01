@@ -43,6 +43,13 @@ enum class EmploymentModel(val title: String, val description: String) {
     ONSITE("On-site", "100% in office")
 }
 
+enum class Country(val title: String, val description: String) {
+    DENMARK("Denmark", ""),
+    SWEDEN("Sweden", ""),
+    FINLAND("Finland", ""),
+    NORWAY("Norway", ""),
+    REMOTE("Remote", "")
+}
 
 enum class ExperienceLevel(val title: String, val description: String) {
     JUNIOR("Junior", ""),

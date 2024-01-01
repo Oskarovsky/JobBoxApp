@@ -1,10 +1,10 @@
 package com.server.jobboxapp.service
 
-import com.server.jobboxapp.entity.Country
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class JobOfferService(
@@ -19,7 +19,7 @@ class JobOfferService(
         return jobOfferRepository
             .findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
     }
-
+    @Transactional
     fun createNewOffer(offerRequest: OfferRequest): ResponseEntity<JobOffer> {
         val employer = employerService.returnEmployeeById(offerRequest.employerId)
 
@@ -44,6 +44,7 @@ class JobOfferService(
         return ResponseEntity.ok(savedOffer)
     }
 
+    @Transactional
     fun updateOffer(id: Long, updatedOffer: OfferRequest): ResponseEntity<JobOffer> {
         val offerToUpdate =
             jobOfferRepository.findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }

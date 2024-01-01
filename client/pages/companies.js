@@ -2,6 +2,9 @@
 import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import React, {useEffect, useState} from "react";
+import IndustryBox from "../components/elements/IndustryBox";
+import CountryBoxEmployer from "../components/elements/CountryBoxEmployer";
+import EmployerList from "../components/elements/EmployerList";
 
 export default function Companies() {
 
@@ -33,26 +36,8 @@ export default function Companies() {
                                     </h3>
                                     <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                                         <form>
-                                            <div className="box-industry">
-                                                <select className="form-input mr-10 select-active input-industry">
-                                                    <option value={0}>Industry</option>
-                                                    <option value={1}>Software</option>
-                                                    <option value={2}>Finance</option>
-                                                    <option value={3}>Recruting</option>
-                                                    <option value={4}>Management</option>
-                                                    <option value={5}>Advertising</option>
-                                                    <option value={6}>Development</option>
-                                                </select>
-                                            </div>
-                                            <div className="box-industry">
-                                                <select className="form-input mr-10 select-active input-location">
-                                                    <option value="DK">Denmark</option>
-                                                    <option value="FI">Finland</option>
-                                                    <option value="SE">Sweden</option>
-                                                    <option value="No">Norway</option>
-                                                    <option value="Remote">Remote</option>
-                                                </select>
-                                            </div>
+                                            <IndustryBox/>
+                                            <CountryBoxEmployer/>
                                             <input className="form-input input-keysearch mr-10" type="text" placeholder="Your keyword... " />
                                             <button className="btn btn-default btn-find font-sm">Search</button>
                                         </form>
@@ -74,49 +59,38 @@ export default function Companies() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="row">
-                                            {employers.map((employer) => (
-                                                <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                                                    <div className="card-grid-1 hover-up wow animate__animated animate__fadeIn">
-                                                        <div className="image-box">
-                                                            <Link legacyBehavior href="/company-details">
-                                                                <a>
-                                                                    <img src="assets/imgs/brands/brand-1.png" alt="jobBox"/>
-                                                                </a>
-                                                            </Link>
-                                                        </div>
-                                                        <div className="info-text mt-10">
-                                                            <h5 className="font-bold">
-                                                                <Link legacyBehavior href="/company-details">
-                                                                    <a>{employer.name}</a>
-                                                                </Link>
-                                                            </h5>
-                                                            <div className="mt-5">
-                                                                <img alt="jobBox" src="assets/imgs/template/icons/star.svg"/>
-                                                                <img alt="jobBox" src="assets/imgs/template/icons/star.svg"/>
-                                                                <img alt="jobBox" src="assets/imgs/template/icons/star.svg"/>
-                                                                <img alt="jobBox" src="assets/imgs/template/icons/star.svg"/>
-                                                                <img alt="jobBox" src="assets/imgs/template/icons/star.svg"/>
-                                                                <span className="font-xs color-text-mutted ml-10">
-                                                                    <span>(</span>
-                                                                    <span>66</span>
-                                                                    <span>)</span>
-                                                                </span>
-                                                            </div>
-                                                            <span className="card-location">{employer.city}, {employer.country}</span>
-                                                            <div className="mt-30">
-                                                                <Link legacyBehavior href="/jobs-grid">
-                                                                    <a className="btn btn-grey-big">
-                                                                        <span>12</span>
-                                                                        <span> Jobs Open</span>
-                                                                    </a>
-                                                                </Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
+                                        {/*<div className="row">*/}
+                                        {/*    {employers.map((employer) => (*/}
+                                        {/*        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">*/}
+                                        {/*            <div className="card-grid-1 hover-up wow animate__animated animate__fadeIn">*/}
+                                        {/*                <div className="image-box">*/}
+                                        {/*                    <Link legacyBehavior href="/company-details">*/}
+                                        {/*                        <a>*/}
+                                        {/*                            <img src="assets/imgs/brands/brand-1.png" alt="jobBox"/>*/}
+                                        {/*                        </a>*/}
+                                        {/*                    </Link>*/}
+                                        {/*                </div>*/}
+                                        {/*                <div className="info-text mt-10">*/}
+                                        {/*                    <h5 className="font-bold">*/}
+                                        {/*                        <Link legacyBehavior href="/company-details">*/}
+                                        {/*                            <a>{employer.name}</a>*/}
+                                        {/*                        </Link>*/}
+                                        {/*                    </h5>*/}
+                                        {/*                    <span className="card-location">{employer.city}, {employer.country}</span>*/}
+                                        {/*                    <div className="mt-30">*/}
+                                        {/*                        <Link legacyBehavior href="/jobs-grid">*/}
+                                        {/*                            <a className="btn btn-grey-big">*/}
+                                        {/*                                <span>12</span>*/}
+                                        {/*                                <span> Jobs Open</span>*/}
+                                        {/*                            </a>*/}
+                                        {/*                        </Link>*/}
+                                        {/*                    </div>*/}
+                                        {/*                </div>*/}
+                                        {/*            </div>*/}
+                                        {/*        </div>*/}
+                                        {/*    ))}*/}
+                                        {/*</div>*/}
+                                        <EmployerList/>
                                     </div>
                                     <div className="paginations">
                                         <ul className="pager">

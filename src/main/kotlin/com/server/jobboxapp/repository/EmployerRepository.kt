@@ -9,6 +9,13 @@ import org.springframework.transaction.annotation.Transactional
 
 @Repository
 interface EmployerRepository : JpaRepository<Employer, Long> {
+
+    @Query("SELECT DISTINCT (INDUSTRY) FROM employer", nativeQuery = true)
+    fun returnDistinctIndustries(): List<String>
+
+    @Query("SELECT DISTINCT (COUNTRY) FROM employer", nativeQuery = true)
+    fun returnDistinctCountries(): List<String>
+
     @Query("SELECT * FROM employer e WHERE e.name = ?1", nativeQuery = true)
     fun returnEmployerByEmployerName(employerName: String): Employer
 

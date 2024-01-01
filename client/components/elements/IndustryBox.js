@@ -6,17 +6,17 @@ const IndustryBox = () => {
 
     useEffect(() => {
         // Fetch industry data from your API
-        fetch("http://your-api-endpoint.com/industries")
+        fetch("http://localhost:8080/api/filterEmployer/industryBoxList")
             .then((response) => response.json())
             .then((data) => {
-                // Assuming the API response is an array of objects with 'id' and 'name' properties
+                // Assuming the API response is an array of objects with 'industryName' property
                 setIndustryOptions(data);
             })
             .catch((error) => console.error("Error fetching industry data:", error));
     }, []);
 
     const handleIndustryChange = (event) => {
-        const value = parseInt(event.target.value, 10);
+        const value = event.target.value;
         setSelectedIndustry(value);
     };
 
@@ -26,10 +26,10 @@ const IndustryBox = () => {
             value={selectedIndustry}
             onChange={handleIndustryChange}
         >
-            <option value={0}>Select an industry</option>
-            {industryOptions.map((industry) => (
-                <option key={industry.id} value={industry.id}>
-                    {industry.name}
+            <option value="">Select an industry</option>
+            {industryOptions.map((industry, index) => (
+                <option key={index} value={industry.industryName}>
+                    {industry.industryName}
                 </option>
             ))}
         </select>

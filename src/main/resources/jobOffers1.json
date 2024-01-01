@@ -1,18 +1,7 @@
 [
   {
     "positionTitle": "Junior Cloud Developer",
-    "employer": {
-      "name": "Tech Solutions Inc.",
-      "industry": "INFORMATION_TECHNOLOGY",
-      "description": "Leading provider of innovative IT solutions",
-      "country": "USA",
-      "city": "San Francisco",
-      "postCode": "94105",
-      "street": "Main Street",
-      "urlToWebsite": "http://www.techsolutions.com",
-      "urlToMiniatureImage": "http://www.techsolutions.com/image.jpg",
-      "urlToBackgroundImage": "http://www.techsolutions.com/image.jpg"
-    },
+    "employerId": 1,
     "experienceLevel": "JUNIOR",
     "employmentType": "FULL_TIME",
     "employmentModel": "REMOTE",
@@ -31,18 +20,7 @@
   },
   {
     "positionTitle": "Cloud Architect",
-    "employer": {
-      "name": "Tech Solutions Inc.",
-      "industry": "INFORMATION_TECHNOLOGY",
-      "description": "Leading provider of innovative IT solutions",
-      "country": "USA",
-      "city": "San Francisco",
-      "postCode": "94105",
-      "street": "Main Street",
-      "urlToWebsite": "http://www.techsolutions.com",
-      "urlToMiniatureImage": "http://www.techsolutions.com/image.jpg",
-      "urlToBackgroundImage": "http://www.techsolutions.com/image.jpg"
-    },
+    "employerId": 1,
     "experienceLevel": "MID",
     "employmentType": "PART_TIME",
     "employmentModel": "HYBRID",
@@ -61,18 +39,7 @@
   },
   {
     "positionTitle": "Cloud Security Specialist",
-    "employer": {
-      "name": "Finance Dynamics Ltd.",
-      "industry": "FINANCE",
-      "description": "Specializing in financial services",
-      "country": "UK",
-      "city": "London",
-      "postCode": "WC1E 6BT",
-      "street": "High Street",
-      "urlToWebsite": "http://www.financedynamics.com",
-      "urlToMiniatureImage": "http://www.financedynamics.com/image.jpg",
-      "urlToBackgroundImage": "http://www.financedynamics.com/image.jpg"
-    },
+    "employerId": 2,
     "experienceLevel": "SENIOR",
     "employmentType": "INTERNSHIP",
     "employmentModel": "ONSITE",
@@ -91,18 +58,7 @@
   },
   {
     "positionTitle": "Cloud DevOps Engineer",
-    "employer": {
-      "name": "Finance Dynamics Ltd.",
-      "industry": "FINANCE",
-      "description": "Specializing in financial services",
-      "country": "UK",
-      "city": "London",
-      "postCode": "WC1E 6BT",
-      "street": "High Street",
-      "urlToWebsite": "http://www.financedynamics.com",
-      "urlToMiniatureImage": "http://www.financedynamics.com/image.jpg",
-      "urlToBackgroundImage": "http://www.financedynamics.com/image.jpg"
-    },
+    "employerId": 2,
     "experienceLevel": "ENTRY_LEVEL",
     "employmentType": "FULL_TIME",
     "employmentModel": "HYBRID",
@@ -121,18 +77,7 @@
   },
   {
     "positionTitle": "Cloud DevOps Data Engineer",
-    "employer": {
-      "name": "Global Logistics Group",
-      "industry": "LOGISTIC",
-      "description": "Providing efficient logistics solutions worldwide",
-      "country": "GERMANY",
-      "city": "Berlin",
-      "postCode": "10117",
-      "street": "Kurfürstendamm",
-      "urlToWebsite": "http://www.logisticsgroup.com",
-      "urlToMiniatureImage": "http://www.logisticsgroup.com/image.jpg",
-      "urlToBackgroundImage": "http://www.logisticsgroup.com/image.jpg"
-    },
+    "employerId": 3,
     "experienceLevel": "EXPERIENCED",
     "employmentType": "INTERNSHIP",
     "employmentModel": "HYBRID",
@@ -151,18 +96,7 @@
   },
   {
     "positionTitle": "Cloud Solutions Architect",
-    "employer": {
-      "name": "Global Logistics Group",
-      "industry": "LOGISTIC",
-      "description": "Providing efficient logistics solutions worldwide",
-      "country": "GERMANY",
-      "city": "Berlin",
-      "postCode": "10117",
-      "street": "Kurfürstendamm",
-      "urlToWebsite": "http://www.logisticsgroup.com",
-      "urlToMiniatureImage": "http://www.logisticsgroup.com/image.jpg",
-      "urlToBackgroundImage": "http://www.logisticsgroup.com/image.jpg"
-    },
+    "employerId": 3,
     "experienceLevel": "LEAD",
     "employmentType": "INTERNSHIP",
     "employmentModel": "REMOTE",
@@ -182,18 +116,7 @@
   },
   {
     "positionTitle": "Cloud Automation Engineer",
-    "employer": {
-      "name": "Healthcare Innovations Ltd.",
-      "industry": "HEALTHCARE",
-      "description": "Innovating healthcare with cutting-edge solutions",
-      "country": "DENMARK",
-      "city": "Toronto",
-      "postCode": "M5J 2S1",
-      "street": "Bay Street",
-      "urlToWebsite": "http://www.healthcareinnovations.com",
-      "urlToMiniatureImage": "http://www.healthcareinnovations.com/image.jpg",
-      "urlToBackgroundImage": "http://www.healthcareinnovations.com/image.jpg"
-    },
+    "employerId": 4,
     "experienceLevel": "ENTRY_LEVEL",
     "employmentType": "INTERNSHIP",
     "employmentModel": "ONSITE",
@@ -212,18 +135,7 @@
   },
   {
     "positionTitle": "Cloud Network Engineer",
-    "employer": {
-      "name": "Healthcare Innovations Ltd.",
-      "industry": "HEALTHCARE",
-      "description": "Innovating healthcare with cutting-edge solutions",
-      "country": "DENMARK",
-      "city": "Toronto",
-      "postCode": "M5J 2S1",
-      "street": "Bay Street",
-      "urlToWebsite": "http://www.healthcareinnovations.com",
-      "urlToMiniatureImage": "http://www.healthcareinnovations.com/image.jpg",
-      "urlToBackgroundImage": "http://www.healthcareinnovations.com/image.jpg"
-    },
+    "employerId": 4,
     "experienceLevel": "PRINCIPAL",
     "employmentType": "FULL_TIME",
     "employmentModel": "REMOTE",
@@ -242,18 +154,7 @@
   },
   {
     "positionTitle": "Data Scientist",
-    "employer": {
-      "name": "Green Energy Solutions LLC",
-      "industry": "ENERGY",
-      "description": "Leading the way in sustainable energy solutions",
-      "country": "NORWAY",
-      "city": "Amsterdam",
-      "postCode": "1012JS",
-      "street": "Herengracht",
-      "urlToWebsite": "http://www.greenenergysolutions.com",
-      "urlToMiniatureImage": "http://www.greenenergysolutions.com/image.jpg",
-      "urlToBackgroundImage": "http://www.greenenergysolutions.com/image.jpg"
-    },
+    "employerId": 5,
     "experienceLevel": "MID",
     "employmentType": "FULL_TIME",
     "employmentModel": "REMOTE",
@@ -273,18 +174,7 @@
   },
   {
     "positionTitle": "Data Scientist",
-    "employer": {
-      "name": "Food Delights International",
-      "industry": "FOOD",
-      "description": "Delivering international culinary experiences",
-      "country": "SWEDEN",
-      "city": "Paris",
-      "postCode": "75001",
-      "street": "Rue de Rivoli",
-      "urlToWebsite": "http://www.fooddelights.com",
-      "urlToMiniatureImage": "http://www.fooddelights.com/image.jpg",
-      "urlToBackgroundImage": "http://www.fooddelights.com/image.jpg"
-    },
+    "employerId": 6,
     "experienceLevel": "JUNIOR",
     "employmentType": "FULL_TIME",
     "employmentModel": "HYBRID",
@@ -304,18 +194,7 @@
   },
   {
     "positionTitle": "Data Scientist",
-    "employer": {
-      "name": "Food Delights International",
-      "industry": "FOOD",
-      "description": "Delivering international culinary experiences",
-      "country": "SWEDEN",
-      "city": "Paris",
-      "postCode": "75001",
-      "street": "Rue de Rivoli",
-      "urlToWebsite": "http://www.fooddelights.com",
-      "urlToMiniatureImage": "http://www.fooddelights.com/image.jpg",
-      "urlToBackgroundImage": "http://www.fooddelights.com/image.jpg"
-    },
+    "employerId": 6,
     "experienceLevel": "SENIOR",
     "employmentType": "INTERNSHIP",
     "employmentModel": "REMOTE",
@@ -335,18 +214,7 @@
   },
   {
     "positionTitle": "Java Developer",
-    "employer": {
-      "name": "Fashion Trends Ltd.",
-      "industry": "FASHION",
-      "description": "Setting trends in the fashion industry",
-      "country": "DENMARK",
-      "city": "Milan",
-      "postCode": "20121",
-      "street": "Via Montenapoleone",
-      "urlToWebsite": "http://www.fashiontrends.com",
-      "urlToMiniatureImage": "http://www.fashiontrends.com/image.jpg",
-      "urlToBackgroundImage": "http://www.fashiontrends.com/image.jpg"
-    },
+    "employerId": 7,
     "experienceLevel": "MID",
     "employmentType": "FULL_TIME",
     "employmentModel": "HYBRID",
@@ -366,18 +234,7 @@
   },
   {
     "positionTitle": "UI/UX Designer",
-    "employer": {
-      "name": "Education Dynamics Group",
-      "industry": "EDUCATION",
-      "description": "Transforming education through dynamic solutions",
-      "country": "FINLAND",
-      "city": "Sydney",
-      "postCode": "2000",
-      "street": "George Street",
-      "urlToWebsite": "http://www.educationdynamics.com",
-      "urlToMiniatureImage": "http://www.educationdynamics.com/image.jpg",
-      "urlToBackgroundImage": "http://www.educationdynamics.com/image.jpg"
-    },
+    "employerId": 8,
     "experienceLevel": "LEAD",
     "employmentType": "PART_TIME",
     "employmentModel": "REMOTE",
@@ -397,18 +254,7 @@
   },
   {
     "positionTitle": "DevOps Engineer",
-    "employer": {
-      "name": "Sports Unlimited Inc.",
-      "industry": "BUSINESS",
-      "description": "Unlimited possibilities in sports and recreation",
-      "country": "UK",
-      "city": "Barcelona",
-      "postCode": "08002",
-      "street": "Passeig de Gràcia",
-      "urlToWebsite": "http://www.sportsunlimited.com",
-      "urlToMiniatureImage": "http://www.sportsunlimited.com/image.jpg",
-      "urlToBackgroundImage": "http://www.sportsunlimited.com/image.jpg"
-    },
+    "employerId": 9,
     "experienceLevel": "SENIOR",
     "employmentType": "FULL_TIME",
     "employmentModel": "HYBRID",
@@ -428,18 +274,7 @@
   },
   {
     "positionTitle": "Full Stack Developer",
-    "employer": {
-      "name": "Artistic Creations Studio",
-      "industry": "BUSINESS",
-      "description": "Creating art that inspires and captivates",
-      "country": "USA",
-      "city": "Tokyo",
-      "postCode": "100-0005",
-      "street": "Ginza",
-      "urlToWebsite": "http://www.artisticcreations.com",
-      "urlToMiniatureImage": "http://www.artisticcreations.com/image.jpg",
-      "urlToBackgroundImage": "http://www.artisticcreations.com/image.jpg"
-    },
+    "employerId": 10,
     "experienceLevel": "MID",
     "employmentType": "FULL_TIME",
     "employmentModel": "ONSITE",
@@ -459,18 +294,7 @@
   },
   {
     "positionTitle": "IT Security Analyst",
-    "employer":{
-      "name": "Travel Adventures Ltd.",
-      "industry": "TRAVEL",
-      "description": "Embark on unforgettable travel adventures",
-      "country": "GERMANY",
-      "city": "Rio de Janeiro",
-      "postCode": "20081-040",
-      "street": "Avenida Atlântica",
-      "urlToWebsite": "http://www.traveladventures.com",
-      "urlToMiniatureImage": "http://www.traveladventures.com/image.jpg",
-      "urlToBackgroundImage": "http://www.traveladventures.com/image.jpg"
-    },
+    "employerId": 11,
     "experienceLevel": "JUNIOR",
     "employmentType": "FULL_TIME",
     "employmentModel": "HYBRID",
@@ -490,18 +314,7 @@
   },
   {
     "positionTitle": "Cloud Architect",
-    "employer": {
-      "name": "Travel Adventures Ltd.",
-      "industry": "TRAVEL",
-      "description": "Embark on unforgettable travel adventures",
-      "country": "GERMANY",
-      "city": "Rio de Janeiro",
-      "postCode": "20081-040",
-      "street": "Avenida Atlântica",
-      "urlToWebsite": "http://www.traveladventures.com",
-      "urlToMiniatureImage": "http://www.traveladventures.com/image.jpg",
-      "urlToBackgroundImage": "http://www.traveladventures.com/image.jpg"
-    },
+    "employerId": 11,
     "experienceLevel": "SENIOR",
     "employmentType": "FULL_TIME",
     "employmentModel": "HYBRID",
@@ -521,18 +334,7 @@
   },
   {
     "positionTitle": "Business Analyst",
-    "employer": {
-      "name": "Automotive Innovations Inc.",
-      "industry": "AUTOMOTIVE",
-      "description": "Driving innovation in the automotive industry",
-      "country": "GERMANY",
-      "city": "Stuttgart",
-      "postCode": "70173",
-      "street": "Königstraße",
-      "urlToWebsite": "http://www.automotiveinnovations.com",
-      "urlToMiniatureImage": "http://www.automotiveinnovations.com/image.jpg",
-      "urlToBackgroundImage": "http://www.automotiveinnovations.com/image.jpg"
-    },
+    "employerId": 12,
     "experienceLevel": "MID",
     "employmentType": "FULL_TIME",
     "employmentModel": "REMOTE",
@@ -552,18 +354,7 @@
   },
   {
     "positionTitle": "Network Administrator",
-    "employer": {
-      "name": "Automotive Innovations Inc.",
-      "industry": "AUTOMOTIVE",
-      "description": "Driving innovation in the automotive industry",
-      "country": "GERMANY",
-      "city": "Stuttgart",
-      "postCode": "70173",
-      "street": "Königstraße",
-      "urlToWebsite": "http://www.automotiveinnovations.com",
-      "urlToMiniatureImage": "http://www.automotiveinnovations.com/image.jpg",
-      "urlToBackgroundImage": "http://www.automotiveinnovations.com/image.jpg"
-    },
+    "employerId": 12,
     "experienceLevel": "JUNIOR",
     "employmentType": "FULL_TIME",
     "employmentModel": "ONSITE",
@@ -583,18 +374,7 @@
   },
   {
     "positionTitle": "System Administrator",
-    "employer": {
-      "name": "Automotive Innovations Inc.",
-      "industry": "AUTOMOTIVE",
-      "description": "Driving innovation in the automotive industry",
-      "country": "GERMANY",
-      "city": "Stuttgart",
-      "postCode": "70173",
-      "street": "Königstraße",
-      "urlToWebsite": "http://www.automotiveinnovations.com",
-      "urlToMiniatureImage": "http://www.automotiveinnovations.com/image.jpg",
-      "urlToBackgroundImage": "http://www.automotiveinnovations.com/image.jpg"
-    },
+    "employerId": 12,
     "experienceLevel": "SENIOR",
     "employmentType": "STUDENT",
     "employmentModel": "HYBRID",

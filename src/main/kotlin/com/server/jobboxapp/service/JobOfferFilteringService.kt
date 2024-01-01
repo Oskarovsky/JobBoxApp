@@ -1,6 +1,6 @@
 package com.server.jobboxapp.service
 
-import com.server.jobboxapp.entity.Country
+import com.server.jobboxapp.entity.CountryBoxDropDown
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
 import org.springframework.stereotype.Service
@@ -79,10 +79,19 @@ class JobOfferFilteringService(
             jobOffer.employer.name,
             Country.valueOf(jobOffer.country).title,
             jobOffer.city,
-            jobOffer.expirationDate.format(expirationDateFormat()),
+            jobOffer.creationDate.format(creationDateFormat()),
             jobOffer.employer.urlToMiniatureImage
         )
     }
+
+    fun returnCountryBoxList(): List<CountryBoxDropDown> =
+        jobOfferRepository.returnDistinctCountries()
+            .map { CountryBoxDropDown(com.server.jobboxapp.entity.employer.EmployerCountry.valueOf(it).title) }.stream()
+            .toList()
+
+    fun returnJobListByCategoryToBrowse(categoryToBrowse: String): List<JobOffer> =
+        jobOfferRepository.returnJobsByCategoryToBrowse(OfferCategory.valueOf(categoryToBrowse.uppercase()).name)
+
 
     private fun filterEmptyCategories(categoryNameAndCount: CategoryNameAndCount): Boolean {
         return categoryNameAndCount.count >= 1L
@@ -108,7 +117,6 @@ class JobOfferFilteringService(
         return employmentTypeFilter.count >= 1L
     }
 
-    private fun expirationDateFormat(): DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-
+    private fun creationDateFormat(): DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
 }
 

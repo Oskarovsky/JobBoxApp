@@ -28,8 +28,14 @@ interface JobOfferRepository : JpaRepository<JobOffer, Long> {
     @Query("SELECT * FROM job_offer o where o.promoted_flag = ?1", nativeQuery = true)
     fun findJobsOfTheDay(promotedFlag: Int): List<JobOffer>
 
+    @Query("SELECT DISTINCT (COUNTRY) FROM job_offer", nativeQuery = true)
+    fun returnDistinctCountries(): List<String>
+
     @Query("SELECT COUNT(EMPLOYER_ID) FROM job_offer o WHERE o.employer_id = ?1", nativeQuery = true)
-    fun countJobsByEmployerId(employerId: Long): Int
+    fun countJobsByEmployerId(employerId: Long): Long
+
+    @Query("SELECT * FROM job_offer o WHERE o.category_to_browse = ?1", nativeQuery = true)
+    fun returnJobsByCategoryToBrowse(categoryToBrowse: String): List<JobOffer>
 
     @Transactional
     @Modifying

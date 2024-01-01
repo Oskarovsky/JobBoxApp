@@ -11,9 +11,6 @@ Content-Type: application/json
   "employerId": 1
 }
 
-### Get all employers
-GET http://localhost:8080/api/employer
-
 ### Get employer by id
 GET http://localhost:8080/api/employer/1
 
@@ -55,5 +52,19 @@ GET http://localhost:8080/api/filterOffers/all
 ### Get rowJobOfferList
 GET http://localhost:8080/api/filterOffers/rowJobOfferList
 
+### Get country box list
+GET http://localhost:8080/api/filterOffers/countryBoxList
+
+### Get country box list
+GET http://localhost:8080/api/filterOffers/jobsListByCategory/{categoryName}
+
 ###Employers
 
+### Get industry box list
+GET http://localhost:8080/api/filterEmployer/industryBoxList
+
+### Get country box list
+GET http://localhost:8080/api/filterEmployer/countryBoxList
+
+### Get all employers
+GET http://localhost:8080/api/filterEmployer/all

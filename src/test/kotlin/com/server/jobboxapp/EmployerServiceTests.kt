@@ -36,7 +36,7 @@ class EmployerServiceTests {
     @BeforeEach
     fun setUp() {
         jsonMapper = jacksonObjectMapper()
-        employerService = EmployerService(employerRepository, jobOfferRepository)
+        employerService = EmployerService(employerRepository)
         jobOfferService = JobOfferService(jobOfferRepository, employerService)
         employerRepository.deleteAll()
         jobOfferRepository.deleteAll()
@@ -100,22 +100,6 @@ class EmployerServiceTests {
         )
     }
 
-    @Test
-    fun mapEmployerToCount() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
-
-        val mapOfEmployerToCount = employerService.mapOfEmployerToCount()
-
-        val appleEmployer = employerList.get(0)
-        val maerskEmployer = employerList.get(1)
-        val nordeaEmployer = employerList.get(2)
-
-
-        Assertions.assertEquals(3, mapOfEmployerToCount.get(appleEmployer))
-        Assertions.assertEquals(3, mapOfEmployerToCount.get(maerskEmployer))
-        Assertions.assertEquals(2, mapOfEmployerToCount.get(nordeaEmployer))
-    }
 
     @Test
     @Transactional

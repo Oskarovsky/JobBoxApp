@@ -64,17 +64,13 @@ const CategorySlider = () => {
                     {categoryNameAndCount.map((item, i) => (
                         <SwiperSlide key={i}>
                             <div className="swiper-slide hover-up">
-                                <Link legacyBehavior href="/jobs-list">
-                                    <a>
-                                        <div className="item-logo">
-                                            <div className="text-info-right">
-                                                <h4>{item.categoryName}</h4>
-                                                <p className="font-xs">
-                                                    {item.count}
-                                                </p>
-                                            </div>
+                                <Link href="/jobs-list/[categoryName]" as={`/jobs-list/${encodeURIComponent(item.categoryName)}`}>
+                                    <div className="item-logo">
+                                        <div className="text-info-right">
+                                            <h4>{item.categoryName}</h4>
+                                            <p className="font-xs">{item.count}</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                             </div>
                         </SwiperSlide>

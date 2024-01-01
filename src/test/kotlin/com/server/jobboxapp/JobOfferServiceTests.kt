@@ -37,7 +37,7 @@ class JobOfferServiceTests {
     @BeforeEach
     fun setUp() {
         jsonMapper = jacksonObjectMapper()
-        employerService = EmployerService(employerRepository, jobOfferRepository)
+        employerService = EmployerService(employerRepository)
         jobOfferService = JobOfferService(jobOfferRepository, employerService)
         employerRepository.deleteAll()
         jobOfferRepository.deleteAll()
@@ -52,16 +52,6 @@ class JobOfferServiceTests {
     }
 
     @Test
-    fun returnJobOffersOfTheDayTest() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
-
-        val offerOfTheDay = jobOfferService.returnOffersOfTheDay()
-
-        Assertions.assertEquals(6, offerOfTheDay.size)
-    }
-
-    @Test
     fun deleteJobOfferTest() {
         loadEmployerDataToDatabase()
         createOffersAndLoadToDatabase()
@@ -69,25 +59,6 @@ class JobOfferServiceTests {
         jobOfferService.deleteOffer(1)
 
         Assertions.assertEquals(7, jobOfferService.returnAllOffers().size)
-    }
-
-    @Test
-    fun mapOfBrowseCategoryAndCountTest() {
-//        loadEmployerDataToDatabase()
-//        createOffersAndLoadToDatabase()
-
-        val jsonMapper = jacksonObjectMapper()
-        val employerList: List<Employer> =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTest.json"))
-        var jobOffersList: List<JobOffer> = jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/main/resources/jobOffers.json"))
-
-        employerRepository.saveAll(employerList)
-        jobOfferRepository.saveAll(jobOffersList)
-
-
-        val mapOfBrowseCategories = jobOfferService.returnCategoryNameAndCount()
-
-        mapOfBrowseCategories
     }
 
     @Test
