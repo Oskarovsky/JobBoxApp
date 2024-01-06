@@ -10,6 +10,7 @@ import com.server.jobboxapp.repository.JobOfferRepository
 import jakarta.annotation.PostConstruct
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
+import java.io.File
 import java.net.URL
 
 @Service
@@ -24,10 +25,14 @@ class DefaultDataService(
     fun initDefaultData() {
 
         val jsonMapper = jacksonObjectMapper()
+
+        val filePathWithEmployers = object {}.javaClass.getResource("/employerDataTest.json")?.file
         val employerList: List<Employer> =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTest.json"))
+            jsonMapper.readValue(File(filePathWithEmployers))
+
+        val filePathWithOffers = object {}.javaClass.getResource("/jobOffers1.json")?.file
         var jobOffersList: List<OfferRequest> =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/main/resources/jobOffers1.json"))
+            jsonMapper.readValue(File(filePathWithOffers))
 
         employerRepository.saveAll(employerList)
         jobOffersList.stream().forEach {
