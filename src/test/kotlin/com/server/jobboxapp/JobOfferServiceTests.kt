@@ -153,9 +153,9 @@ class JobOfferServiceTests {
     }
 
     fun loadJobOfferRequest() {
-        val filePathWithOfferRequests = object {}.javaClass.getResource("/jobOfferDataTest.json")?.file
+        val filePathWithOfferRequests = object {}.javaClass.getResource("/offerRequestDataTest.json")?.file
         offerRequestList =
-            jsonMapper.readValue(File(filePathWithOfferRequests))
+            jsonMapper.readValue<List<OfferRequest>>(File(filePathWithOfferRequests))
     }
 
     fun createOffersAndLoadToDatabase() {

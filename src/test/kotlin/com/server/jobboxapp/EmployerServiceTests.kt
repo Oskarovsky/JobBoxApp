@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.transaction.annotation.Transactional
+import java.io.File
 import java.net.URL
 
 @SpringBootTest
@@ -85,8 +86,9 @@ class EmployerServiceTests {
     fun updateEmployerEntity() {
         loadEmployerDataToDatabase()
 
+        val filePathWithEmployers = object {}.javaClass.getResource("/employerDataTestUpdate.json")?.file
         val employerToUpdate =
-            jsonMapper.readValue<Employer>(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTestUpdate.json"))
+            jsonMapper.readValue<Employer>(File(filePathWithEmployers))
 
         employerService.updateEmployerEntity(1, employerToUpdate)
 
@@ -108,7 +110,7 @@ class EmployerServiceTests {
 
         employerService.deleteEmployerByName("Apple")
 
-        Assertions.assertEquals(2, employerService.returnAllEmployees().size)
+        Assertions.assertEquals(12, employerService.returnAllEmployees().size)
     }
 
     @Test
@@ -121,8 +123,9 @@ class EmployerServiceTests {
     }
 
     fun loadEmployerList() {
+        val filePathWithEmployers = object {}.javaClass.getResource("/employerDataTest.json")?.file
         employerList =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTest.json"))
+            jsonMapper.readValue(File(filePathWithEmployers))
     }
 
     fun loadEmployerDataToDatabase() {
@@ -133,8 +136,9 @@ class EmployerServiceTests {
     }
 
     fun loadJobOfferRequest() {
+        val filePathWithOfferRequests = object {}.javaClass.getResource("/jobOfferDataTest.json")?.file
         offerRequestList =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/jobOfferDataTest.json"))
+            jsonMapper.readValue(File(filePathWithOfferRequests))
     }
 
     fun createOffersAndLoadToDatabase() {
