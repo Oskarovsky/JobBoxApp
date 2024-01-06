@@ -12,6 +12,16 @@ export const fetchJobOfferData = async (endpoint) => {
     }
 }
 
+export const fetchJobsOffers = async () => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/filterOffers/rowJobOfferList`);
+        const data = await response.json();
+        setJobOffersMiniature(data.content);
+    } catch (error) {
+        console.error('Error fetching job offers:', error);
+    }
+};
+
 export const fetchJobs = async (page = 0, pageSize = 3) => {
     try {
         const response = await fetch(`${API_BASE_URL}/offer/all?page=${page}&size=${pageSize}`);
@@ -21,4 +31,4 @@ export const fetchJobs = async (page = 0, pageSize = 3) => {
         console.error('Error fetching jobs:', error);
         throw error;
     }
-};
+}

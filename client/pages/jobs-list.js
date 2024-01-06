@@ -160,52 +160,7 @@ export default function JobList() {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/*<RowJobOfferList/>*/}
-                                    </div>
-                                    <div className="paginations">
-                                        <ul className="pager">
-                                            <li>
-                                                <a className="pager-prev" href="#"/>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">1</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">2</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">3</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">4</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">5</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number active">6</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">7</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <a className="pager-next" href="#"/>
-                                            </li>
-                                        </ul>
+                                        <RowJobOfferList/>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12 col-12">
