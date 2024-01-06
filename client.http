@@ -1,6 +1,3 @@
-### Get all offers
-GET http://localhost:8080/api/offer
-
 ### Get offer by id
 GET http://localhost:8080/api/offer/1
 
@@ -14,9 +11,6 @@ Content-Type: application/json
   "employerId": 1
 }
 
-### Get all employers
-GET http://localhost:8080/api/employer
-
 ### Get employer by id
 GET http://localhost:8080/api/employer/1
 
@@ -28,3 +22,49 @@ Content-Type: application/json
   "name": "TestCompany",
   "description": "hehehee"
 }
+
+###Jobs Filtering
+
+### Get filter on location
+GET http://localhost:8080/api/filterOffers/location
+
+### Get filter on experiencelevel
+GET http://localhost:8080/api/filterOffers/experienceLevel
+
+### Get filter on role
+GET http://localhost:8080/api/filterOffers/roles
+
+### Get filter on employmentModel
+GET http://localhost:8080/api/filterOffers/employmentModel
+
+### Get filter on employmentType
+GET http://localhost:8080/api/filterOffers/employmentType
+
+### Get categoryNameAndCount
+GET http://localhost:8080/api/filterOffers/categoryNameAndCount
+
+### Get jobs of the day
+GET http://localhost:8080/api/filterOffers/jobsOfTheDay
+
+### Get count on all
+GET http://localhost:8080/api/filterOffers/all
+
+### Get rowJobOfferList
+GET http://localhost:8080/api/filterOffers/rowJobOfferList
+
+### Get country box list
+GET http://localhost:8080/api/filterOffers/countryBoxList
+
+### Get country box list
+GET http://localhost:8080/api/filterOffers/jobsListByCategory/{categoryName}
+
+###Employers
+
+### Get industry box list
+GET http://localhost:8080/api/filterEmployer/industryBoxList
+
+### Get country box list
+GET http://localhost:8080/api/filterEmployer/countryBoxList
+
+### Get all employers
+GET http://localhost:8080/api/filterEmployer/all

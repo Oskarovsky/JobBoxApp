@@ -1,65 +1,32 @@
 import Link from "next/link";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import React, { useEffect, useState } from "react";
 SwiperCore.use([Navigation]);
 
 import "swiper/css/grid";
 import { Grid } from "swiper";
 
-const data = [
-    {
-        icon: "marketing.svg",
-        title: "Agile"
-    },
-    {
-        icon: "customer.svg",
-        title: "DevOps",
-        count: 185
-    },
-    {
-        icon: "finance.svg",
-        title: "Product Management",
-        count: 168
-    },
-    {
-        icon: "lightning.svg",
-        title: "Software",
-        count: 1856
-    },
-    {
-        icon: "human.svg",
-        title: "Human Resource",
-        count: 165
-    },
-    {
-        icon: "management.svg",
-        title: "Management",
-        count: 965
-    },
-    {
-        icon: "retail.svg",
-        title: "Retail & Products",
-        count: 563
-    },
-    {
-        icon: "security.svg",
-        title: "Security Analyst",
-        count: 254
-    },
-    {
-        icon: "content.svg",
-        title: "Content Writer",
-        count: 142
-    },
-    {
-        icon: "research.svg",
-        title: "Market Research",
-        count: 532
-    }
-];
-
 const CategorySlider = () => {
+
+    const [categoryNameAndCount, setCategoryNameAndCount] = useState(null);
+    const [isLoading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('http://localhost:8080/api/filterOffers/categoryNameAndCount')
+            .then((res) => res.json())
+            .then((categoryNameAndCount) => {
+                setCategoryNameAndCount(categoryNameAndCount);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching category data:', error);
+            });
+    }, []);
+
+    if (isLoading) return <p>Loading...</p>
+    if (!categoryNameAndCount) return <p>No profile data</p>
+
     return (
         <>
             <div className="swiper-container swiper-group-5">
@@ -94,31 +61,22 @@ const CategorySlider = () => {
                     }}
                     className="swiper-wrapper pb-70 pt-5 swiper-grid-jobobx"
                 >
-                    {data.map((item, i) => (
+                    {categoryNameAndCount.map((item, i) => (
                         <SwiperSlide key={i}>
                             <div className="swiper-slide hover-up">
-                                <Link legacyBehavior href="/jobs-list">
-                                    <a>
-                                        <div className="item-logo">
-                                            <div className="image-left">
-                                                <img alt="jobBox" src={`assets/imgs/page/homepage1/${item.icon}`} />
-                                            </div>
-                                            <div className="text-info-right">
-                                                <h4>{item.title}</h4>
-                                                <p className="font-xs">
-                                                    {item.count}
-                                                    {/*<span> Jobs Available</span>*/}
-                                                </p>
-                                            </div>
+                                <Link href="/jobs-list/[categoryName]" as={`/jobs-list/${encodeURIComponent(item.categoryName)}`}>
+                                    <div className="item-logo">
+                                        <div className="text-info-right">
+                                            <h4>{item.categoryName}</h4>
+                                            <p className="font-xs">{item.count}</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
             </div>
-
             <div className="swiper-button-next" />
             <div className="swiper-button-prev" />
         </>

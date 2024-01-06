@@ -2,7 +2,8 @@
 import Layout from "../components/Layout/Layout";
 import CategorySlider from "./../components/sliders/Category";
 import Link from "next/link";
-import CategoryTab3 from "../components/elements/CategoryTab3";
+import CategoryTab from "../components/elements/CategoryTab";
+import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
 
 export default function Home() {
     return (
@@ -23,21 +24,13 @@ export default function Home() {
                                           To na srodek, zmiana w wyszukiwaniu
                                             <br className="d-none d-lg-block" />
                                         </div>
-                                        <div className="form-find mt-40 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
-                                            <form>
-                                                <input className="form-input input-keysearch mr-10" type="text" placeholder="Your keyword... " />
-                                                <div className="box-industry">
-                                                    <select className="form-input mr-10 select-active input-location">
-                                                        <option value="DK">Denmark</option>
-                                                        <option value="FI">Finland</option>
-                                                        <option value="SE">Sweden</option>
-                                                        <option value="No">Norway</option>
-                                                        <option value="Remote">Remote</option>
-                                                    </select>
-                                                </div>
-                                                <button className="btn btn-default btn-find font-sm">Search</button>
-                                            </form>
-                                        </div>
+                                            <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                                                <form>
+                                                    <CountryBoxJobOffer/>
+                                                    <input className="form-input input-keysearch mr-10" type="text" placeholder="Your keyword... " />
+                                                    <button className="btn btn-default btn-find font-sm">Search</button>
+                                                </form>
+                                            </div>
                                         <div className="list-tags-banner mt-60 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
                                             <strong>Popular Searches:</strong>
                                             <Link legacyBehavior href="#">
@@ -88,7 +81,7 @@ export default function Home() {
                             <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs of the day</h2>
                             <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Search and connect with the right candidates faster.</p>
                         </div>
-                        <CategoryTab3 />
+                        <CategoryTab />
                     </div>
                 </section>
             </Layout>

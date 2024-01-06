@@ -1,0 +1,597 @@
+[
+  {
+    "positionTitle": "Junior Cloud Developer",
+    "employer": {
+      "name": "Tech Solutions Inc.",
+      "industry": "Information Technology",
+      "description": "Leading provider of innovative IT solutions",
+      "country": "USA",
+      "city": "San Francisco",
+      "postCode": "94105",
+      "street": "Main Street",
+      "urlToWebsite": "http://www.techsolutions.com",
+      "urlToImage": "http://www.techsolutions.com/image.jpg"
+    },
+    "experienceLevel": "Junior",
+    "employmentType": "Part Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Frontend",
+    "technologyStack": [
+      "JavaScript",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis2",
+    "country": "Germany",
+    "city": "Berlin",
+    "postCode": "10115",
+    "street": "Techstrasse 123",
+    "urlToApply": "microsoft.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Architect",
+    "employer": {
+      "name": "Tech Solutions Inc.",
+      "industry": "Information Technology",
+      "description": "Leading provider of innovative IT solutions",
+      "country": "USA",
+      "city": "San Francisco",
+      "postCode": "94105",
+      "street": "Main Street",
+      "urlToWebsite": "http://www.techsolutions.com",
+      "urlToImage": "http://www.techsolutions.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Contract",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Full Stack",
+    "technologyStack": [
+      "Java",
+      "GCP"
+    ],
+    "jobOfferDescription": "opis3",
+    "country": "France",
+    "city": "Paris",
+    "postCode": "75001",
+    "street": "Cloud Boulevard 42",
+    "urlToApply": "google.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud Security Specialist",
+    "employer": {
+      "name": "Finance Dynamics Ltd.",
+      "industry": "Finance",
+      "description": "Specializing in financial services",
+      "country": "UK",
+      "city": "London",
+      "postCode": "WC1E 6BT",
+      "street": "High Street",
+      "urlToWebsite": "http://www.financedynamics.com",
+      "urlToImage": "http://www.financedynamics.com/image.jpg"
+    },
+    "experienceLevel": "Mid-Level",
+    "employmentType": "Freelance",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Security",
+    "technologyStack": [
+      "C#",
+      "AWS"
+    ],
+    "jobOfferDescription": "opis4",
+    "country": "United Kingdom",
+    "city": "London",
+    "postCode": "SW1A 1AA",
+    "street": "Secure Street 7",
+    "urlToApply": "amazon.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud DevOps Engineer",
+    "employer": {
+      "name": "Finance Dynamics Ltd.",
+      "industry": "Finance",
+      "description": "Specializing in financial services",
+      "country": "UK",
+      "city": "London",
+      "postCode": "WC1E 6BT",
+      "street": "High Street",
+      "urlToWebsite": "http://www.financedynamics.com",
+      "urlToImage": "http://www.financedynamics.com/image.jpg"
+    },
+    "experienceLevel": "Mid-Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "DevOps",
+    "technologyStack": [
+      "Python",
+      "IBM Cloud"
+    ],
+    "jobOfferDescription": "opis5",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "postCode": "1012 AB",
+    "street": "DevOps Lane 88",
+    "urlToApply": "ibm.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud DevOps Data Engineer",
+    "employer": {
+      "name": "Global Logistics Group",
+      "industry": "Logistics",
+      "description": "Providing efficient logistics solutions worldwide",
+      "country": "Germany",
+      "city": "Berlin",
+      "postCode": "10117",
+      "street": "Kurfürstendamm",
+      "urlToWebsite": "http://www.logisticsgroup.com",
+      "urlToImage": "http://www.logisticsgroup.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Contract",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "DevOps",
+    "technologyStack": [
+      "SQL",
+      "Oracle Cloud"
+    ],
+    "jobOfferDescription": "opis6",
+    "country": "Italy",
+    "city": "Rome",
+    "postCode": "00100",
+    "street": "Data Street 15",
+    "urlToApply": "oracle.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Solutions Architect",
+    "employer": {
+      "name": "Global Logistics Group",
+      "industry": "Logistics",
+      "description": "Providing efficient logistics solutions worldwide",
+      "country": "Germany",
+      "city": "Berlin",
+      "postCode": "10117",
+      "street": "Kurfürstendamm",
+      "urlToWebsite": "http://www.logisticsgroup.com",
+      "urlToImage": "http://www.logisticsgroup.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Architecture",
+    "technologyStack": [
+      "JavaScript",
+      "AWS",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis7",
+    "country": "Spain",
+    "city": "Barcelona",
+    "postCode": "08001",
+    "street": "Solution Street 5",
+    "urlToApply": "cisco.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud Automation Engineer",
+    "employer": {
+      "name": "Healthcare Innovations Ltd.",
+      "industry": "Healthcare",
+      "description": "Innovating healthcare with cutting-edge solutions",
+      "country": "Canada",
+      "city": "Toronto",
+      "postCode": "M5J 2S1",
+      "street": "Bay Street",
+      "urlToWebsite": "http://www.healthcareinnovations.com",
+      "urlToImage": "http://www.healthcareinnovations.com/image.jpg"
+    },
+    "experienceLevel": "Mid-Level",
+    "employmentType": "Part Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Automation",
+    "technologyStack": [
+      "Python",
+      "VMware Cloud"
+    ],
+    "jobOfferDescription": "opis8",
+    "country": "Sweden",
+    "city": "Stockholm",
+    "postCode": "11120",
+    "street": "Automation Avenue 22",
+    "urlToApply": "vmware.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Network Engineer",
+    "employer": {
+      "name": "Healthcare Innovations Ltd.",
+      "industry": "Healthcare",
+      "description": "Innovating healthcare with cutting-edge solutions",
+      "country": "Canada",
+      "city": "Toronto",
+      "postCode": "M5J 2S1",
+      "street": "Bay Street",
+      "urlToWebsite": "http://www.healthcareinnovations.com",
+      "urlToImage": "http://www.healthcareinnovations.com/image.jpg"
+    },
+    "experienceLevel": "Junior",
+    "employmentType": "Full Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Networking",
+    "technologyStack": [
+      "Java",
+      "HP Cloud"
+    ],
+    "jobOfferDescription": "opis9",
+    "country": "Poland",
+    "city": "Warsaw",
+    "postCode": "00-001",
+    "street": "Network Street 10",
+    "urlToApply": "hp.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Data Scientist",
+    "employer": {
+      "name": "Green Energy Solutions LLC",
+      "industry": "Renewable Energy",
+      "description": "Leading the way in sustainable energy solutions",
+      "country": "Netherlands",
+      "city": "Amsterdam",
+      "postCode": "1012JS",
+      "street": "Herengracht",
+      "urlToWebsite": "http://www.greenenergysolutions.com",
+      "urlToImage": "http://www.greenenergysolutions.com/image.jpg"
+    },
+    "experienceLevel": "Mid",
+    "employmentType": "Full Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Data Engineering",
+    "technologyStack": [
+      "Python",
+      "R",
+      "Tableau"
+    ],
+    "jobOfferDescription": "Exciting opportunity for a Data Scientist...",
+    "country": "USA",
+    "city": "San Francisco",
+    "postCode": "94105",
+    "street": "Main Street",
+    "urlToApply": "datasciencecompany.com/job-data-scientist",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Data Scientist",
+    "employer": {
+      "name": "Food Delights International",
+      "industry": "Food and Beverage",
+      "description": "Delivering international culinary experiences",
+      "country": "France",
+      "city": "Paris",
+      "postCode": "75001",
+      "street": "Rue de Rivoli",
+      "urlToWebsite": "http://www.fooddelights.com",
+      "urlToImage": "http://www.fooddelights.com/image.jpg"
+    },
+    "experienceLevel": "Junior",
+    "employmentType": "Full Time",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Machine Learning",
+    "technologyStack": [
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn"
+    ],
+    "jobOfferDescription": "Challenging opportunity for a Data Scientist...",
+    "country": "Canada",
+    "city": "Toronto",
+    "postCode": "M5H 3H1",
+    "street": "Yonge Street",
+    "urlToApply": "datasciencecompany.com/job-data-scientist",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Data Scientist",
+    "employer": {
+      "name": "Food Delights International",
+      "industry": "Food and Beverage",
+      "description": "Delivering international culinary experiences",
+      "country": "France",
+      "city": "Paris",
+      "postCode": "75001",
+      "street": "Rue de Rivoli",
+      "urlToWebsite": "http://www.fooddelights.com",
+      "urlToImage": "http://www.fooddelights.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Contract",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Data Visualization",
+    "technologyStack": [
+      "D3.js",
+      "Plotly",
+      "Matplotlib"
+    ],
+    "jobOfferDescription": "Opportunity for a Data Scientist with experience in data visualization...",
+    "country": "United Kingdom",
+    "city": "London",
+    "postCode": "SW1A 1AA",
+    "street": "Downing Street",
+    "urlToApply": "datasciencecompany.com/job-data-scientist",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Java Developer",
+    "employer": {
+      "name": "Fashion Trends Ltd.",
+      "industry": "Fashion",
+      "description": "Setting trends in the fashion industry",
+      "country": "Italy",
+      "city": "Milan",
+      "postCode": "20121",
+      "street": "Via Montenapoleone",
+      "urlToWebsite": "http://www.fashiontrends.com",
+      "urlToImage": "http://www.fashiontrends.com/image.jpg"
+    },
+    "experienceLevel": "Mid",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "Software Development",
+    "technologyStack": [
+      "Java",
+      "Spring",
+      "React"
+    ],
+    "jobOfferDescription": "Join our team as a Java Developer...",
+    "country": "Germany",
+    "city": "Berlin",
+    "postCode": "10115",
+    "street": "Techstrasse 123",
+    "urlToApply": "javacompany.com/job-java-developer",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "UI/UX Designer",
+    "employer": {
+      "name": "Education Dynamics Group",
+      "industry": "Education",
+      "description": "Transforming education through dynamic solutions",
+      "country": "Australia",
+      "city": "Sydney",
+      "postCode": "2000",
+      "street": "George Street",
+      "urlToWebsite": "http://www.educationdynamics.com",
+      "urlToImage": "http://www.educationdynamics.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "UI/UX",
+    "technologyStack": [
+      "Adobe XD",
+      "Sketch",
+      "Figma"
+    ],
+    "jobOfferDescription": "Exciting opportunity for a talented UI/UX Designer...",
+    "country": "USA",
+    "city": "San Francisco",
+    "postCode": "94105",
+    "street": "Design Avenue",
+    "urlToApply": "designcompany.com/job-ui-ux-designer",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "DevOps Engineer",
+    "employer": {
+      "name": "Sports Unlimited Inc.",
+      "industry": "Sports and Recreation",
+      "description": "Unlimited possibilities in sports and recreation",
+      "country": "Spain",
+      "city": "Barcelona",
+      "postCode": "08002",
+      "street": "Passeig de Gràcia",
+      "urlToWebsite": "http://www.sportsunlimited.com",
+      "urlToImage": "http://www.sportsunlimited.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Contract",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "DevOps",
+    "technologyStack": [
+      "Docker",
+      "Kubernetes",
+      "Jenkins"
+    ],
+    "jobOfferDescription": "Exciting DevOps role with cutting-edge technologies...",
+    "country": "United Kingdom",
+    "city": "London",
+    "postCode": "EC1A 1BB",
+    "street": "DevOps Street",
+    "urlToApply": "devopscompany.com/job-devops-engineer",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Full Stack Developer",
+    "employer": {
+      "name": "Artistic Creations Studio",
+      "industry": "Arts and Culture",
+      "description": "Creating art that inspires and captivates",
+      "country": "Japan",
+      "city": "Tokyo",
+      "postCode": "100-0005",
+      "street": "Ginza",
+      "urlToWebsite": "http://www.artisticcreations.com",
+      "urlToImage": "http://www.artisticcreations.com/image.jpg"
+    },
+    "experienceLevel": "Mid",
+    "employmentType": "Full Time",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Software Development",
+    "technologyStack": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "jobOfferDescription": "Join our team as a Full Stack Developer...",
+    "country": "Germany",
+    "city": "Munich",
+    "postCode": "80331",
+    "street": "Full Stack Street",
+    "urlToApply": "fullstackcompany.com/job-full-stack-developer",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "IT Security Analyst",
+    "employer": {
+      "name": "Travel Adventures Ltd.",
+      "industry": "Travel and Tourism",
+      "description": "Embark on unforgettable travel adventures",
+      "country": "Brazil",
+      "city": "Rio de Janeiro",
+      "postCode": "20081-040",
+      "street": "Avenida Atlântica",
+      "urlToWebsite": "http://www.traveladventures.com",
+      "urlToImage": "http://www.traveladventures.com/image.jpg"
+    },
+    "experienceLevel": "Junior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "IT Security",
+    "technologyStack": [
+      "Firewall",
+      "Antivirus",
+      "Encryption"
+    ],
+    "jobOfferDescription": "Exciting opportunity in IT Security...",
+    "country": "USA",
+    "city": "New York",
+    "postCode": "10001",
+    "street": "Security Boulevard",
+    "urlToApply": "securitycompany.com/job-security-analyst",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Architect",
+    "employer": {
+      "name": "Travel Adventures Ltd.",
+      "industry": "Travel and Tourism",
+      "description": "Embark on unforgettable travel adventures",
+      "country": "Brazil",
+      "city": "Rio de Janeiro",
+      "postCode": "20081-040",
+      "street": "Avenida Atlântica",
+      "urlToWebsite": "http://www.traveladventures.com",
+      "urlToImage": "http://www.traveladventures.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Contract",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Cloud Computing",
+    "technologyStack": [
+      "AWS",
+      "Azure",
+      "Google Cloud Platform"
+    ],
+    "jobOfferDescription": "Exciting role for a Cloud Architect...",
+    "country": "France",
+    "city": "Paris",
+    "postCode": "75001",
+    "street": "Cloud Boulevard 42",
+    "urlToApply": "cloudcompany.com/job-cloud-architect",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Business Analyst",
+    "employer": {
+      "name": "Automotive Innovations Inc.",
+      "industry": "Automotive",
+      "description": "Driving innovation in the automotive industry",
+      "country": "Germany",
+      "city": "Stuttgart",
+      "postCode": "70173",
+      "street": "Königstraße",
+      "urlToWebsite": "http://www.automotiveinnovations.com",
+      "urlToImage": "http://www.automotiveinnovations.com/image.jpg"
+    },
+    "experienceLevel": "Mid",
+    "employmentType": "Contract",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Business Analyst",
+    "technologyStack": [
+      "Data Analysis",
+      "Requirements Gathering",
+      "SQL"
+    ],
+    "jobOfferDescription": "Join our team as a Business Analyst...",
+    "country": "Canada",
+    "city": "Vancouver",
+    "postCode": "V6B 1A1",
+    "street": "Analysis Street",
+    "urlToApply": "businesscompany.com/job-business-analyst",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Network Administrator",
+    "employer": {
+      "name": "Automotive Innovations Inc.",
+      "industry": "Automotive",
+      "description": "Driving innovation in the automotive industry",
+      "country": "Germany",
+      "city": "Stuttgart",
+      "postCode": "70173",
+      "street": "Königstraße",
+      "urlToWebsite": "http://www.automotiveinnovations.com",
+      "urlToImage": "http://www.automotiveinnovations.com/image.jpg"
+    },
+    "experienceLevel": "Junior",
+    "employmentType": "Full Time",
+    "employmentModel": "On-site",
+    "categoryToBrowse": "Network Admin",
+    "technologyStack": [
+      "Routing",
+      "Switching",
+      "Firewalls"
+    ],
+    "jobOfferDescription": "Exciting opportunity for a Network Administrator...",
+    "country": "Germany",
+    "city": "Frankfurt",
+    "postCode": "60311",
+    "street": "Network Avenue",
+    "urlToApply": "networkcompany.com/job-network-administrator",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "System Administrator",
+    "employer": {
+      "name": "Automotive Innovations Inc.",
+      "industry": "Automotive",
+      "description": "Driving innovation in the automotive industry",
+      "country": "Germany",
+      "city": "Stuttgart",
+      "postCode": "70173",
+      "street": "Königstraße",
+      "urlToWebsite": "http://www.automotiveinnovations.com",
+      "urlToImage": "http://www.automotiveinnovations.com/image.jpg"
+    },
+    "experienceLevel": "Senior",
+    "employmentType": "Full Time",
+    "employmentModel": "Hybrid",
+    "categoryToBrowse": "System Admin",
+    "technologyStack": [
+      "Linux",
+      "Windows",
+      "Server Administration"
+    ],
+    "jobOfferDescription": "Exciting role for a System Administrator...",
+    "country": "USA",
+    "city": "Los Angeles",
+    "postCode": "90001",
+    "street": "System Street",
+    "urlToApply": "systemcompany.com/job-system-administrator",
+    "promotedFlag": 1
+  }
+]
+
+

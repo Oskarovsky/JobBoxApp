@@ -1,0 +1,397 @@
+[
+  {
+    "positionTitle": "Junior Cloud Developer",
+    "employerId": 1,
+    "experienceLevel": "JUNIOR",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "REMOTE",
+    "categoryToBrowse": "DEVOPS",
+    "technologyStack": [
+      "JavaScript",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis2",
+    "country": "DENMARK",
+    "city": "Berlin",
+    "postCode": "10115",
+    "street": "Techstrasse 123",
+    "urlToApply": "microsoft.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Architect",
+    "employerId": 1,
+    "experienceLevel": "MID",
+    "employmentType": "PART_TIME",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "PRODUCT_MANAGEMENT",
+    "technologyStack": [
+      "Java",
+      "GCP"
+    ],
+    "jobOfferDescription": "opis3",
+    "country": "FINLAND",
+    "city": "Paris",
+    "postCode": "75001",
+    "street": "Cloud Boulevard 42",
+    "urlToApply": "google.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud Security Specialist",
+    "employerId": 2,
+    "experienceLevel": "SENIOR",
+    "employmentType": "INTERNSHIP",
+    "employmentModel": "ONSITE",
+    "categoryToBrowse": "FRONTEND",
+    "technologyStack": [
+      "C#",
+      "AWS"
+    ],
+    "jobOfferDescription": "opis4",
+    "country": "SWEDEN",
+    "city": "London",
+    "postCode": "SW1A 1AA",
+    "street": "Secure Street 7",
+    "urlToApply": "amazon.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud DevOps Engineer",
+    "employerId": 2,
+    "experienceLevel": "ENTRY_LEVEL",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "CLOUD_COMPUTING",
+    "technologyStack": [
+      "Python",
+      "IBM Cloud"
+    ],
+    "jobOfferDescription": "opis5",
+    "country": "NORWAY",
+    "city": "Amsterdam",
+    "postCode": "1012 AB",
+    "street": "DevOps Lane 88",
+    "urlToApply": "ibm.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud DevOps Data Engineer",
+    "employerId": 3,
+    "experienceLevel": "EXPERIENCED",
+    "employmentType": "INTERNSHIP",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "DEVOPS",
+    "technologyStack": [
+      "SQL",
+      "Oracle Cloud"
+    ],
+    "jobOfferDescription": "opis6",
+    "country": "SWEDEN",
+    "city": "Rome",
+    "postCode": "00100",
+    "street": "Data Street 15",
+    "urlToApply": "oracle.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Solutions Architect",
+    "employerId": 3,
+    "experienceLevel": "LEAD",
+    "employmentType": "INTERNSHIP",
+    "employmentModel": "REMOTE",
+    "categoryToBrowse": "IT_OPERATIONS",
+    "technologyStack": [
+      "JavaScript",
+      "AWS",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis7",
+    "country": "DENMARK",
+    "city": "Copenhagen",
+    "postCode": "08001",
+    "street": "Solution Street 5",
+    "urlToApply": "cisco.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Cloud Automation Engineer",
+    "employerId": 4,
+    "experienceLevel": "ENTRY_LEVEL",
+    "employmentType": "INTERNSHIP",
+    "employmentModel": "ONSITE",
+    "categoryToBrowse": "ANALYST",
+    "technologyStack": [
+      "Python",
+      "VMware Cloud"
+    ],
+    "jobOfferDescription": "opis8",
+    "country": "SWEDEN",
+    "city": "Stockholm",
+    "postCode": "11120",
+    "street": "Automation Avenue 22",
+    "urlToApply": "vmware.com/job-newJob",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Network Engineer",
+    "employerId": 4,
+    "experienceLevel": "PRINCIPAL",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "REMOTE",
+    "categoryToBrowse": "DATABASE_MANAGEMENT",
+    "technologyStack": [
+      "Java",
+      "HP Cloud"
+    ],
+    "jobOfferDescription": "opis9",
+    "country": "DENMARK",
+    "city": "Warsaw",
+    "postCode": "00-001",
+    "street": "Network Street 10",
+    "urlToApply": "hp.com/job-newJob",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Data Scientist",
+    "employerId": 5,
+    "experienceLevel": "MID",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "REMOTE",
+    "categoryToBrowse": "DATA_ENGINEERING",
+    "technologyStack": [
+      "Python",
+      "R",
+      "Tableau"
+    ],
+    "jobOfferDescription": "Exciting opportunity for a Data Scientist...",
+    "country": "NORWAY",
+    "city": "San Francisco",
+    "postCode": "94105",
+    "street": "Main Street",
+    "urlToApply": "datasciencecompany.com/job-data-scientist",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Data Scientist",
+    "employerId": 6,
+    "experienceLevel": "JUNIOR",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "MACHINE_LEARNING",
+    "technologyStack": [
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn"
+    ],
+    "jobOfferDescription": "Challenging opportunity for a Data Scientist...",
+    "country": "FINLAND",
+    "city": "Toronto",
+    "postCode": "M5H 3H1",
+    "street": "Yonge Street",
+    "urlToApply": "datasciencecompany.com/job-data-scientist",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Data Scientist",
+    "employerId": 6,
+    "experienceLevel": "SENIOR",
+    "employmentType": "INTERNSHIP",
+    "employmentModel": "REMOTE",
+    "categoryToBrowse": "ANALYTICS",
+    "technologyStack": [
+      "D3.js",
+      "Plotly",
+      "Matplotlib"
+    ],
+    "jobOfferDescription": "Opportunity for a Data Scientist with experience in data visualization...",
+    "country": "DENMARK",
+    "city": "Alborg",
+    "postCode": "SW1A 1AA",
+    "street": "Downing Street",
+    "urlToApply": "datasciencecompany.com/job-data-scientist",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Java Developer",
+    "employerId": 7,
+    "experienceLevel": "MID",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "BACKEND",
+    "technologyStack": [
+      "Java",
+      "Spring",
+      "React"
+    ],
+    "jobOfferDescription": "Join our team as a Java Developer...",
+    "country": "DENMARK",
+    "city": "Berlin",
+    "postCode": "10115",
+    "street": "Techstrasse 123",
+    "urlToApply": "javacompany.com/job-java-developer",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "UI/UX Designer",
+    "employerId": 8,
+    "experienceLevel": "LEAD",
+    "employmentType": "PART_TIME",
+    "employmentModel": "REMOTE",
+    "categoryToBrowse": "UI_UX",
+    "technologyStack": [
+      "Adobe XD",
+      "Sketch",
+      "Figma"
+    ],
+    "jobOfferDescription": "Exciting opportunity for a talented UI/UX Designer...",
+    "country": "DENMARK",
+    "city": "San Francisco",
+    "postCode": "94105",
+    "street": "Design Avenue",
+    "urlToApply": "designcompany.com/job-ui-ux-designer",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "DevOps Engineer",
+    "employerId": 9,
+    "experienceLevel": "SENIOR",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "DEVOPS",
+    "technologyStack": [
+      "Docker",
+      "Kubernetes",
+      "Jenkins"
+    ],
+    "jobOfferDescription": "Exciting DevOps role with cutting-edge technologies...",
+    "country": "NORWAY",
+    "city": "London",
+    "postCode": "EC1A 1BB",
+    "street": "DevOps Street",
+    "urlToApply": "devopscompany.com/job-devops-engineer",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Full Stack Developer",
+    "employerId": 10,
+    "experienceLevel": "MID",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "ONSITE",
+    "categoryToBrowse": "FULLSTACK",
+    "technologyStack": [
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "jobOfferDescription": "Join our team as a Full Stack Developer...",
+    "country": "SWEDEN",
+    "city": "Munich",
+    "postCode": "80331",
+    "street": "Full Stack Street",
+    "urlToApply": "fullstackcompany.com/job-full-stack-developer",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "IT Security Analyst",
+    "employerId": 11,
+    "experienceLevel": "JUNIOR",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "IT_SECURITY",
+    "technologyStack": [
+      "Firewall",
+      "Antivirus",
+      "Encryption"
+    ],
+    "jobOfferDescription": "Exciting opportunity in IT Security...",
+    "country": "SWEDEN",
+    "city": "New York",
+    "postCode": "10001",
+    "street": "Security Boulevard",
+    "urlToApply": "securitycompany.com/job-security-analyst",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Cloud Architect",
+    "employerId": 11,
+    "experienceLevel": "SENIOR",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "CLOUD_COMPUTING",
+    "technologyStack": [
+      "AWS",
+      "Azure",
+      "Google Cloud Platform"
+    ],
+    "jobOfferDescription": "Exciting role for a Cloud Architect...",
+    "country": "NORWAY",
+    "city": "Paris",
+    "postCode": "75001",
+    "street": "Cloud Boulevard 42",
+    "urlToApply": "cloudcompany.com/job-cloud-architect",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "Business Analyst",
+    "employerId": 12,
+    "experienceLevel": "MID",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "REMOTE",
+    "categoryToBrowse": "ANALYST",
+    "technologyStack": [
+      "Data Analysis",
+      "Requirements Gathering",
+      "SQL"
+    ],
+    "jobOfferDescription": "Join our team as a Business Analyst...",
+    "country": "NORWAY",
+    "city": "Vancouver",
+    "postCode": "V6B 1A1",
+    "street": "Analysis Street",
+    "urlToApply": "businesscompany.com/job-business-analyst",
+    "promotedFlag": 0
+  },
+  {
+    "positionTitle": "Network Administrator",
+    "employerId": 12,
+    "experienceLevel": "JUNIOR",
+    "employmentType": "FULL_TIME",
+    "employmentModel": "ONSITE",
+    "categoryToBrowse": "ADMIN",
+    "technologyStack": [
+      "Routing",
+      "Switching",
+      "Firewalls"
+    ],
+    "jobOfferDescription": "Exciting opportunity for a Network Administrator...",
+    "country": "SWEDEN",
+    "city": "Frankfurt",
+    "postCode": "60311",
+    "street": "Network Avenue",
+    "urlToApply": "networkcompany.com/job-network-administrator",
+    "promotedFlag": 1
+  },
+  {
+    "positionTitle": "System Administrator",
+    "employerId": 12,
+    "experienceLevel": "SENIOR",
+    "employmentType": "STUDENT",
+    "employmentModel": "HYBRID",
+    "categoryToBrowse": "ADMIN",
+    "technologyStack": [
+      "Linux",
+      "Windows",
+      "Server Administration"
+    ],
+    "jobOfferDescription": "Exciting role for a System Administrator...",
+    "country": "SWEDEN",
+    "city": "Los Angeles",
+    "postCode": "90001",
+    "street": "System Street",
+    "urlToApply": "systemcompany.com/job-system-administrator",
+    "promotedFlag": 1
+  }
+]
+
+
