@@ -2,6 +2,9 @@ package com.server.jobboxapp.service
 
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -14,6 +17,10 @@ class JobOfferService(
 
     fun returnAllOffers(): List<JobOffer> =
         jobOfferRepository.findAll()
+
+    fun returnAllOffersPage(page: Int, size: Int): Page<JobOffer> {
+        return jobOfferRepository.findAll(PageRequest.of(page, size))
+    }
 
     fun returnOfferById(id: Long): JobOffer {
         return jobOfferRepository

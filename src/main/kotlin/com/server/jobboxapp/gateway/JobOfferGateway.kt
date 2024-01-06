@@ -5,6 +5,8 @@ import com.server.jobboxapp.entity.joboffer.JobOffer
 import com.server.jobboxapp.entity.joboffer.LocationFilter
 import com.server.jobboxapp.entity.joboffer.OfferRequest
 import com.server.jobboxapp.service.JobOfferService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -17,6 +19,12 @@ class JobOfferGateway(
 
     @GetMapping
     fun getAllOffers(): List<JobOffer> = jobOfferService.returnAllOffers()
+
+    @GetMapping("/all")
+    fun getAllJobOffers(@RequestParam(defaultValue = "0") page: Int,
+                        @RequestParam(defaultValue = "5") size: Int): Page<JobOffer> {
+        return jobOfferService.returnAllOffersPage(page, size)
+    }
 
     @GetMapping("/{id}")
     fun getOfferById(@PathVariable id: Long): JobOffer =
