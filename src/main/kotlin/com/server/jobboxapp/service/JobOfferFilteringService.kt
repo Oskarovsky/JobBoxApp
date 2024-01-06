@@ -3,8 +3,13 @@ package com.server.jobboxapp.service
 import com.server.jobboxapp.entity.CountryBoxDropDown
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageImpl
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 import java.time.format.DateTimeFormatter
+import kotlin.streams.toList
 
 @Service
 class JobOfferFilteringService(
@@ -69,6 +74,15 @@ class JobOfferFilteringService(
         return listOfAllJobs.stream().map {
             jobOfferMiniatureMapping(it)
         }.toList()
+    }
+
+    fun returnRowJobOfferPage(page: Int, size: Int): Page<JobOfferMiniature> {
+        val listOfAllJobs = jobOfferRepository.findAll(PageRequest.of(page, size))
+        return PageImpl(
+            listOfAllJobs.content.stream().map { jobOfferMiniatureMapping(it) }.toList(),
+            listOfAllJobs.pageable,
+            listOfAllJobs.totalElements
+        )
     }
 
     private fun jobOfferMiniatureMapping(jobOffer: JobOffer): JobOfferMiniature {

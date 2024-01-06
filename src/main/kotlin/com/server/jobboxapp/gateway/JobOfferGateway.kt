@@ -20,7 +20,7 @@ class JobOfferGateway(
     @GetMapping
     fun getAllOffers(): List<JobOffer> = jobOfferService.returnAllOffers()
 
-    @GetMapping("/all")
+    @GetMapping("/list")
     fun getAllJobOffers(@RequestParam(defaultValue = "0") page: Int,
                         @RequestParam(defaultValue = "5") size: Int): Page<JobOffer> {
         return jobOfferService.returnAllOffersPage(page, size)

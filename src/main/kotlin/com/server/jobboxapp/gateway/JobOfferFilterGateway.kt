@@ -4,6 +4,8 @@ import com.server.jobboxapp.entity.*
 import com.server.jobboxapp.entity.CountryBoxDropDown
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.service.JobOfferFilteringService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.web.bind.annotation.*
 
 @CrossOrigin(origins = ["*"])
@@ -43,6 +45,11 @@ class JobOfferFilterGateway(
     @GetMapping("/rowJobOfferList")
     fun getRowJobOfferList(): List<JobOfferMiniature> =
         jobOfferFilteringService.returnRowJobOfferList()
+
+    @GetMapping("/rowJobOfferPage")
+    fun getRowJobOfferPage(@RequestParam(defaultValue = "0") page: Int,
+                           @RequestParam(defaultValue = "5") size: Int): Page<JobOfferMiniature> =
+        jobOfferFilteringService.returnRowJobOfferPage(page, size)
 
     @GetMapping("/countryBoxList")
     fun getCountryBoxFiltering(): List<CountryBoxDropDown>  =
