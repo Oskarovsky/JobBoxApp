@@ -1,5 +1,6 @@
-package com.server.jobboxapp.entity
+package com.server.jobboxapp.entity.joboffer
 
+import com.server.jobboxapp.entity.employer.Employer
 import jakarta.persistence.*
 import java.time.LocalDate
 
@@ -8,7 +9,7 @@ data class JobOffer(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
     @JoinColumn(name = "employer_id")
     var employer: Employer,
 
@@ -34,16 +35,16 @@ data class JobOffer(
     @Column(nullable = false)
     var jobOfferDescription: String,
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     var country: String,
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     var city: String,
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     var postCode: String,
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     var street: String,
 
     @Column(nullable = false)

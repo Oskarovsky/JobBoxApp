@@ -575,7 +575,7 @@ export default function CandidateProfile() {
                                                             <div className="card-block-info">
                                                                 <h6>
                                                                     <Link legacyBehavior href="/job-details">
-                           {/*data[4].title*/}
+                                                                        <a>TEST</a>
                                                                     </Link>
                                                                 </h6>
                                                                 <div className="mt-5">

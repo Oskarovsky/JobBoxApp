@@ -1,11 +1,16 @@
 package com.server.jobboxapp.gateway
 
-import com.server.jobboxapp.entity.JobOffer
-import com.server.jobboxapp.entity.OfferRequest
+import com.server.jobboxapp.entity.joboffer.CategoryNameAndCount
+import com.server.jobboxapp.entity.joboffer.JobOffer
+import com.server.jobboxapp.entity.joboffer.LocationFilter
+import com.server.jobboxapp.entity.joboffer.OfferRequest
 import com.server.jobboxapp.service.JobOfferService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin(origins = ["*"])
 @RestController
 @RequestMapping("/api/offer")
 class JobOfferGateway(
@@ -13,20 +18,29 @@ class JobOfferGateway(
 ) {
 
     @GetMapping
-    @CrossOrigin(origins = ["*"])
     fun getAllOffers(): List<JobOffer> = jobOfferService.returnAllOffers()
+
+    @GetMapping("/all")
+    fun getAllJobOffers(@RequestParam(defaultValue = "0") page: Int,
+                        @RequestParam(defaultValue = "5") size: Int): Page<JobOffer> {
+        return jobOfferService.returnAllOffersPage(page, size)
+    }
 
     @GetMapping("/{id}")
     fun getOfferById(@PathVariable id: Long): JobOffer =
         jobOfferService.returnOfferById(id)
 
-    @GetMapping("/{jobsOfTheDay}")
-    fun getJobsOfTheDay(): List<JobOffer> =
-        jobOfferService.returnOffersOfTheDay()
+//    @GetMapping("/jobsOfTheDay")
+//    fun getJobsOfTheDay(): List<JobOffer> =
+//        jobOfferService.returnOffersOfTheDay()
 
-    @GetMapping("/{browseByCategory}")
-    fun getBrowseByCategory(): Map<String, Int> =
-        jobOfferService.returnMapOfBrowseCategoryAndCount()
+//    @GetMapping("/countName")
+//    fun getBrowseByCategory(): List<CategoryNameAndCount> =
+//        jobOfferService.returnCategoryNameAndCount()
+
+//    @GetMapping("/countryFilter")
+//    fun getFilterLocations(): List<LocationFilter> =
+//        jobOfferService.returnCountriesForFilter()
 
     @PostMapping("/create", consumes = ["application/json"])
     fun createNewOffer(@RequestBody offerRequest: OfferRequest): ResponseEntity<JobOffer> =

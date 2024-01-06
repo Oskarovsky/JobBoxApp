@@ -20,91 +20,26 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                     <div className="main-header">
                         <div className="header-left">
                             <div className="header-logo">
-                                <Link legacyBehavior href="/"><a className="d-flex"><img alt="jobBox"
-                                                                                         src="assets/imgs/template/findjobintech/logo-no-background.png"/></a></Link>
+                                <Link legacyBehavior href="/">
+                                    <a className="d-flex">
+                                        <img alt="jobBox" src="assets/imgs/template/findjobintech/logo-no-background.png"/>
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="header-nav">
                             <nav className="nav-main-menu">
                                 <ul className="main-menu">
-                                    {/*<li>*/}
-                                    {/*    <Link legacyBehavior href="/"><a>Home</a></Link>*/}
-                                    {/*</li>*/}
-                                    {/*<li className="has-children">*/}
-
 
                                     <li>
                                         <Link legacyBehavior href="/jobs-list"><a>Job Offers</a></Link>
                                     </li>
-
-                                    {/*<ul className="sub-menu">*/}
-                                    {/*    <li>*/}
-                                    {/*        <Link legacyBehavior href="/jobs-grid"><a>Jobs Grid</a></Link>*/}
-                                    {/*    </li>*/}
-                                    {/*    <li>*/}
-                                    {/*        <Link legacyBehavior href="/jobs-list"><a>Jobs List</a></Link>*/}
-                                    {/*    </li>*/}
-                                    {/*    <li>*/}
-                                    {/*        <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>*/}
-                                    {/*    </li>*/}
-                                    {/*    <li>*/}
-                                    {/*        <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2            </a></Link>*/}
-                                    {/*    </li>*/}
-                                    {/*</ul>*/}
-                                    {/*</li>*/}
-                                    {/*<li className="has-children">*/}
                                     <li>
-                                        <Link legacyBehavior href="/companies-grid"><a>Top Companies</a></Link>
-
-                                        {/*<ul className="sub-menu">*/}
-                                        {/*    <li>*/}
-                                        {/*        <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>*/}
-                                        {/*    </li>*/}
-                                        {/*    <li>*/}
-                                        {/*        <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>*/}
-                                        {/*    </li>*/}
-                                        {/*</ul>*/}
+                                        <Link legacyBehavior href="/companies"><a>Companies</a></Link>
                                     </li>
                                     <li>
                                         <Link legacyBehavior href="/blog-grid"><a>Blog</a></Link>
-
                                     </li>
-                                    {/*<li className="has-children">*/}
-                                    {/*    <Link legacyBehavior href="/candidates-grid"><a>Candidates</a></Link>*/}
-
-                                    {/*    <ul className="sub-menu">*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/candidates-grid"><a>Candidates Grid</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/candidate-details"><a>Candidate Details</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/candidate-profile"><a>Candidate Profile</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*    </ul>*/}
-                                    {/*</li>*/}
-                                    {/*<li className="has-children">*/}
-                                    {/*    <Link legacyBehavior href="/jobs-grid"><a>Pages</a></Link>*/}
-
-                                    {/*    <ul className="sub-menu">*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/page-contact"><a>Contact Us</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/page-register"><a>Register</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/page-signin"><a>Signin</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/page-reset-password"><a>Reset Password</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*        <li>*/}
-                                    {/*            <Link legacyBehavior href="/page-content-protected"><a>Content Protected</a></Link>*/}
-                                    {/*        </li>*/}
-                                    {/*    </ul>*/}
-                                    {/*</li>*/}
                                     <li>
                                         <Link legacyBehavior href="/page-contact"><a>Contact</a></Link>
                                     </li>
@@ -118,15 +53,6 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                 <span className="burger-icon-top"/><span className="burger-icon-mid"/><span
                                 className="burger-icon-bottom"/></div>
                         </div>
-                        {/*<div className="header-right">*/}
-                            {/*<div className="block-signin">*/}
-                            {/*    <Link legacyBehavior href="page-register"><a*/}
-                            {/*        className="text-link-bd-btom hover-up">Register</a></Link>*/}
-
-                            {/*    <Link legacyBehavior href="page-signin"><a*/}
-                            {/*        className="btn btn-default btn-shadow ml-40 hover-up">Sign in</a></Link>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
             </header>
@@ -171,11 +97,11 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                             </ul>
                                         </li>
                                         <li className="has-children">
-                                            <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
+                                            <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
 
                                             <ul className="sub-menu">
                                                 <li>
-                                                    <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
+                                                    <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
                                                 </li>
                                                 <li>
                                                     <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>
@@ -291,11 +217,11 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                             </ul>
                                         </li>
                                         <li className="has-children">
-                                            <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
+                                            <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
 
                                             <ul className="sub-menu">
                                                 <li>
-                                                    <Link legacyBehavior href="/companies-grid"><a>Recruiters</a></Link>
+                                                    <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
                                                 </li>
                                                 <li>
                                                     <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>
@@ -364,7 +290,7 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="site-copyright">Copyright 2022 © JobBox. <br/>Designed by AliThemes.</div>
+                            <div className="site-copyright">Copyright 2024 © JobBox. <br/>Designed by AliThemes.</div>
                         </div>
                     </div>
                 </div>

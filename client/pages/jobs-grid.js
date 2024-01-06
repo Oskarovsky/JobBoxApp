@@ -445,8 +445,7 @@ export default function JobGrid() {
                                                     <div className="card-block-info">
                                                         <h6>
                                                             <Link legacyBehavior href="/job-details">
-                                                                <a>Java Software Engineer</a>
-                                                                {/*<a>{data[4].title}</a>*/}
+                                                                <a>TEST</a>
                                                             </Link>
                                                         </h6>
                                                         <div className="mt-5">
@@ -870,7 +869,7 @@ export default function JobGrid() {
                                                     <div className="card-block-info">
                                                         <h6>
                                                             <Link legacyBehavior href="/job-details">
-                   {/*data[4].title*/}
+                                                                <a>TEST</a>
                                                             </Link>
                                                         </h6>
                                                         <div className="mt-5">
@@ -1294,7 +1293,7 @@ export default function JobGrid() {
                                                     <div className="card-block-info">
                                                         <h6>
                                                             <Link legacyBehavior href="/job-details">
-                   {/*data[4].title*/}
+                                                                TEST
                                                             </Link>
                                                         </h6>
                                                         <div className="mt-5">

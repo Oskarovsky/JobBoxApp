@@ -1,10 +1,13 @@
 package com.server.jobboxapp.service
 
-import com.server.jobboxapp.entity.JobOffer
-import com.server.jobboxapp.entity.OfferRequest
+import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class JobOfferService(
@@ -15,13 +18,17 @@ class JobOfferService(
     fun returnAllOffers(): List<JobOffer> =
         jobOfferRepository.findAll()
 
+    fun returnAllOffersPage(page: Int, size: Int): Page<JobOffer> {
+        return jobOfferRepository.findAll(PageRequest.of(page, size))
+    }
+
     fun returnOfferById(id: Long): JobOffer {
         return jobOfferRepository
             .findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
     }
-
+    @Transactional
     fun createNewOffer(offerRequest: OfferRequest): ResponseEntity<JobOffer> {
-        var employer = employerService.returnEmployeeById(offerRequest.employerId)
+        val employer = employerService.returnEmployeeById(offerRequest.employerId)
 
         val offer = JobOffer(
             positionTitle = offerRequest.positionTitle,
@@ -44,6 +51,7 @@ class JobOfferService(
         return ResponseEntity.ok(savedOffer)
     }
 
+    @Transactional
     fun updateOffer(id: Long, updatedOffer: OfferRequest): ResponseEntity<JobOffer> {
         val offerToUpdate =
             jobOfferRepository.findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
@@ -66,10 +74,6 @@ class JobOfferService(
         jobOfferRepository.save(offerToUpdate)
         return ResponseEntity.ok(offerToUpdate)
     }
-
-    fun returnOffersOfTheDay(): List<JobOffer> =
-        jobOfferRepository
-            .findJobsOfTheDay()
 
     fun updatePositionTitle(id: Long, positionTitle: String) {
         jobOfferRepository.updatePositionTitle(id, positionTitle)
@@ -121,13 +125,6 @@ class JobOfferService(
 
     fun updatePromotedFlag(id: Long, promotedFlag: Int) {
         jobOfferRepository.updatePromotedFlag(id, promotedFlag)
-    }
-
-    fun returnMapOfBrowseCategoryAndCount(): Map<String, Int> {
-        val categoriesToBrowse = jobOfferRepository.findAllCategoriesToBrowse()
-        return categoriesToBrowse.map {
-            it to jobOfferRepository.countJobsByCategoriesToBrowse(it)
-        }.toMap()
     }
 
     fun deleteOffer(id: Long): ResponseEntity<Long> {
