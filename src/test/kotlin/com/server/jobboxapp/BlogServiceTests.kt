@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import java.io.File
 import java.net.URL
 
 @SpringBootTest
@@ -52,8 +53,9 @@ class BlogServiceTests {
     fun updateBlogPost() {
         loadBlogPostsToDatabase()
 
+        val filePathWithOfferRequests = object {}.javaClass.getResource("/jobOfferDataTest.json")?.file
         var updatedBlogPost =
-            jsonMapper.readValue<BlogPost>(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/blogPostsUpdate.json"))
+            jsonMapper.readValue<BlogPost>(File(filePathWithOfferRequests))
 
         blogService.updateBlogPost(1, updatedBlogPost)
 

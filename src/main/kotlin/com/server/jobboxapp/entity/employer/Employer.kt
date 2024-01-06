@@ -1,6 +1,7 @@
-package com.server.jobboxapp.entity
+package com.server.jobboxapp.entity.employer
 
 import com.fasterxml.jackson.annotation.JsonIgnore
+import com.server.jobboxapp.entity.joboffer.JobOffer
 import jakarta.persistence.*
 
 @Entity
@@ -33,7 +34,10 @@ data class Employer(
     var urlToWebsite: String,
 
     @Column(nullable = false)
-    var urlToImage: String,
+    var urlToMiniatureImage: String,
+
+    @Column(nullable = false)
+    var urlToBackgroundImage: String,
 
     @OneToMany(mappedBy = "employer", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JsonIgnore

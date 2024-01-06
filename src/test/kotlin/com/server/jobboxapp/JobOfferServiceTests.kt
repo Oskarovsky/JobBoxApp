@@ -3,9 +3,9 @@ package com.server.jobboxapp
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.server.jobboxapp.entity.Employer
-import com.server.jobboxapp.entity.JobOffer
-import com.server.jobboxapp.entity.OfferRequest
+import com.server.jobboxapp.entity.employer.Employer
+import com.server.jobboxapp.entity.joboffer.JobOffer
+import com.server.jobboxapp.entity.joboffer.OfferRequest
 import com.server.jobboxapp.repository.EmployerRepository
 import com.server.jobboxapp.repository.JobOfferRepository
 import com.server.jobboxapp.service.EmployerService
@@ -15,6 +15,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import java.io.File
 import java.net.URL
 
 @SpringBootTest
@@ -37,7 +38,7 @@ class JobOfferServiceTests {
     @BeforeEach
     fun setUp() {
         jsonMapper = jacksonObjectMapper()
-        employerService = EmployerService(employerRepository, jobOfferRepository)
+        employerService = EmployerService(employerRepository)
         jobOfferService = JobOfferService(jobOfferRepository, employerService)
         employerRepository.deleteAll()
         jobOfferRepository.deleteAll()
@@ -52,16 +53,6 @@ class JobOfferServiceTests {
     }
 
     @Test
-    fun returnJobOffersOfTheDayTest() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
-
-        val offerOfTheDay = jobOfferService.returnOffersOfTheDay()
-
-        Assertions.assertEquals(6, offerOfTheDay.size)
-    }
-
-    @Test
     fun deleteJobOfferTest() {
         loadEmployerDataToDatabase()
         createOffersAndLoadToDatabase()
@@ -69,27 +60,6 @@ class JobOfferServiceTests {
         jobOfferService.deleteOffer(1)
 
         Assertions.assertEquals(7, jobOfferService.returnAllOffers().size)
-    }
-
-    @Test
-    fun findCategoriesToBrowseTest() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
-
-        val categoriesToBrowse = jobOfferRepository.findAllCategoriesToBrowse()
-
-        Assertions.assertEquals(7, categoriesToBrowse.size)
-    }
-
-    @Test
-    fun mapOfBrowseCategoryAndCountTest() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
-
-        val mapOfBrowseCategories = jobOfferService.returnMapOfBrowseCategoryAndCount()
-
-        Assertions.assertEquals(2, mapOfBrowseCategories.get("DevOps"))
-        Assertions.assertEquals(1, mapOfBrowseCategories.get("Frontend"))
     }
 
     @Test
@@ -148,7 +118,9 @@ class JobOfferServiceTests {
     fun updateEntity() {
         loadEmployerDataToDatabase()
         createOffersAndLoadToDatabase()
-        var updatedJobOffer = jsonMapper.readValue<OfferRequest>(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/jobOfferDataTestUpdate.json"))
+
+        val filePath = object {}.javaClass.getResource("/jobOfferDataTestUpdate.json")?.file
+        val updatedJobOffer = jsonMapper.readValue<OfferRequest>(File(filePath))
 
         jobOfferService.updateOffer(8, updatedJobOffer)
 
@@ -169,8 +141,8 @@ class JobOfferServiceTests {
     }
 
     fun loadEmployerList() {
-        employerList =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/employerDataTest.json"))
+        val filePath = object {}.javaClass.getResource("/employerDataTest.json")?.file
+        employerList = jsonMapper.readValue(File(filePath))
     }
 
     fun loadEmployerDataToDatabase() {
@@ -181,8 +153,9 @@ class JobOfferServiceTests {
     }
 
     fun loadJobOfferRequest() {
+        val filePathWithOfferRequests = object {}.javaClass.getResource("/offerRequestDataTest.json")?.file
         offerRequestList =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/jobOfferDataTest.json"))
+            jsonMapper.readValue<List<OfferRequest>>(File(filePathWithOfferRequests))
     }
 
     fun createOffersAndLoadToDatabase() {

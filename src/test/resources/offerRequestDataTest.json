@@ -1,0 +1,21 @@
+[
+  {
+    "positionTitle": "Junior Cloud Developer",
+    "employerId": 3,
+    "experienceLevel": "Junior",
+    "employmentType": "Part Time",
+    "employmentModel": "Remote",
+    "categoryToBrowse": "Frontend",
+    "technologyStack": [
+      "JavaScript",
+      "Azure"
+    ],
+    "jobOfferDescription": "opis2",
+    "country": "Germany",
+    "city": "Berlin",
+    "postCode": "10115",
+    "street": "Techstrasse 123",
+    "urlToApply": "microsoft.com/job-newJob",
+    "promotedFlag": 0
+  }
+]

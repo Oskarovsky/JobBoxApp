@@ -1,0 +1,26 @@
+{
+  "positionTitle": "Cloud Architect",
+  "employer": {
+    "name": "Tech Solutions Inc.",
+    "industry": "Information Technology",
+    "description": "Leading provider of innovative IT solutions",
+    "country": "USA",
+    "city": "San Francisco",
+    "postCode": "94105",
+    "street": "Main Street",
+    "urlToWebsite": "http://www.techsolutions.com",
+    "urlToImage": "http://www.techsolutions.com/image.jpg"
+  },
+  "experienceLevel": "Senior",
+  "employmentType": "CONTRACT",
+  "employmentModel": "ON_SITE",
+  "categoryToBrowse": "CLOUD_COMPUTING",
+  "technologyStack": ["Java", "GCP"],
+  "jobOfferDescription": "Opportunity for an experienced Cloud Architect...",
+  "country": "France",
+  "city": "Paris",
+  "postCode": "75001",
+  "street": "Cloud Boulevard 42",
+  "urlToApply": "google.com/job-newJob",
+  "promotedFlag": 1
+}
