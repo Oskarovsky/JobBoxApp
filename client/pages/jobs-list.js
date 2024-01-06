@@ -14,7 +14,6 @@ import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
 export default function JobList() {
     const router = useRouter(); // Inicjalizuj useRouter
     const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
-    console.log(categoryName)
 
     const [offers, setOffers] = useState(null);
     const [isLoading, setLoading] = useState(true);
@@ -73,9 +72,9 @@ export default function JobList() {
                                         <div className="box-filters-job">
                                             <div className="row">
                                                 <div className="col-xl-6 col-lg-5">
-                          <span className="text-small text-showing">
-                            Showing <strong>41-60 </strong>of <strong>944 </strong>jobs
-                          </span>
+                                                    <span className="text-small text-showing">
+                                                        Showing <strong>41-60 </strong>of <strong>944 </strong>jobs
+                                                    </span>
                                                 </div>
                                                 <div className="col-xl-6 col-lg-7 text-lg-end mt-sm-15">
                                                     <div className="display-flex2">
@@ -161,7 +160,7 @@ export default function JobList() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <RowJobOfferList/>
+                                        {/*<RowJobOfferList/>*/}
                                     </div>
                                     <div className="paginations">
                                         <ul className="pager">

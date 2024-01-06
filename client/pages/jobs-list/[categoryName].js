@@ -15,7 +15,7 @@ const CategoryJobsList = ({ offers, categoryName }) => {
                             <div className="col-lg-9 col-md-12 col-sm-12 col-12 float-right">
                                 <div className="content-page">
                                     <h2>{`Jobs in ${categoryName}`}</h2>
-                                    <RowJobOfferList offers={offers} />
+                                    {/*<RowJobOfferList offers={offers} />*/}
                                 </div>
                             </div>
                         </div>
