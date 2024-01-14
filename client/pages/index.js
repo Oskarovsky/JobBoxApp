@@ -4,10 +4,11 @@ import CategorySlider from "./../components/sliders/Category";
 import Link from "next/link";
 import CategoryTab from "../components/elements/CategoryTab";
 import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
-
+import {JobProvider} from "../components/elements/JobContext";
 export default function Home() {
     return (
         <>
+        <JobProvider>
             <Layout>
                 <div className="bg-homepage1" />
                 <section className="section-box">
@@ -81,10 +82,11 @@ export default function Home() {
                             <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs of the day</h2>
                             <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Search and connect with the right candidates faster.</p>
                         </div>
-                        <CategoryTab />
+                        <CategoryTab/>
                     </div>
                 </section>
             </Layout>
+        </JobProvider>
         </>
     );
 }

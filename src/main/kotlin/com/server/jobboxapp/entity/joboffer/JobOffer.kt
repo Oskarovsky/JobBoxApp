@@ -32,8 +32,8 @@ data class JobOffer(
     @Column(nullable = false)
     var technologyStack: List<String>,
 
-    @Column(nullable = false)
-    var jobOfferDescription: String,
+    @Embedded
+    var jobOfferDescription: JobOfferDescription,
 
     @Column(nullable = true)
     var country: String,
@@ -71,7 +71,7 @@ data class OfferRequest(
     val employmentModel: String,
     val categoryToBrowse: String,
     val technologyStack: List<String>,
-    val jobOfferDescription: String,
+    val jobOfferDescription: JobOfferDescription,
     val country: String,
     val city: String,
     val postCode: String,

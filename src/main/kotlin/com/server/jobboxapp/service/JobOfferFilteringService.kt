@@ -1,15 +1,14 @@
 package com.server.jobboxapp.service
 
 import com.server.jobboxapp.entity.CountryBoxDropDown
+import com.server.jobboxapp.entity.employer.Industry
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
 import org.springframework.data.domain.PageRequest
-import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 import java.time.format.DateTimeFormatter
-import kotlin.streams.toList
 
 @Service
 class JobOfferFilteringService(
@@ -61,40 +60,56 @@ class JobOfferFilteringService(
     fun returnNumberOfAllJobs(): JobsAvailable =
         JobsAvailable(jobOfferRepository.findAll().size)
 
-    fun returnOffersOfTheDay(): List<JobOfferMiniature> {
+    fun returnOffersOfTheDay(): List<JobOfferFrontEndEntity> {
         var listOfTheJobOffers = jobOfferRepository
             .findJobsOfTheDay(1).shuffled()
         return listOfTheJobOffers.subList(0, 8).stream().map {
-            jobOfferMiniatureMapping(it)
+            jobOfferFrontEndMapping(it)
         }.toList()
     }
 
-    fun returnRowJobOfferList(): List<JobOfferMiniature> {
+    fun returnRowJobOfferList(): List<JobOfferFrontEndEntity> {
         val listOfAllJobs = jobOfferRepository.findAll()
         return listOfAllJobs.stream().map {
-            jobOfferMiniatureMapping(it)
+            jobOfferFrontEndMapping(it)
         }.toList()
     }
 
-    fun returnRowJobOfferPage(page: Int, size: Int): Page<JobOfferMiniature> {
+    fun returnRowJobOfferPage(page: Int, size: Int): Page<JobOfferFrontEndEntity> {
         val listOfAllJobs = jobOfferRepository.findAll(PageRequest.of(page, size))
         return PageImpl(
-            listOfAllJobs.content.stream().map { jobOfferMiniatureMapping(it) }.toList(),
+            listOfAllJobs.content.stream().map { jobOfferFrontEndMapping(it) }.toList(),
             listOfAllJobs.pageable,
             listOfAllJobs.totalElements
         )
     }
 
-    private fun jobOfferMiniatureMapping(jobOffer: JobOffer): JobOfferMiniature {
-        return JobOfferMiniature(
+    fun returnOffersById(id: Long): JobOfferFrontEndEntity {
+        val offerById = jobOfferRepository
+            .findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
+
+        return jobOfferFrontEndMapping(offerById)
+    }
+
+    private fun jobOfferFrontEndMapping(jobOffer: JobOffer): JobOfferFrontEndEntity {
+        return JobOfferFrontEndEntity(
+            jobOffer.employer,
+            Industry.valueOf(jobOffer.employer.industry).title,
+            jobOffer.id,
             jobOffer.positionTitle,
+            ExperienceLevel.valueOf(jobOffer.experienceLevel).title,
             EmploymentModel.valueOf(jobOffer.employmentModel).title,
+            EmploymentType.valueOf(jobOffer.employmentType).title,
+            OfferCategory.valueOf(jobOffer.categoryToBrowse).title,
             jobOffer.technologyStack,
-            jobOffer.employer.name,
+            jobOffer.jobOfferDescription,
             Country.valueOf(jobOffer.country).title,
             jobOffer.city,
-            jobOffer.creationDate.format(creationDateFormat()),
-            jobOffer.employer.urlToMiniatureImage
+            jobOffer.postCode,
+            jobOffer.street,
+            jobOffer.urlToApply,
+            jobOffer.promotedFlag,
+            jobOffer.creationDate.format(creationDateFormat())
         )
     }
 
@@ -106,6 +121,12 @@ class JobOfferFilteringService(
     fun returnJobListByCategoryToBrowse(categoryToBrowse: String): List<JobOffer> =
         jobOfferRepository.returnJobsByCategoryToBrowse(OfferCategory.valueOf(categoryToBrowse.uppercase()).name)
 
+    fun returnJobListBySimilarCategory(categoryToBrowse: String): List<JobOfferFrontEndEntity> {
+        val category = OfferCategory.values().find { it.title == categoryToBrowse }
+        return jobOfferRepository.returnJobsByCategoryToBrowse(category!!.name).stream().map {
+            jobOfferFrontEndMapping(it)
+        }.toList()
+    }
 
     private fun filterEmptyCategories(categoryNameAndCount: CategoryNameAndCount): Boolean {
         return categoryNameAndCount.count >= 1L
