@@ -12,6 +12,11 @@ import RowJobOfferList from "../components/elements/RowJobOfferList";
 import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
 
 export default function JobList() {
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(0);
+    const [size, setSize] = useState(6)
+
     const router = useRouter(); // Inicjalizuj useRouter
     const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
 
@@ -34,6 +39,11 @@ export default function JobList() {
                 setLoading(false);
             });
     }, [categoryName]);
+
+    const handleChange = () => {
+        setSize(10)
+        return 10
+    }
 
     if (isLoading) return <p>Loading...</p>;
     if (!offers) return <p>Could not fetch offers</p>;
@@ -91,7 +101,7 @@ export default function JobList() {
                                                                 <ul className="dropdown-menu dropdown-menu-light"
                                                                     aria-labelledby="dropdownSort">
                                                                     <li>
-                                                                        <Link legacyBehavior href="#">
+                                                                        <Link legacyBehavior href="#" onClick={handleChange} onChange={handleChange}>
                                                                             <a className="dropdown-item active">10</a>
                                                                         </Link>
                                                                     </li>
@@ -160,7 +170,7 @@ export default function JobList() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <RowJobOfferList/>
+                                        <RowJobOfferList page={currentPage} size={size}/>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12 col-12">

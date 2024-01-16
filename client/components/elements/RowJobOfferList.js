@@ -2,17 +2,18 @@ import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import {fetchJobOfferData, fetchJobs} from "../services/JobOfferService";
 
-const RowJobOfferList = () => {
+const RowJobOfferList = ({ page, size }) => {
 
     const [jobOffersMiniature, setJobOffersMiniature] = useState([]);
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(page);
     const [totalPages, setTotalPages] = useState(0);
+    const [currentSize, setCurrentSize] = useState(size)
     const [isLoading, setLoading] = useState(true)
 
     const API_BASE_URL = 'http://localhost:8080/api';
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/filterOffers/rowJobOfferPage?page=${currentPage}&size=5`)
+        fetch(`http://localhost:8080/api/filterOffers/rowJobOfferPage?page=${currentPage}&size=${currentSize}`)
             .then((res) => res.json())
             .then((data) => {
                 setJobOffersMiniature(data.content)
