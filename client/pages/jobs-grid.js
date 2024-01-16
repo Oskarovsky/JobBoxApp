@@ -380,7 +380,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">LinkedIn</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -436,7 +436,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Adobe Ilustrator</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -488,7 +488,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Bing Search</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -544,7 +544,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Dailymotion</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -596,7 +596,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Linkedin</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -644,7 +644,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Quora JSC</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -696,7 +696,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Nintendo</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -748,7 +748,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Periscope</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -804,7 +804,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">LinkedIn</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -860,7 +860,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Adobe Ilustrator</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -912,7 +912,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-3.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Bing Search</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -968,7 +968,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-4.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Dailymotion</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -1020,7 +1020,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-5.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Linkedin</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -1068,7 +1068,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-6.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Quora JSC</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -1120,7 +1120,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-7.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Nintendo</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -1172,7 +1172,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-8.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Periscope</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -1228,7 +1228,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">LinkedIn</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>
@@ -1284,7 +1284,7 @@ export default function JobGrid() {
                                                             <img src="assets/imgs/brands/brand-2.png" alt="jobBox" />
                                                         </div>
                                                         <div className="right-info">
-                                                            <Link legacyBehavior href="company-details">
+                                                            <Link legacyBehavior href="company-details1">
                                                                 <a className="name-job">Adobe Ilustrator</a>
                                                             </Link>
                                                             <span className="location-small">New York, US</span>

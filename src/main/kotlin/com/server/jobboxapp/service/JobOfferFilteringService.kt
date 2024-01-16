@@ -91,6 +91,11 @@ class JobOfferFilteringService(
         return jobOfferFrontEndMapping(offerById)
     }
 
+    fun returnOffersByEmployerId(id: Long): List<JobOfferFrontEndEntity>{
+       val jobOffers = jobOfferRepository.returnJobsByEmployerId(id)
+      return  jobOffers.stream().map {  jobOfferFrontEndMapping(it) }.toList()
+    }
+
     private fun jobOfferFrontEndMapping(jobOffer: JobOffer): JobOfferFrontEndEntity {
         return JobOfferFrontEndEntity(
             jobOffer.employer,

@@ -69,4 +69,13 @@ class JobOfferFilterGateway(
     @GetMapping("similarJobs/{categoryName}")
     fun getListOfSimilarJobs(@PathVariable categoryName: String): List<JobOfferFrontEndEntity> =
         jobOfferFilteringService.returnJobListBySimilarCategory(categoryName)
+
+    @GetMapping("jobsByTheSameEmployer/{employerId}")
+    fun getListOfJobsByTheSameEmployer(@PathVariable employerId: Long): List<JobOfferFrontEndEntity> =
+        jobOfferFilteringService.returnOffersByEmployerId(employerId)
+
+
+
+
+
 }

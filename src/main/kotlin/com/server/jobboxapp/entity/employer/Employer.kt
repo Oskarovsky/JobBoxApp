@@ -15,7 +15,7 @@ data class Employer(
     @Column(nullable = false)
     var industry: String,
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "TEXT")
     var description: String,
 
     @Column(nullable = true)

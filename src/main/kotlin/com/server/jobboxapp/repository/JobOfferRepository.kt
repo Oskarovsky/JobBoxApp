@@ -38,6 +38,9 @@ interface JobOfferRepository : PagingAndSortingRepository<JobOffer, Long>, JpaRe
     @Query("SELECT * FROM job_offer o WHERE o.category_to_browse = ?1", nativeQuery = true)
     fun returnJobsByCategoryToBrowse(categoryToBrowse: String): List<JobOffer>
 
+    @Query("SELECT * FROM job_offer o WHERE o.employer_id = ?1", nativeQuery = true)
+    fun returnJobsByEmployerId(employerId: Long): List<JobOffer>
+
     @Transactional
     @Modifying
     @Query("UPDATE JobOffer o SET o.positionTitle = ?2 WHERE o.id = ?1")

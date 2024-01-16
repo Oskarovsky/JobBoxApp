@@ -40,7 +40,7 @@ const RowJobOfferList = () => {
     return (
         <>
             <div className="row display-list">
-                {jobOffersMiniature.map((jobOfferMiniature) => (
+                {jobOffersMiniature.map((jobOfferFrontEndEntity) => (
                     <div className="col-xl-12 col-12">
                         <div className="card-grid-2 hover-up">
                             <span className="flash"/>
@@ -51,17 +51,17 @@ const RowJobOfferList = () => {
                                             <img src="assets/imgs/brands/brand-1.png" alt="jobBox"/>
                                         </div>
                                         <div className="right-info">
-                                            <Link legacyBehavior href="#">
-                                                <a className="name-job">{jobOfferMiniature.employerName}</a>
+                                            <Link href={`/company-details/${jobOfferFrontEndEntity.employer.id}`}>
+                                                <span className="name-job">{jobOfferFrontEndEntity.employer.name}</span>
                                             </Link>
                                             <span
-                                                className="location-small">{jobOfferMiniature.offerCity}, {jobOfferMiniature.offerCountry}</span>
+                                                className="location-small">{jobOfferFrontEndEntity.offerCity}, {jobOfferFrontEndEntity.offerCountry}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
                                     <div className="pl-15 mb-15 mt-30">
-                                        {jobOfferMiniature.technologyStack.map((tech) => (
+                                        {jobOfferFrontEndEntity.technologyStack.map((tech) => (
                                             <Link legacyBehavior href="/jobs-grid">
                                                 <a className="btn btn-grey-small mr-5">{tech}</a>
                                             </Link>
@@ -71,14 +71,14 @@ const RowJobOfferList = () => {
                             </div>
                             <div className="card-block-info">
                                 <h4>
-                                    <Link legacyBehavior href="/job-details">
-                                        <a>{jobOfferMiniature.positionTitle}</a>
+                                    <Link href={`/job-details/${jobOfferFrontEndEntity.jobOfferId}`}>
+                                        {jobOfferFrontEndEntity.positionTitle}
                                     </Link>
                                 </h4>
                                 <div className="mt-5">
-                                    <span className="card-briefcase">{jobOfferMiniature.employmentModel}</span>
-                                    <span className="card-time"><span>{jobOfferMiniature.postedOn}</span>
-                                                            </span>
+                                    <span className="card-briefcase">{jobOfferFrontEndEntity.employmentModel}</span>
+                                    <span className="card-time"><span>{jobOfferFrontEndEntity.postedOn}</span>
+                                    </span>
                                 </div>
                                 <div className="card-2-bottom mt-20">
                                 </div>
@@ -92,18 +92,19 @@ const RowJobOfferList = () => {
                     <li>
                         <button className="pager-prev" onClick={handlePrevPage} disabled={currentPage === 0}/>
                     </li>
-                    {Array.from({ length: totalPages }).map((_, index) => (
+                    {Array.from({length: totalPages}).map((_, index) => (
                         <li>
                             <Link legacyBehavior href="#">
                                 {index === currentPage
-                                ? (<a className="pager-number active">{index}</a>)
-                                : (<a className="pager-number">{index}</a>)
+                                    ? (<a className="pager-number active">{index}</a>)
+                                    : (<a className="pager-number">{index}</a>)
                                 }
                             </Link>
                         </li>
                     ))}
                     <li>
-                        <button className="pager-next" onClick={handleNextPage} disabled={currentPage === totalPages - 1}/>
+                        <button className="pager-next" onClick={handleNextPage}
+                                disabled={currentPage === totalPages - 1}/>
                     </li>
                 </ul>
             </div>

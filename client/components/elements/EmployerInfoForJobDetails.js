@@ -33,27 +33,61 @@ const EmployerInfoForJobDetails = ({ employerId }) => {
     return (
         <div className="sidebar-border">
             <div className="sidebar-heading">
-                <div className="avatar-sidebar">
-                    <figure>
-                        <img alt="jobBox" src="/assets/imgs/page/job-single/avatar.png" />
-                    </figure>
-                    <div className="sidebar-info">
-                        <span className="sidebar-company">{employer.employerName}</span>
-                        <span className="card-location">{employer.city}, {employer.country}</span>
-                        <Link legacyBehavior href="client/pages#">
-                            <a className="link-underline mt-15">{employer.numberOfJobs} Open Jobs</a>
-                        </Link>
+                <Link href={`/company-details/${employer.id}`}>
+                    <div className="avatar-sidebar">
+                        <figure>
+                            <img alt="jobBox" src="/assets/imgs/page/job-single/avatar.png" />
+                        </figure>
+                        <div className="sidebar-info">
+                            <span className="sidebar-company">{employer.employerName}</span>
+                        </div>
                     </div>
-                </div>
+                </Link>
             </div>
             <div className="sidebar-list-job">
-                {/*<div className="box-map">*/}
-                {/*    /!* Mapa i inne informacje o pracodawcy *!/*/}
-                {/*</div>*/}
-                <ul>
-                    <li><strong>Headquarter Location:</strong><br />{employer.city}, {employer.country}</li>
-                    <li><strong>Website:</strong><br />{employer.urlToWebsite}</li>
-                </ul>
+                <div className="sidebar-list-job">
+                    <ul>
+                        <li>
+                            <div className="sidebar-icon-item">
+                                <i className="fi-rr-briefcase"/>
+                            </div>
+                            <div className="sidebar-text-info">
+                                <span className="text-description">Industry</span>
+                                <strong className="small-heading">{employer.industry}</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="sidebar-icon-item">
+                                <i className="fi-rr-marker"/>
+                            </div>
+                            <div className="sidebar-text-info">
+                                <span className="text-description">Headquarter</span>
+                                <strong
+                                    className="small-heading">{employer.city}, {employer.country}</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="sidebar-icon-item">
+                                <i className="fi-rr-checkbox"/>
+                            </div>
+                            <div className="sidebar-text-info">
+                                <span className="text-description">Jobs Open</span>
+                                <strong
+                                    className="small-heading">{employer.numberOfJobs}</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="sidebar-icon-item">
+                                <i className="fi-rr-bookmark"/>
+                            </div>
+                            <div className="sidebar-text-info">
+                                <span className="text-description">Website</span>
+                                <strong
+                                    className="small-heading">{employer.urlToWebsite}</strong>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );
