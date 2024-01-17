@@ -4,9 +4,11 @@ import com.server.jobboxapp.entity.CountryBoxDropDown
 import com.server.jobboxapp.entity.employer.Industry
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
+import jakarta.persistence.criteria.Predicate
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
 import org.springframework.data.domain.PageRequest
+import org.springframework.data.jpa.domain.Specification
 import org.springframework.stereotype.Service
 import java.time.format.DateTimeFormatter
 
@@ -77,6 +79,25 @@ class JobOfferFilteringService(
 
     fun returnRowJobOfferPage(page: Int, size: Int): Page<JobOfferFrontEndEntity> {
         val listOfAllJobs = jobOfferRepository.findAll(PageRequest.of(page, size))
+        return PageImpl(
+            listOfAllJobs.content.stream().map { jobOfferFrontEndMapping(it) }.toList(),
+            listOfAllJobs.pageable,
+            listOfAllJobs.totalElements
+        )
+    }
+
+    fun getFilteredOffers(filter: JobOfferFilter, page: Int, size: Int): Page<JobOfferFrontEndEntity> {
+        val pageable: PageRequest = PageRequest.of(page, size)
+        val specification: Specification<JobOffer> = Specification { root, _, criteriaBuilder ->
+            val predicates = mutableListOf<Predicate>()
+            filter.positionTitle.let {
+                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("positionTitle")), "%${it.lowercase()}%"))
+            }
+
+            criteriaBuilder.and(*predicates.toTypedArray())
+        }
+        val listOfAllJobs = jobOfferRepository.findAll(specification, pageable)
+
         return PageImpl(
             listOfAllJobs.content.stream().map { jobOfferFrontEndMapping(it) }.toList(),
             listOfAllJobs.pageable,

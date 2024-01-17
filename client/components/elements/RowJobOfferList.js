@@ -2,7 +2,12 @@ import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import {fetchJobOfferData, fetchJobs} from "../services/JobOfferService";
 
-const RowJobOfferList = ({ page, size }) => {
+const RowJobOfferList = ({ filter, page, size }) => {
+
+    const [currentFilter, setCurrentFilter] = useState({
+        positionTitle: filter.positionTitle,
+        country: ''
+    })
 
     const [jobOffersMiniature, setJobOffersMiniature] = useState([]);
     const [currentPage, setCurrentPage] = useState(page);
@@ -13,14 +18,42 @@ const RowJobOfferList = ({ page, size }) => {
     const API_BASE_URL = 'http://localhost:8080/api';
 
     useEffect(() => {
-        fetch(`${API_BASE_URL}/filterOffers/rowJobOfferPage?page=${currentPage}&size=${currentSize}`)
-            .then((res) => res.json())
+        fetch(`${API_BASE_URL}/filterOffers/rowJobOfferFilteredPage?page=${currentPage}&size=${currentSize}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(filter)
+        })
+            .then((response) => response.json())
             .then((data) => {
                 setJobOffersMiniature(data.content)
                 setTotalPages(data.totalPages)
                 setLoading(false)
             })
-    }, [currentPage]);
+    }, [currentPage, currentFilter]);
+
+    const handleSubmitButton = () => {
+        try {
+            const response = fetch(`${API_BASE_URL}/filterOffers/rowJobOfferFilteredPage?page=${currentPage}&size=${currentSize}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(filter)
+            })
+            if (response.ok) {
+                const data = response.json();
+                setJobOffersMiniature(data.content)
+                setTotalPages(data.totalPages)
+                setLoading(false)
+            } else {
+                console.error("Error fetching filtered offers")
+            }
+        } catch (error) {
+            console.error('Error fetching offers', error)
+        }
+    }
 
     const handleNextPage = () => {
         if (currentPage < totalPages - 1) {

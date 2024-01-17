@@ -54,6 +54,16 @@ class JobOfferFilterGateway(
                            @RequestParam(defaultValue = "5") size: Int): Page<JobOfferFrontEndEntity> =
         jobOfferFilteringService.returnRowJobOfferPage(page, size)
 
+    @PostMapping("/rowJobOfferFilteredPage")
+    fun getFilteredJobOffers(@RequestBody filter: JobOfferFilter,
+                             @RequestParam(defaultValue = "0") page: Int,
+                             @RequestParam(defaultValue = "5") size: Int): Page<JobOfferFrontEndEntity> {
+        if (filter.positionTitle.isEmpty()) {
+            return jobOfferFilteringService.returnRowJobOfferPage(page, size)
+        }
+        return jobOfferFilteringService.getFilteredOffers(filter, page, size)
+    }
+
     @GetMapping("/countryBoxList")
     fun getCountryBoxFiltering(): List<CountryBoxDropDown>  =
         jobOfferFilteringService.returnCountryBoxList()

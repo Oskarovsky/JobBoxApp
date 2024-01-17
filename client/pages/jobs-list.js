@@ -15,45 +15,14 @@ export default function JobList() {
 
     const [currentPage, setCurrentPage] = useState(0);
     const [size, setSize] = useState(6)
+    const [currentFilter, setCurrentFilter] = useState({
+        positionTitle: '',
+        country: ''
+    })
 
     const router = useRouter();
-    const [inputValue, setInputValue] = useState("");
-
 
     const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
-
-    const [offers, setOffers] = useState(null);
-    const [isLoading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const apiUrl = categoryName
-            ? `http://localhost:8080/api/filterOffers/jobsListByCategory/${encodeURIComponent(categoryName)}`
-            : 'http://www.localhost:8080/api/offer';
-
-        fetch(apiUrl)
-            .then((res) => res.json())
-            .then((offer) => {
-                setOffers(offer);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching offers:', error);
-                setLoading(false);
-            });
-    }, [categoryName]);
-
-    const handleChange = () => {
-        setSize(10)
-        return 10
-    }
-
-    const handleSearchForm = (e) => {
-        e.preventDefault()
-        router.push("/companies/" + inputValue)
-    }
-
-    if (isLoading) return <p>Loading...</p>;
-    if (!offers) return <p>Could not fetch offers</p>;
 
     return (
         <>
@@ -70,11 +39,13 @@ export default function JobList() {
                                     </div>
                                     <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp"
                                          data-wow-delay=".2s">
-                                        <form onSubmit={handleSearchForm}>
+                                        <form>
                                             <CountryBoxJobOffer/>
-                                            <input type="text" name='route' className="form-input input-keysearch mr-10" placeholder="Your keyword... "
-                                                   onChange={(e) => {setInputValue(e.target.value)}}/>
-                                            <button className="btn btn-default btn-find font-sm">Search</button>
+                                            <input type="text" className="form-input input-keysearch mr-10" placeholder="Your keyword... "
+                                                   onChange={(e) => {
+                                                       setCurrentFilter({...currentFilter, positionTitle: e.target.value})
+                                                   }}/>
+                                            <button className="btn btn-default btn-find font-sm" type="submit">Search</button>
                                         </form>
                                     </div>
                                 </div>
@@ -108,7 +79,7 @@ export default function JobList() {
                                                                 <ul className="dropdown-menu dropdown-menu-light"
                                                                     aria-labelledby="dropdownSort">
                                                                     <li>
-                                                                        <Link legacyBehavior href="#" onClick={handleChange} onChange={handleChange}>
+                                                                        <Link legacyBehavior href="#">
                                                                             <a className="dropdown-item active">10</a>
                                                                         </Link>
                                                                     </li>
@@ -177,7 +148,7 @@ export default function JobList() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <RowJobOfferList page={currentPage} size={size}/>
+                                        <RowJobOfferList filter={currentFilter} page={currentPage} size={size} />
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12 col-12">

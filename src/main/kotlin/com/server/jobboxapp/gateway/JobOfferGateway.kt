@@ -1,9 +1,6 @@
 package com.server.jobboxapp.gateway
 
-import com.server.jobboxapp.entity.joboffer.CategoryNameAndCount
-import com.server.jobboxapp.entity.joboffer.JobOffer
-import com.server.jobboxapp.entity.joboffer.LocationFilter
-import com.server.jobboxapp.entity.joboffer.OfferRequest
+import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.service.JobOfferService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -24,6 +21,13 @@ class JobOfferGateway(
     fun getAllJobOffers(@RequestParam(defaultValue = "0") page: Int,
                         @RequestParam(defaultValue = "5") size: Int): Page<JobOffer> {
         return jobOfferService.returnAllOffersPage(page, size)
+    }
+
+    @GetMapping("/filtered")
+    fun getFilteredJobOffers(@RequestBody filter: JobOfferFilter,
+                             @RequestParam(defaultValue = "0") page: Int,
+                             @RequestParam(defaultValue = "5") size: Int): Page<JobOffer> {
+        return jobOfferService.getFilteredOffers(filter, page, size)
     }
 
     @GetMapping("/{id}")

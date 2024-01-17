@@ -2,9 +2,11 @@ package com.server.jobboxapp.service
 
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.repository.JobOfferRepository
+import jakarta.persistence.criteria.Predicate
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
-import org.springframework.data.domain.Pageable
+import org.springframework.data.jpa.domain.Specification
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -20,6 +22,19 @@ class JobOfferService(
 
     fun returnAllOffersPage(page: Int, size: Int): Page<JobOffer> {
         return jobOfferRepository.findAll(PageRequest.of(page, size))
+    }
+
+    fun getFilteredOffers(filter: JobOfferFilter, page: Int, size: Int): Page<JobOffer> {
+        val pageable: PageRequest = PageRequest.of(page, size)
+        val specification: Specification<JobOffer> = Specification { root, _, criteriaBuilder ->
+            val predicates = mutableListOf<Predicate>()
+            filter.positionTitle.let {
+                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("positionTitle")), "%${it.lowercase()}"))
+            }
+
+            criteriaBuilder.and(*predicates.toTypedArray())
+        }
+        return jobOfferRepository.findAll(specification, pageable)
     }
 
     fun returnOfferById(id: Long): JobOffer {

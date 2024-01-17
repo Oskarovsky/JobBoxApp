@@ -2,6 +2,7 @@ package com.server.jobboxapp.repository
 
 import com.server.jobboxapp.entity.joboffer.JobOffer
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.PagingAndSortingRepository
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Transactional
 
 @Repository
-interface JobOfferRepository : PagingAndSortingRepository<JobOffer, Long>, JpaRepository<JobOffer, Long> {
+interface JobOfferRepository : PagingAndSortingRepository<JobOffer, Long>, JpaRepository<JobOffer, Long>, JpaSpecificationExecutor<JobOffer> {
 
     // region GET
     @Query("SELECT * FROM job_offer o where o.promoted_flag = ?1", nativeQuery = true)
