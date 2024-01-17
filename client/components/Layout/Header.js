@@ -71,12 +71,6 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                     <ul className="mobile-menu font-heading">
                                         <li className="has-children">
                                             <Link legacyBehavior href="/"><a className="active">Home</a></Link>
-
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/"><a>Home 1</a></Link>
-                                                </li>
-                                            </ul>
                                         </li>
                                         <li className="has-children">
                                             <Link legacyBehavior href="/jobs-grid"><a>Find a Job</a></Link>
@@ -88,36 +82,24 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                                 <li>
                                                     <Link legacyBehavior href="/jobs-list"><a>Jobs List</a></Link>
                                                 </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details 2 </a></Link>
-                                                </li>
                                             </ul>
                                         </li>
                                         <li className="has-children">
-                                            <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
-
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>
-                                                </li>
-                                            </ul>
+                                            <Link legacyBehavior href="/companies"><a>Companies</a></Link>
                                         </li>
                                         <li className="has-children">
                                             <Link legacyBehavior href="/candidates-grid"><a>Candidates</a></Link>
 
                                             <ul className="sub-menu">
                                                 <li>
-                                                    <Link legacyBehavior href="/candidates-grid"><a>Candidates Grid</a></Link>
+                                                    <Link legacyBehavior href="/candidates-grid">
+                                                        <a>Candidates Grid</a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/candidate-details"><a>Candidate
-                                                        Details</a></Link>
+                                                    <Link legacyBehavior href="/candidate-details">
+                                                        <a>Candidate Details</a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </li>
@@ -135,12 +117,12 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                                     <Link legacyBehavior href="/page-signin"><a>Signin</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/page-reset-password"><a>Reset
-                                                        Password</a></Link>
+                                                    <Link legacyBehavior href="/page-reset-password">
+                                                        <a>Reset Password</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/page-content-protected"><a>Content
-                                                        Protected</a></Link>
+                                                    <Link legacyBehavior href="/page-content-protected">
+                                                        <a>Content Protected</a></Link>
                                                 </li>
                                             </ul>
                                         </li>
@@ -170,7 +152,7 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="site-copyright">Copyright 2022 © JobBox. <br/>Designed by AliThemes.</div>
+                            <div className="site-copyright">Copyright 2022 © JobBox. <br/>Designed by us.</div>
                         </div>
                     </div>
                 </div>
@@ -190,12 +172,6 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                     <ul className="mobile-menu font-heading">
                                         <li className="has-children">
                                             <Link legacyBehavior href="/"><a className="active">Home</a></Link>
-
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/"><a>Home 1</a></Link>
-                                                </li>
-                                            </ul>
                                         </li>
                                         <li className="has-children">
                                             <Link legacyBehavior href="/jobs-grid"><a>Find a Job</a></Link>
@@ -207,37 +183,23 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                                 <li>
                                                     <Link legacyBehavior href="/jobs-list"><a>Jobs List</a></Link>
                                                 </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details"><a>Jobs Details</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/job-details-2"><a>Jobs Details
-                                                        2 </a></Link>
-                                                </li>
                                             </ul>
                                         </li>
                                         <li className="has-children">
-                                            <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
-
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <Link legacyBehavior href="/client/pages/companies"><a>Recruiters</a></Link>
-                                                </li>
-                                                <li>
-                                                    <Link legacyBehavior href="/company-details"><a>Company Details</a></Link>
-                                                </li>
-                                            </ul>
+                                            <Link legacyBehavior href="/companies"><a>Companies</a></Link>
                                         </li>
                                         <li className="has-children">
                                             <Link legacyBehavior href="/candidates-grid"><a>Candidates</a></Link>
 
                                             <ul className="sub-menu">
                                                 <li>
-                                                    <Link legacyBehavior href="/candidates-grid"><a>Candidates Grid</a></Link>
+                                                    <Link legacyBehavior href="/candidates-grid">
+                                                        <a>Candidates Grid</a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/candidate-details"><a>Candidate
-                                                        Details</a></Link>
+                                                    <Link legacyBehavior href="/candidate-details">
+                                                        <a>Candidate Details</a></Link>
                                                 </li>
                                             </ul>
                                         </li>
@@ -255,12 +217,14 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                                     <Link legacyBehavior href="/page-signin"><a>Signin</a></Link>
                                                 </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/page-reset-password"><a>Reset
-                                                        Password</a></Link>
+                                                    <Link legacyBehavior href="/page-reset-password">
+                                                        <a>Reset Password</a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <Link legacyBehavior href="/page-content-protected"><a>Content
-                                                        Protected</a></Link>
+                                                    <Link legacyBehavior href="/page-content-protected">
+                                                        <a>Content Protected</a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </li>
@@ -290,7 +254,7 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="site-copyright">Copyright 2024 © JobBox. <br/>Designed by AliThemes.</div>
+                            <div className="site-copyright">Copyright 2024 © JobBox. <br/>Designed by us.</div>
                         </div>
                     </div>
                 </div>

@@ -14,7 +14,6 @@ import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
 export default function JobList() {
 
     const [currentPage, setCurrentPage] = useState(0);
-    const [totalPages, setTotalPages] = useState(0);
     const [size, setSize] = useState(6)
 
     const router = useRouter(); // Inicjalizuj useRouter

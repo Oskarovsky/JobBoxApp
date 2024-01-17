@@ -13,7 +13,7 @@ const RowJobOfferList = ({ page, size }) => {
     const API_BASE_URL = 'http://localhost:8080/api';
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/filterOffers/rowJobOfferPage?page=${currentPage}&size=${currentSize}`)
+        fetch(`${API_BASE_URL}/filterOffers/rowJobOfferPage?page=${currentPage}&size=${currentSize}`)
             .then((res) => res.json())
             .then((data) => {
                 setJobOffersMiniature(data.content)

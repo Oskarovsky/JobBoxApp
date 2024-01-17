@@ -73,9 +73,4 @@ class JobOfferFilterGateway(
     @GetMapping("jobsByTheSameEmployer/{employerId}")
     fun getListOfJobsByTheSameEmployer(@PathVariable employerId: Long): List<JobOfferFrontEndEntity> =
         jobOfferFilteringService.returnOffersByEmployerId(employerId)
-
-
-
-
-
 }

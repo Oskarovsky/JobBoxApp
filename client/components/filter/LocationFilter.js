@@ -6,7 +6,6 @@ const LocationFilter = () => {
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
-        // Pobieranie danych lokalizacji z API REST
         fetch('http://localhost:8080/api/filterOffers/location')
             .then((response) => response.json())
             .then((data) => {
