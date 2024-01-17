@@ -10,7 +10,7 @@ class EmployerMapper {
 
     companion object {
         fun mapDtoToEntity(api: EmployerDto, db: Employer): Employer {
-            BeanUtils.copyProperties(api, db, getNullPropertyNames(api))
+            BeanUtils.copyProperties(api, db, *getNullPropertyNames(api))
             return db
         }
         private fun getNullPropertyNames(source: Any): Array<String> {
