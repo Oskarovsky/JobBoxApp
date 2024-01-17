@@ -44,3 +44,18 @@ data class Employer(
     val jobOffers: List<JobOffer> = mutableListOf()
 )
 
+data class EmployerDto(
+    val id: Long,
+    var name: String,
+    var industry: String,
+    var description: String,
+    var country: String,
+    var city: String,
+    var postCode: String,
+    var street: String,
+    var urlToWebsite: String,
+    var urlToMiniatureImage: String,
+    var urlToBackgroundImage: String,
+    val jobOffers: List<JobOffer>
+)
+

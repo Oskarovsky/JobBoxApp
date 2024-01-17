@@ -11,6 +11,21 @@ import org.springframework.transaction.annotation.Transactional
 @Repository
 interface JobOfferRepository : PagingAndSortingRepository<JobOffer, Long>, JpaRepository<JobOffer, Long> {
 
+    // region GET
+    @Query("SELECT * FROM job_offer o where o.promoted_flag = ?1", nativeQuery = true)
+    fun findJobsOfTheDay(promotedFlag: Int): List<JobOffer>
+
+    @Query("SELECT DISTINCT (COUNTRY) FROM job_offer", nativeQuery = true)
+    fun returnDistinctCountries(): List<String>
+
+    @Query("SELECT * FROM job_offer o WHERE o.category_to_browse = ?1", nativeQuery = true)
+    fun returnJobsByCategoryToBrowse(categoryToBrowse: String): List<JobOffer>
+
+    @Query("SELECT * FROM job_offer o WHERE o.employer_id = ?1", nativeQuery = true)
+    fun returnJobsByEmployerId(employerId: Long): List<JobOffer>
+    // endregion
+
+    // region COUNT
     @Query("SELECT COUNT(CATEGORY_TO_BROWSE) FROM job_offer o where o.category_to_browse = ?1", nativeQuery = true)
     fun countJobsByCategoriesToBrowse(categoryToBrowse: String): Long
 
@@ -26,20 +41,10 @@ interface JobOfferRepository : PagingAndSortingRepository<JobOffer, Long>, JpaRe
     @Query("SELECT COUNT(EMPLOYMENT_TYPE) FROM job_offer o where o.employment_type = ?1", nativeQuery = true)
     fun countJobsByEmploymentType(employmentType: String): Long
 
-    @Query("SELECT * FROM job_offer o where o.promoted_flag = ?1", nativeQuery = true)
-    fun findJobsOfTheDay(promotedFlag: Int): List<JobOffer>
-
-    @Query("SELECT DISTINCT (COUNTRY) FROM job_offer", nativeQuery = true)
-    fun returnDistinctCountries(): List<String>
-
     @Query("SELECT COUNT(EMPLOYER_ID) FROM job_offer o WHERE o.employer_id = ?1", nativeQuery = true)
     fun countJobsByEmployerId(employerId: Long): Long
+    // endregion
 
-    @Query("SELECT * FROM job_offer o WHERE o.category_to_browse = ?1", nativeQuery = true)
-    fun returnJobsByCategoryToBrowse(categoryToBrowse: String): List<JobOffer>
-
-    @Query("SELECT * FROM job_offer o WHERE o.employer_id = ?1", nativeQuery = true)
-    fun returnJobsByEmployerId(employerId: Long): List<JobOffer>
 
     @Transactional
     @Modifying

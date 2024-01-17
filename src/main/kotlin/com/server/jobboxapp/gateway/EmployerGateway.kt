@@ -1,6 +1,7 @@
 package com.server.jobboxapp.gateway
 
 import com.server.jobboxapp.entity.employer.Employer
+import com.server.jobboxapp.entity.employer.EmployerDto
 import com.server.jobboxapp.service.EmployerService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -25,6 +26,12 @@ class EmployerGateway(
     @PutMapping("/{id}")
     fun updateEmployer(@PathVariable id: Long, @RequestBody updatedEmployer: Employer): ResponseEntity<Employer> =
         employerService.updateEmployerEntity(id, updatedEmployer)
+
+    @PatchMapping("/{id}")
+    fun patchEmployer(@PathVariable id: Long, @RequestBody dto: EmployerDto): ResponseEntity<Employer> {
+        val entity = employerService.patchEmployerEntity(id, dto)
+        return ResponseEntity.ok(entity)
+    }
 
     @DeleteMapping("/{id}")
     fun deleteEmployee(@PathVariable id: Long) {

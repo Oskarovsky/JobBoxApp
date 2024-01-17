@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import {useRouter} from "next/router"; // Dodaj useRouter z next/router
+import {useRouter} from "next/router";
 import React, {useEffect, useState} from "react";
 import Layout from "../components/Layout/Layout";
 import LocationFilter from "../components/filter/LocationFilter";
@@ -16,7 +16,10 @@ export default function JobList() {
     const [currentPage, setCurrentPage] = useState(0);
     const [size, setSize] = useState(6)
 
-    const router = useRouter(); // Inicjalizuj useRouter
+    const router = useRouter();
+    const [inputValue, setInputValue] = useState("");
+
+
     const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
 
     const [offers, setOffers] = useState(null);
@@ -44,6 +47,11 @@ export default function JobList() {
         return 10
     }
 
+    const handleSearchForm = (e) => {
+        e.preventDefault()
+        router.push("/companies/" + inputValue)
+    }
+
     if (isLoading) return <p>Loading...</p>;
     if (!offers) return <p>Could not fetch offers</p>;
 
@@ -62,10 +70,10 @@ export default function JobList() {
                                     </div>
                                     <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp"
                                          data-wow-delay=".2s">
-                                        <form>
+                                        <form onSubmit={handleSearchForm}>
                                             <CountryBoxJobOffer/>
-                                            <input className="form-input input-keysearch mr-10" type="text"
-                                                   placeholder="Your keyword... "/>
+                                            <input type="text" name='route' className="form-input input-keysearch mr-10" placeholder="Your keyword... "
+                                                   onChange={(e) => {setInputValue(e.target.value)}}/>
                                             <button className="btn btn-default btn-find font-sm">Search</button>
                                         </form>
                                     </div>
