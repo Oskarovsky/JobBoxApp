@@ -1,8 +1,9 @@
 package com.server.jobboxapp.service
 
 import com.server.jobboxapp.entity.employer.Employer
+import com.server.jobboxapp.entity.employer.EmployerDto
 import com.server.jobboxapp.repository.EmployerRepository
-import com.server.jobboxapp.repository.JobOfferRepository
+import com.server.jobboxapp.service.mapper.EmployerMapper
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 
@@ -21,6 +22,16 @@ class EmployerService(
     fun saveEmployerEntity(employer: Employer): ResponseEntity<Employer> {
         employerRepository.save(employer)
         return ResponseEntity.ok(employer)
+    }
+
+    fun patchEmployerEntity(id: Long, dto: EmployerDto): Employer {
+        val employer: Employer = employerRepository
+            .findById(id)
+            .orElseThrow { NoSuchElementException("There is no employer with id: $id") }
+
+        val updatedEmployer = EmployerMapper.mapDtoToEntity(dto, employer)
+        employerRepository.save(updatedEmployer)
+        return updatedEmployer
     }
 
     fun updateEmployerEntity(id: Long, updatedEmployer: Employer): ResponseEntity<Employer> {
@@ -43,31 +54,6 @@ class EmployerService(
         employerRepository.deleteById(id)
         return ResponseEntity.ok(id)
     }
-
-    fun updateEmployerName(id: Long, newEmployerName: String): ResponseEntity<String> {
-        employerRepository.updateEmployerName(id, newEmployerName)
-        return ResponseEntity.ok(newEmployerName)
-    }
-
-    fun updateIndustry(id: Long, newIndustry: String): ResponseEntity<String> {
-        employerRepository.updateIndustry(id, newIndustry)
-        return ResponseEntity.ok(newIndustry)
-    }
-
-    fun updateEmployerDescription(id: Long, newEmployerDescription: String): ResponseEntity<String> {
-        employerRepository.updateEmployerDescription(id, newEmployerDescription)
-        return ResponseEntity.ok(newEmployerDescription)
-    }
-
-    fun updateUrlToWebsite(id: Long, newUrlToWebsite: String): ResponseEntity<String> {
-        employerRepository.updateUrlToWebsite(id, newUrlToWebsite)
-        return ResponseEntity.ok(newUrlToWebsite)
-    }
-
-//    fun updateUrlToImage(id: Long, newUrlToImage: String): ResponseEntity<String> {
-//        employerRepository.updaterUrlToImage(id, newUrlToImage)
-//        return ResponseEntity.ok(newUrlToImage)
-//    }
 
     fun deleteEmployerByName(employerName: String): ResponseEntity<String> {
         employerRepository.deleteEmployerByEmployerName(employerName)

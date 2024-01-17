@@ -17,30 +17,27 @@ const EmployersList = () => {
 
     return (
         <div className="row">
-            {employers.map((employer, index) => (
+            {employers.map((employerFrontEndEntity, index) => (
                 <div key={index} className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                     <div className="card-grid-1 hover-up wow animate__animated animate__fadeIn">
                         <div className="image-box">
-                            <Link legacyBehavior href="/company-details">
-                                <a>
-                                    <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
-                                </a>
-                            </Link>
+                            {/* Przekazanie ścieżki z tylko employerId jako prop do Link */}
+                                <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
                         </div>
                         <div className="info-text mt-10">
                             <h5 className="font-bold">
-                                <Link legacyBehavior href="/company-details">
-                                    <a>{employer.employerName}</a>
+                                <Link href={`/company-details/${(employerFrontEndEntity.id)}`}>
+                                    {employerFrontEndEntity.employerName}
                                 </Link>
                             </h5>
-                            <span className="card-location">{employer.city}, {employer.country}</span>
+                            <span className="card-location">{employerFrontEndEntity.city}, {employerFrontEndEntity.country}</span>
                             <div className="mt-30">
-                                <Link legacyBehavior href="/jobs-grid">
-                                    <a className="btn btn-grey-big">
-                                        <span>{employer.numberOfJobs}</span>
-                                        <span> Jobs Open</span>
-                                    </a>
-                                </Link>
+                                <div className="mt-30">
+                                        <a className="btn btn-grey-big">
+                                            <span>{employerFrontEndEntity.numberOfJobs}</span>
+                                            <span> Jobs Open</span>
+                                        </a>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import {useRouter} from "next/router"; // Dodaj useRouter z next/router
+import {useRouter} from "next/router";
 import React, {useEffect, useState} from "react";
 import Layout from "../components/Layout/Layout";
 import LocationFilter from "../components/filter/LocationFilter";
@@ -12,31 +12,17 @@ import RowJobOfferList from "../components/elements/RowJobOfferList";
 import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
 
 export default function JobList() {
-    const router = useRouter(); // Inicjalizuj useRouter
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const [size, setSize] = useState(6)
+    const [currentFilter, setCurrentFilter] = useState({
+        positionTitle: '',
+        country: ''
+    })
+
+    const router = useRouter();
+
     const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
-
-    const [offers, setOffers] = useState(null);
-    const [isLoading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const apiUrl = categoryName
-            ? `http://localhost:8080/api/filterOffers/jobsListByCategory/${encodeURIComponent(categoryName)}`
-            : 'http://www.localhost:8080/api/offer';
-
-        fetch(apiUrl)
-            .then((res) => res.json())
-            .then((offer) => {
-                setOffers(offer);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching offers:', error);
-                setLoading(false);
-            });
-    }, [categoryName]);
-
-    if (isLoading) return <p>Loading...</p>;
-    if (!offers) return <p>Could not fetch offers</p>;
 
     return (
         <>
@@ -55,9 +41,11 @@ export default function JobList() {
                                          data-wow-delay=".2s">
                                         <form>
                                             <CountryBoxJobOffer/>
-                                            <input className="form-input input-keysearch mr-10" type="text"
-                                                   placeholder="Your keyword... "/>
-                                            <button className="btn btn-default btn-find font-sm">Search</button>
+                                            <input type="text" className="form-input input-keysearch mr-10" placeholder="Your keyword... "
+                                                   onChange={(e) => {
+                                                       setCurrentFilter({...currentFilter, positionTitle: e.target.value})
+                                                   }}/>
+                                            <button className="btn btn-default btn-find font-sm" type="submit">Search</button>
                                         </form>
                                     </div>
                                 </div>
@@ -160,52 +148,7 @@ export default function JobList() {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/*<RowJobOfferList/>*/}
-                                    </div>
-                                    <div className="paginations">
-                                        <ul className="pager">
-                                            <li>
-                                                <a className="pager-prev" href="#"/>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">1</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">2</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">3</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">4</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">5</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number active">6</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link legacyBehavior href="#">
-                                                    <a className="pager-number">7</a>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <a className="pager-next" href="#"/>
-                                            </li>
-                                        </ul>
+                                        <RowJobOfferList filter={currentFilter} page={currentPage} size={size} />
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12 col-12">

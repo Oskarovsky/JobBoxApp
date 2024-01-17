@@ -47,6 +47,24 @@ class EmployerFilteringService(
         }.toList()
     }
 
+    fun returnEmployerFrontEndEntityById(id: Long): EmployerFrontEndEntity {
+        val employer = employerRepository.findById(id).get()
+        return EmployerFrontEndEntity(
+            employer.id,
+            employer.name,
+            Industry.valueOf(employer.industry).title,
+            employer.description,
+            EmployerCountry.valueOf(employer.country).title,
+            employer.city,
+            employer.postCode,
+            employer.street,
+            employer.urlToWebsite,
+            employer.urlToMiniatureImage,
+            employer.urlToBackgroundImage,
+            jobOfferRepository.countJobsByEmployerId(employer.id)
+        )
+    }
+
 }
 
 

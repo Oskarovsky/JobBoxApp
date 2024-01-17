@@ -4,6 +4,7 @@ import com.server.jobboxapp.entity.*
 import com.server.jobboxapp.entity.CountryBoxDropDown
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.service.JobOfferFilteringService
+import org.springframework.data.domain.Page
 import org.springframework.web.bind.annotation.*
 
 @CrossOrigin(origins = ["*"])
@@ -12,6 +13,10 @@ import org.springframework.web.bind.annotation.*
 class JobOfferFilterGateway(
     private val jobOfferFilteringService: JobOfferFilteringService
 ) {
+    @GetMapping("/{id}")
+    fun getOfferById(@PathVariable id: Long): JobOfferFrontEndEntity =
+        jobOfferFilteringService.returnOffersById(id)
+
     @GetMapping("/location")
     fun getLocationFilter(): List<LocationFilter> =
         jobOfferFilteringService.returnLocationForFilter()
@@ -37,12 +42,27 @@ class JobOfferFilterGateway(
         jobOfferFilteringService.returnCategoryNameAndCount()
 
     @GetMapping("/jobsOfTheDay")
-    fun getJobsOfTheDay(): List<JobOfferMiniature> =
+    fun getJobsOfTheDay(): List<JobOfferFrontEndEntity> =
         jobOfferFilteringService.returnOffersOfTheDay()
 
     @GetMapping("/rowJobOfferList")
-    fun getRowJobOfferList(): List<JobOfferMiniature> =
+    fun getRowJobOfferList(): List<JobOfferFrontEndEntity> =
         jobOfferFilteringService.returnRowJobOfferList()
+
+    @GetMapping("/rowJobOfferPage")
+    fun getRowJobOfferPage(@RequestParam(defaultValue = "0") page: Int,
+                           @RequestParam(defaultValue = "5") size: Int): Page<JobOfferFrontEndEntity> =
+        jobOfferFilteringService.returnRowJobOfferPage(page, size)
+
+    @PostMapping("/rowJobOfferFilteredPage")
+    fun getFilteredJobOffers(@RequestBody filter: JobOfferFilter,
+                             @RequestParam(defaultValue = "0") page: Int,
+                             @RequestParam(defaultValue = "5") size: Int): Page<JobOfferFrontEndEntity> {
+        if (filter.positionTitle.isEmpty()) {
+            return jobOfferFilteringService.returnRowJobOfferPage(page, size)
+        }
+        return jobOfferFilteringService.getFilteredOffers(filter, page, size)
+    }
 
     @GetMapping("/countryBoxList")
     fun getCountryBoxFiltering(): List<CountryBoxDropDown>  =
@@ -55,4 +75,12 @@ class JobOfferFilterGateway(
     @GetMapping("jobsListByCategory/{categoryName}")
     fun getListOfJobsByCategoryName(@PathVariable categoryName: String): List<JobOffer> =
         jobOfferFilteringService.returnJobListByCategoryToBrowse(categoryName)
+
+    @GetMapping("similarJobs/{categoryName}")
+    fun getListOfSimilarJobs(@PathVariable categoryName: String): List<JobOfferFrontEndEntity> =
+        jobOfferFilteringService.returnJobListBySimilarCategory(categoryName)
+
+    @GetMapping("jobsByTheSameEmployer/{employerId}")
+    fun getListOfJobsByTheSameEmployer(@PathVariable employerId: Long): List<JobOfferFrontEndEntity> =
+        jobOfferFilteringService.returnOffersByEmployerId(employerId)
 }

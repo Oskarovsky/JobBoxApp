@@ -10,12 +10,25 @@
       "JavaScript",
       "Azure"
     ],
-    "jobOfferDescription": "opis2",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "DENMARK",
     "city": "Berlin",
     "postCode": "10115",
     "street": "Techstrasse 123",
-    "urlToApply": "microsoft.com/job-newJob",
+    "urlToApply": "https://www.microsoft.com/job-newJob",
     "promotedFlag": 0
   },
   {
@@ -29,7 +42,20 @@
       "Java",
       "GCP"
     ],
-    "jobOfferDescription": "opis3",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "FINLAND",
     "city": "Paris",
     "postCode": "75001",
@@ -48,7 +74,20 @@
       "C#",
       "AWS"
     ],
-    "jobOfferDescription": "opis4",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "SWEDEN",
     "city": "London",
     "postCode": "SW1A 1AA",
@@ -67,7 +106,20 @@
       "Python",
       "IBM Cloud"
     ],
-    "jobOfferDescription": "opis5",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "NORWAY",
     "city": "Amsterdam",
     "postCode": "1012 AB",
@@ -86,7 +138,20 @@
       "SQL",
       "Oracle Cloud"
     ],
-    "jobOfferDescription": "opis6",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "SWEDEN",
     "city": "Rome",
     "postCode": "00100",
@@ -106,7 +171,20 @@
       "AWS",
       "Azure"
     ],
-    "jobOfferDescription": "opis7",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "DENMARK",
     "city": "Copenhagen",
     "postCode": "08001",
@@ -125,7 +203,20 @@
       "Python",
       "VMware Cloud"
     ],
-    "jobOfferDescription": "opis8",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "SWEDEN",
     "city": "Stockholm",
     "postCode": "11120",
@@ -144,7 +235,20 @@
       "Java",
       "HP Cloud"
     ],
-    "jobOfferDescription": "opis9",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "DENMARK",
     "city": "Warsaw",
     "postCode": "00-001",
@@ -164,7 +268,20 @@
       "R",
       "Tableau"
     ],
-    "jobOfferDescription": "Exciting opportunity for a Data Scientist...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "NORWAY",
     "city": "San Francisco",
     "postCode": "94105",
@@ -184,7 +301,20 @@
       "PyTorch",
       "Scikit-learn"
     ],
-    "jobOfferDescription": "Challenging opportunity for a Data Scientist...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "FINLAND",
     "city": "Toronto",
     "postCode": "M5H 3H1",
@@ -204,7 +334,20 @@
       "Plotly",
       "Matplotlib"
     ],
-    "jobOfferDescription": "Opportunity for a Data Scientist with experience in data visualization...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "DENMARK",
     "city": "Alborg",
     "postCode": "SW1A 1AA",
@@ -224,7 +367,20 @@
       "Spring",
       "React"
     ],
-    "jobOfferDescription": "Join our team as a Java Developer...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "DENMARK",
     "city": "Berlin",
     "postCode": "10115",
@@ -244,7 +400,20 @@
       "Sketch",
       "Figma"
     ],
-    "jobOfferDescription": "Exciting opportunity for a talented UI/UX Designer...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "DENMARK",
     "city": "San Francisco",
     "postCode": "94105",
@@ -264,7 +433,20 @@
       "Kubernetes",
       "Jenkins"
     ],
-    "jobOfferDescription": "Exciting DevOps role with cutting-edge technologies...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "NORWAY",
     "city": "London",
     "postCode": "EC1A 1BB",
@@ -284,7 +466,20 @@
       "React",
       "Node.js"
     ],
-    "jobOfferDescription": "Join our team as a Full Stack Developer...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "SWEDEN",
     "city": "Munich",
     "postCode": "80331",
@@ -304,7 +499,20 @@
       "Antivirus",
       "Encryption"
     ],
-    "jobOfferDescription": "Exciting opportunity in IT Security...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "SWEDEN",
     "city": "New York",
     "postCode": "10001",
@@ -324,7 +532,20 @@
       "Azure",
       "Google Cloud Platform"
     ],
-    "jobOfferDescription": "Exciting role for a Cloud Architect...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "NORWAY",
     "city": "Paris",
     "postCode": "75001",
@@ -344,7 +565,20 @@
       "Requirements Gathering",
       "SQL"
     ],
-    "jobOfferDescription": "Join our team as a Business Analyst...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "NORWAY",
     "city": "Vancouver",
     "postCode": "V6B 1A1",
@@ -364,7 +598,20 @@
       "Switching",
       "Firewalls"
     ],
-    "jobOfferDescription": "Exciting opportunity for a Network Administrator...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "SWEDEN",
     "city": "Frankfurt",
     "postCode": "60311",
@@ -384,7 +631,20 @@
       "Windows",
       "Server Administration"
     ],
-    "jobOfferDescription": "Exciting role for a System Administrator...",
+    "jobOfferDescription": {
+      "description": [
+        "The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.",
+        "The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms."
+      ],
+      "responsibilities": [
+        "A portfolio demonstrating well thought through and polished end to end customer journeys",
+        "5+ years of industry experience in interactive design and / or visual design"
+      ],
+      "preferredExperience": [
+        "Designing user experiences for enterprise software / services",
+        "Creating and applying established design principles and interaction patterns"
+      ]
+    },
     "country": "SWEDEN",
     "city": "Los Angeles",
     "postCode": "90001",

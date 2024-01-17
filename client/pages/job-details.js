@@ -3,7 +3,10 @@ import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import FeaturedSlider from "./../components/sliders/Featured";
 
-export default function JobDetails() {
+export default function JobDetails({jobOfferFrontEndEntity}) {
+    if (!jobOfferFrontEndEntity) {
+        return <p>Loading...</p>; // lub dowolny komunikat w przypadku braku danych
+    }
     return (
         <>
             <Layout>
@@ -15,7 +18,7 @@ export default function JobDetails() {
                             </div>
                             <div className="row mt-10">
                                 <div className="col-lg-8 col-md-12">
-                                    <h3>Senior Full Stack Engineer, Creator Success Full Time</h3>
+                                    <h3>{jobOfferFrontEndEntity.positionTitle}</h3>
                                     <div className="mt-0 mb-15">
                                         <span className="card-briefcase">Fulltime</span>
                                         <span className="card-time">3 mins ago</span>
