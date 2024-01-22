@@ -9,7 +9,7 @@ import EmploymentModel from "../components/filter/EmploymentModel";
 import EmploymentType from "../components/filter/EmploymentType";
 import JobsAvailable from "../components/elements/JobsAvailable";
 import RowJobOfferList from "../components/elements/RowJobOfferList";
-import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
+import JobSearch from "./job-search";
 
 export default function JobList() {
 
@@ -20,9 +20,56 @@ export default function JobList() {
         country: ''
     })
 
+    const handleSearch = async (searchTerm, selectedCountry) => {
+        try {
+            setCurrentFilter({
+                positionTitle: searchTerm,
+                country: ''
+            });
+        } catch (error) {
+            console.error('Error fetching job offers:', error);
+        }
+    };
+
     const router = useRouter();
 
     const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
+
+
+    const [jobOffersMiniature, setJobOffersMiniature] = useState([]);
+    const [totalPages, setTotalPages] = useState(0);
+    const [currentSize, setCurrentSize] = useState(size)
+    const [isLoading, setLoading] = useState(true)
+
+    const API_BASE_URL = 'http://localhost:8080/api';
+
+    useEffect(() => {
+        fetch(`${API_BASE_URL}/filterOffers/rowJobOfferFilteredPage?page=${currentPage}&size=${currentSize}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(currentFilter)
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setJobOffersMiniature(data.content)
+                setTotalPages(data.totalPages)
+                setLoading(false)
+            })
+    }, [currentPage, currentFilter]);
+
+    const handleNextPage = () => {
+        if (currentPage < totalPages - 1) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handlePrevPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
 
     return (
         <>
@@ -39,14 +86,7 @@ export default function JobList() {
                                     </div>
                                     <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp"
                                          data-wow-delay=".2s">
-                                        <form>
-                                            <CountryBoxJobOffer/>
-                                            <input type="text" className="form-input input-keysearch mr-10" placeholder="Your keyword... "
-                                                   onChange={(e) => {
-                                                       setCurrentFilter({...currentFilter, positionTitle: e.target.value})
-                                                   }}/>
-                                            <button className="btn btn-default btn-find font-sm" type="submit">Search</button>
-                                        </form>
+                                        <JobSearch onSearch={handleSearch}/>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +188,84 @@ export default function JobList() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <RowJobOfferList filter={currentFilter} page={currentPage} size={size} />
+
+                                        <div className="row display-list">
+                                            {jobOffersMiniature.map((jobOfferFrontEndEntity) => (
+                                                <div className="col-xl-12 col-12">
+                                                    <div className="card-grid-2 hover-up">
+                                                        <span className="flash"/>
+                                                        <div className="row">
+                                                            <div className="col-lg-6 col-md-6 col-sm-12">
+                                                                <div className="card-grid-2-image-left">
+                                                                    <div className="image-box">
+                                                                        <img src="assets/imgs/brands/brand-1.png"
+                                                                             alt="jobBox"/>
+                                                                    </div>
+                                                                    <div className="right-info">
+                                                                        <Link
+                                                                            href={`/company-details/${jobOfferFrontEndEntity.employer.id}`}>
+                                                                            <span
+                                                                                className="name-job">{jobOfferFrontEndEntity.employer.name}</span>
+                                                                        </Link>
+                                                                        <span
+                                                                            className="location-small">{jobOfferFrontEndEntity.offerCity}, {jobOfferFrontEndEntity.offerCountry}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                className="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
+                                                                <div className="pl-15 mb-15 mt-30">
+                                                                    {jobOfferFrontEndEntity.technologyStack.map((tech) => (
+                                                                        <Link legacyBehavior href="/jobs-grid">
+                                                                            <a className="btn btn-grey-small mr-5">{tech}</a>
+                                                                        </Link>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="card-block-info">
+                                                            <h4>
+                                                                <Link
+                                                                    href={`/job-details/${jobOfferFrontEndEntity.jobOfferId}`}>
+                                                                    {jobOfferFrontEndEntity.positionTitle}
+                                                                </Link>
+                                                            </h4>
+                                                            <div className="mt-5">
+                                                                <span
+                                                                    className="card-briefcase">{jobOfferFrontEndEntity.employmentModel}</span>
+                                                                <span
+                                                                    className="card-time"><span>{jobOfferFrontEndEntity.postedOn}</span>
+                                                                </span>
+                                                            </div>
+                                                            <div className="card-2-bottom mt-20">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="paginations">
+                                            <ul className="pager">
+                                                <li>
+                                                    <button className="pager-prev" onClick={handlePrevPage}
+                                                            disabled={currentPage === 0}/>
+                                                </li>
+                                                {Array.from({length: totalPages}).map((_, index) => (
+                                                    <li>
+                                                        <Link legacyBehavior href="#">
+                                                            {index === currentPage
+                                                                ? (<a className="pager-number active">{index}</a>)
+                                                                : (<a className="pager-number">{index}</a>)
+                                                            }
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                                <li>
+                                                    <button className="pager-next" onClick={handleNextPage}
+                                                            disabled={currentPage === totalPages - 1}/>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-12 col-sm-12 col-12">
