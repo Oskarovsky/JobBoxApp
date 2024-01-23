@@ -34,18 +34,6 @@ class JobOfferGateway(
     fun getOfferById(@PathVariable id: Long): JobOffer =
         jobOfferService.returnOfferById(id)
 
-//    @GetMapping("/jobsOfTheDay")
-//    fun getJobsOfTheDay(): List<JobOffer> =
-//        jobOfferService.returnOffersOfTheDay()
-
-//    @GetMapping("/countName")
-//    fun getBrowseByCategory(): List<CategoryNameAndCount> =
-//        jobOfferService.returnCategoryNameAndCount()
-
-//    @GetMapping("/countryFilter")
-//    fun getFilterLocations(): List<LocationFilter> =
-//        jobOfferService.returnCountriesForFilter()
-
     @PostMapping("/create", consumes = ["application/json"])
     fun createNewOffer(@RequestBody offerRequest: OfferRequest): ResponseEntity<JobOffer> =
         jobOfferService.createNewOffer(offerRequest)

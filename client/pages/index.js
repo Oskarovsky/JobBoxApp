@@ -3,9 +3,29 @@ import Layout from "../components/Layout/Layout";
 import CategorySlider from "./../components/sliders/Category";
 import Link from "next/link";
 import CategoryTab from "../components/elements/CategoryTab";
-import CountryBoxJobOffer from "../components/elements/CountryBoxJobOffer";
 import {JobProvider} from "../components/elements/JobContext";
+import JobSearch from "./job-search";
+import {useState} from "react";
+import JobSearchMain from "./job-search-main";
+
 export default function Home() {
+
+    const [currentFilter, setCurrentFilter] = useState({
+        positionTitle: '',
+        offerCountry: ''
+    })
+
+    const handleSearch = async ({ searchTerm, selectedCountry}) => {
+        try {
+            setCurrentFilter({
+                positionTitle: searchTerm,
+                offerCountry: selectedCountry
+            });
+        } catch (error) {
+            console.error('Error fetching job offers:', error);
+        }
+    };
+
     return (
         <>
         <JobProvider>
@@ -26,11 +46,7 @@ export default function Home() {
                                             <br className="d-none d-lg-block" />
                                         </div>
                                             <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
-                                                <form>
-                                                    <CountryBoxJobOffer/>
-                                                    <input className="form-input input-keysearch mr-10" type="text" placeholder="Your keyword... " />
-                                                    <button className="btn btn-default btn-find font-sm">Search</button>
-                                                </form>
+                                                <JobSearchMain onSearch={handleSearch}/>
                                             </div>
                                         <div className="list-tags-banner mt-60 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
                                             <strong>Popular Searches:</strong>

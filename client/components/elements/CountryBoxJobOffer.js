@@ -24,8 +24,7 @@ const CountryBoxEmployer = () => {
         <select
             className="form-input mr-10 select-active input-country"
             value={selectedCountry}
-            onChange={handleCountryChange}
-        >
+            onChange={handleCountryChange}>
             <option value="">Select a country</option>
             {countryOptions.map((country, index) => (
                 <option key={index} value={country.countryName}>

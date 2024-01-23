@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
-import {fetchJobOfferData, fetchJobs} from "../services/JobOfferService";
 
 const RowJobOfferList = ({ filter, page, size }) => {
 
-    const [currentFilter, setCurrentFilter] = useState({
-        positionTitle: filter.positionTitle,
-        country: ''
-    })
+    const [currentFilter, setCurrentFilter] = useState(filter)
 
     const [jobOffersMiniature, setJobOffersMiniature] = useState([]);
     const [currentPage, setCurrentPage] = useState(page);
@@ -23,7 +19,7 @@ const RowJobOfferList = ({ filter, page, size }) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(filter)
+            body: JSON.stringify(currentFilter)
         })
             .then((response) => response.json())
             .then((data) => {
@@ -32,28 +28,6 @@ const RowJobOfferList = ({ filter, page, size }) => {
                 setLoading(false)
             })
     }, [currentPage, currentFilter]);
-
-    const handleSubmitButton = () => {
-        try {
-            const response = fetch(`${API_BASE_URL}/filterOffers/rowJobOfferFilteredPage?page=${currentPage}&size=${currentSize}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(filter)
-            })
-            if (response.ok) {
-                const data = response.json();
-                setJobOffersMiniature(data.content)
-                setTotalPages(data.totalPages)
-                setLoading(false)
-            } else {
-                console.error("Error fetching filtered offers")
-            }
-        } catch (error) {
-            console.error('Error fetching offers', error)
-        }
-    }
 
     const handleNextPage = () => {
         if (currentPage < totalPages - 1) {

@@ -18,63 +18,71 @@ class JobOfferFilteringService(
 ) {
 
     fun returnCategoryNameAndCount(): List<CategoryNameAndCount> {
-        val categoriesToBrowse = OfferCategory.values()
-        return categoriesToBrowse.map {
-            CategoryNameAndCount(it.title, jobOfferRepository.countJobsByCategoriesToBrowse(it.name))
-        }.filter { categoryNameAndCount -> filterEmptyCategories(categoryNameAndCount) }.toList()
+        val categoriesToBrowse = OfferCategory.entries.toTypedArray()
+        return categoriesToBrowse
+            .map { CategoryNameAndCount(it.title, jobOfferRepository.countJobsByCategoriesToBrowse(it.name)) }
+            .filter { categoryNameAndCount -> filterEmptyCategories(categoryNameAndCount) }
+            .toList()
     }
 
     fun returnLocationForFilter(): List<LocationFilter> {
-        val countryForFilter = Country.values()
-        return countryForFilter.map {
-            LocationFilter(it.title, jobOfferRepository.countJobsByCountry(it.name))
-        }.filter { locationFilter -> filterEmptyLocations(locationFilter) }.toList()
+        val countryForFilter = Country.entries.toTypedArray()
+        return countryForFilter
+            .map { LocationFilter(it.title, jobOfferRepository.countJobsByCountry(it.name)) }
+            .filter { locationFilter -> filterEmptyLocations(locationFilter) }
+            .toList()
     }
 
     fun returnExperienceLevelForFilter(): List<ExperienceLevelFilter> {
-        val experienceLevelForFilter = ExperienceLevel.values()
-        return experienceLevelForFilter.map {
-            ExperienceLevelFilter(it.title, jobOfferRepository.countJobsByExperienceLevel(it.name))
-        }.filter { experienceFilter -> filterEmptyExperience(experienceFilter) }.toList()
+        val experienceLevelForFilter = ExperienceLevel.entries.toTypedArray()
+        return experienceLevelForFilter
+            .map { ExperienceLevelFilter(it.title, jobOfferRepository.countJobsByExperienceLevel(it.name)) }
+            .filter { experienceFilter -> filterEmptyExperience(experienceFilter) }
+            .toList()
     }
 
     fun returnRolesForFilter(): List<RolesFilter> {
-        val rolesForFilter = OfferCategory.values()
-        return rolesForFilter.map {
-            RolesFilter(it.title, jobOfferRepository.countJobsByCategoriesToBrowse(it.name))
-        }.filter { rolesFilter -> filterEmptyRoles(rolesFilter) }.toList()
+        val rolesForFilter = OfferCategory.entries.toTypedArray()
+        return rolesForFilter
+            .map { RolesFilter(it.title, jobOfferRepository.countJobsByCategoriesToBrowse(it.name)) }
+            .filter { rolesFilter -> filterEmptyRoles(rolesFilter) }
+            .toList()
     }
 
     fun returnEmploymentModelForFilter(): List<EmploymentModelFilter> {
-        val employmentModelForFilter = EmploymentModel.values()
-        return employmentModelForFilter.map {
-            EmploymentModelFilter(it.title, jobOfferRepository.countJobsByEmploymentModel(it.name))
-        }.filter { employmentModelFilter -> filterEmptyEmploymentModel(employmentModelFilter) }.toList()
+        val employmentModelForFilter = EmploymentModel.entries.toTypedArray()
+        return employmentModelForFilter
+            .map { EmploymentModelFilter(it.title, jobOfferRepository.countJobsByEmploymentModel(it.name)) }
+            .filter { employmentModelFilter -> filterEmptyEmploymentModel(employmentModelFilter) }
+            .toList()
     }
 
     fun returnEmploymentTypeForFilter(): List<EmploymentTypeFilter> {
-        val employmentTypeForFilter = EmploymentType.values()
-        return employmentTypeForFilter.map {
-            EmploymentTypeFilter(it.title, jobOfferRepository.countJobsByEmploymentType(it.name))
-        }.filter { employmentTypeFilter -> filterEmptyEmploymentType(employmentTypeFilter) }.toList()
+        val employmentTypeForFilter = EmploymentType.entries.toTypedArray()
+        return employmentTypeForFilter
+            .map { EmploymentTypeFilter(it.title, jobOfferRepository.countJobsByEmploymentType(it.name)) }
+            .filter { employmentTypeFilter -> filterEmptyEmploymentType(employmentTypeFilter) }
+            .toList()
     }
 
     fun returnNumberOfAllJobs(): JobsAvailable =
         JobsAvailable(jobOfferRepository.findAll().size)
 
     fun returnOffersOfTheDay(): List<JobOfferFrontEndEntity> {
-        var listOfTheJobOffers = jobOfferRepository
-            .findJobsOfTheDay(1).shuffled()
-        return listOfTheJobOffers.subList(0, 8).stream().map {
-            jobOfferFrontEndMapping(it)
-        }.toList()
+        val listOfTheJobOffers = jobOfferRepository
+            .findJobsOfTheDay(1)
+            .shuffled()
+        return listOfTheJobOffers.subList(0, 8)
+            .stream()
+            .map { jobOfferFrontEndMapping(it) }
+            .toList()
     }
 
     fun returnRowJobOfferList(): List<JobOfferFrontEndEntity> {
         val listOfAllJobs = jobOfferRepository.findAll()
-        return listOfAllJobs.stream().map {
-            jobOfferFrontEndMapping(it)
-        }.toList()
+        return listOfAllJobs.stream()
+            .map { jobOfferFrontEndMapping(it) }
+            .toList()
     }
 
     fun returnRowJobOfferPage(page: Int, size: Int): Page<JobOfferFrontEndEntity> {
@@ -91,7 +99,10 @@ class JobOfferFilteringService(
         val specification: Specification<JobOffer> = Specification { root, _, criteriaBuilder ->
             val predicates = mutableListOf<Predicate>()
             filter.positionTitle.let {
-                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("positionTitle")), "%${it.lowercase()}%"))
+                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root["positionTitle"]), "%${it.lowercase()}%"))
+            }
+            filter.offerCountry.let {
+                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root["country"]), "%${it.lowercase()}%"))
             }
 
             criteriaBuilder.and(*predicates.toTypedArray())
@@ -107,14 +118,14 @@ class JobOfferFilteringService(
 
     fun returnOffersById(id: Long): JobOfferFrontEndEntity {
         val offerById = jobOfferRepository
-            .findById(id).orElseThrow { NoSuchElementException("There is no offer with id: $id") }
-
+            .findById(id)
+            .orElseThrow { NoSuchElementException("There is no offer with id: $id") }
         return jobOfferFrontEndMapping(offerById)
     }
 
     fun returnOffersByEmployerId(id: Long): List<JobOfferFrontEndEntity>{
-       val jobOffers = jobOfferRepository.returnJobsByEmployerId(id)
-      return  jobOffers.stream().map {  jobOfferFrontEndMapping(it) }.toList()
+        val jobOffers = jobOfferRepository.returnJobsByEmployerId(id)
+        return  jobOffers.stream().map {  jobOfferFrontEndMapping(it) }.toList()
     }
 
     private fun jobOfferFrontEndMapping(jobOffer: JobOffer): JobOfferFrontEndEntity {
@@ -148,7 +159,7 @@ class JobOfferFilteringService(
         jobOfferRepository.returnJobsByCategoryToBrowse(OfferCategory.valueOf(categoryToBrowse.uppercase()).name)
 
     fun returnJobListBySimilarCategory(categoryToBrowse: String): List<JobOfferFrontEndEntity> {
-        val category = OfferCategory.values().find { it.title == categoryToBrowse }
+        val category = OfferCategory.entries.find { it.title == categoryToBrowse }
         return jobOfferRepository.returnJobsByCategoryToBrowse(category!!.name).stream().map {
             jobOfferFrontEndMapping(it)
         }.toList()

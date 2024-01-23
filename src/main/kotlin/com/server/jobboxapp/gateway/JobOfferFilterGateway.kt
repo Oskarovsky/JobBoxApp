@@ -58,7 +58,7 @@ class JobOfferFilterGateway(
     fun getFilteredJobOffers(@RequestBody filter: JobOfferFilter,
                              @RequestParam(defaultValue = "0") page: Int,
                              @RequestParam(defaultValue = "5") size: Int): Page<JobOfferFrontEndEntity> {
-        if (filter.positionTitle.isEmpty()) {
+        if (filter.positionTitle.isEmpty() && filter.offerCountry.isEmpty()) {
             return jobOfferFilteringService.returnRowJobOfferPage(page, size)
         }
         return jobOfferFilteringService.getFilteredOffers(filter, page, size)
