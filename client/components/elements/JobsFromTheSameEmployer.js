@@ -3,18 +3,18 @@ import Link from "next/link";
 
 const JobsFromTheSameEmployer = ({employerId}) => {
     const [jobsFromTheSameEmployer, setJobsFromTheSameEmployer] = useState([]);
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/filterOffers/jobsByTheSameEmployer/${encodeURIComponent(employerId)}`)
             .then((response) => response.json())
             .then((data) => {
                 setJobsFromTheSameEmployer(data);
-                setLoading(false);
+                setIsLoading(false);
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
-                setLoading(false);
+                setIsLoading(false);
             });
     }, [employerId]);
 
@@ -46,8 +46,8 @@ const JobsFromTheSameEmployer = ({employerId}) => {
                                 </div>
                                 <div className="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
                                     <div className="pl-15 mb-15 mt-30">
-                                        {jobOfferFrontEndEntity.technologyStack.map((tech, techIndex) => (
-                                            <Link key={techIndex} href="/jobs-grid">
+                                        {jobOfferFrontEndEntity.technologyStack.map((tech) => (
+                                            <Link key={tech.id} href="/jobs-grid">
                                                 <span className="btn btn-grey-small mr-5">{tech}</span>
                                             </Link>
                                         ))}

@@ -17,6 +17,44 @@ class JobOfferFilteringService(
     private val jobOfferRepository: JobOfferRepository
 ) {
 
+    fun returnRowJobOfferList(): List<JobOfferFrontEndEntity> {
+        val listOfAllJobs = jobOfferRepository.findAll()
+        return listOfAllJobs
+            .map { jobOfferFrontEndMapping(it) }
+            .toList()
+    }
+
+    fun getRowJobOfferPage(page: Int, size: Int): Page<JobOfferFrontEndEntity> {
+        val listOfAllJobs = jobOfferRepository.findAll(PageRequest.of(page, size))
+        return PageImpl(
+            listOfAllJobs.content.map { jobOfferFrontEndMapping(it) }.toList(),
+            listOfAllJobs.pageable,
+            listOfAllJobs.totalElements
+        )
+    }
+
+    fun getFilteredOffers(filter: JobOfferFilter, page: Int, size: Int): Page<JobOfferFrontEndEntity> {
+        val pageable: PageRequest = PageRequest.of(page, size)
+        val specification: Specification<JobOffer> = Specification { root, _, criteriaBuilder ->
+            val predicates = mutableListOf<Predicate>()
+            filter.positionTitle.let {
+                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root["positionTitle"]), "%${it.lowercase()}%"))
+            }
+            filter.offerCountry.let {
+                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root["country"]), "%${it.lowercase()}%"))
+            }
+
+            criteriaBuilder.and(*predicates.toTypedArray())
+        }
+        val listOfAllJobs = jobOfferRepository.findAll(specification, pageable)
+
+        return PageImpl(
+            listOfAllJobs.content.map { jobOfferFrontEndMapping(it) }.toList(),
+            listOfAllJobs.pageable,
+            listOfAllJobs.totalElements
+        )
+    }
+
     fun returnCategoryNameAndCount(): List<CategoryNameAndCount> {
         val categoriesToBrowse = OfferCategory.entries.toTypedArray()
         return categoriesToBrowse
@@ -73,47 +111,8 @@ class JobOfferFilteringService(
             .findJobsOfTheDay(1)
             .shuffled()
         return listOfTheJobOffers.subList(0, 8)
-            .stream()
             .map { jobOfferFrontEndMapping(it) }
             .toList()
-    }
-
-    fun returnRowJobOfferList(): List<JobOfferFrontEndEntity> {
-        val listOfAllJobs = jobOfferRepository.findAll()
-        return listOfAllJobs.stream()
-            .map { jobOfferFrontEndMapping(it) }
-            .toList()
-    }
-
-    fun returnRowJobOfferPage(page: Int, size: Int): Page<JobOfferFrontEndEntity> {
-        val listOfAllJobs = jobOfferRepository.findAll(PageRequest.of(page, size))
-        return PageImpl(
-            listOfAllJobs.content.stream().map { jobOfferFrontEndMapping(it) }.toList(),
-            listOfAllJobs.pageable,
-            listOfAllJobs.totalElements
-        )
-    }
-
-    fun getFilteredOffers(filter: JobOfferFilter, page: Int, size: Int): Page<JobOfferFrontEndEntity> {
-        val pageable: PageRequest = PageRequest.of(page, size)
-        val specification: Specification<JobOffer> = Specification { root, _, criteriaBuilder ->
-            val predicates = mutableListOf<Predicate>()
-            filter.positionTitle.let {
-                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root["positionTitle"]), "%${it.lowercase()}%"))
-            }
-            filter.offerCountry.let {
-                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root["country"]), "%${it.lowercase()}%"))
-            }
-
-            criteriaBuilder.and(*predicates.toTypedArray())
-        }
-        val listOfAllJobs = jobOfferRepository.findAll(specification, pageable)
-
-        return PageImpl(
-            listOfAllJobs.content.stream().map { jobOfferFrontEndMapping(it) }.toList(),
-            listOfAllJobs.pageable,
-            listOfAllJobs.totalElements
-        )
     }
 
     fun returnOffersById(id: Long): JobOfferFrontEndEntity {
@@ -125,7 +124,9 @@ class JobOfferFilteringService(
 
     fun returnOffersByEmployerId(id: Long): List<JobOfferFrontEndEntity>{
         val jobOffers = jobOfferRepository.returnJobsByEmployerId(id)
-        return  jobOffers.stream().map {  jobOfferFrontEndMapping(it) }.toList()
+        return  jobOffers
+            .map {  jobOfferFrontEndMapping(it) }
+            .toList()
     }
 
     private fun jobOfferFrontEndMapping(jobOffer: JobOffer): JobOfferFrontEndEntity {
@@ -152,7 +153,7 @@ class JobOfferFilteringService(
 
     fun returnCountryBoxList(): List<CountryBoxDropDown> =
         jobOfferRepository.returnDistinctCountries()
-            .map { CountryBoxDropDown(com.server.jobboxapp.entity.employer.EmployerCountry.valueOf(it).title) }.stream()
+            .map { CountryBoxDropDown(com.server.jobboxapp.entity.employer.EmployerCountry.valueOf(it).title) }
             .toList()
 
     fun returnJobListByCategoryToBrowse(categoryToBrowse: String): List<JobOffer> =
@@ -160,9 +161,9 @@ class JobOfferFilteringService(
 
     fun returnJobListBySimilarCategory(categoryToBrowse: String): List<JobOfferFrontEndEntity> {
         val category = OfferCategory.entries.find { it.title == categoryToBrowse }
-        return jobOfferRepository.returnJobsByCategoryToBrowse(category!!.name).stream().map {
-            jobOfferFrontEndMapping(it)
-        }.toList()
+        return jobOfferRepository.returnJobsByCategoryToBrowse(category!!.name)
+            .map { jobOfferFrontEndMapping(it) }
+            .toList()
     }
 
     private fun filterEmptyCategories(categoryNameAndCount: CategoryNameAndCount): Boolean {

@@ -1,6 +1,5 @@
 package com.server.jobboxapp.gateway
 
-import com.server.jobboxapp.entity.*
 import com.server.jobboxapp.entity.CountryBoxDropDown
 import com.server.jobboxapp.entity.joboffer.*
 import com.server.jobboxapp.service.JobOfferFilteringService
@@ -52,14 +51,14 @@ class JobOfferFilterGateway(
     @GetMapping("/rowJobOfferPage")
     fun getRowJobOfferPage(@RequestParam(defaultValue = "0") page: Int,
                            @RequestParam(defaultValue = "5") size: Int): Page<JobOfferFrontEndEntity> =
-        jobOfferFilteringService.returnRowJobOfferPage(page, size)
+        jobOfferFilteringService.getRowJobOfferPage(page, size)
 
     @PostMapping("/rowJobOfferFilteredPage")
     fun getFilteredJobOffers(@RequestBody filter: JobOfferFilter,
                              @RequestParam(defaultValue = "0") page: Int,
                              @RequestParam(defaultValue = "5") size: Int): Page<JobOfferFrontEndEntity> {
         if (filter.positionTitle.isEmpty() && filter.offerCountry.isEmpty()) {
-            return jobOfferFilteringService.returnRowJobOfferPage(page, size)
+            return jobOfferFilteringService.getRowJobOfferPage(page, size)
         }
         return jobOfferFilteringService.getFilteredOffers(filter, page, size)
     }
