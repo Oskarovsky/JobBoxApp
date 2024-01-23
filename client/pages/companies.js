@@ -9,14 +9,14 @@ import EmployerList from "../components/elements/EmployerList";
 export default function Companies() {
 
     const [employers, setEmployers] = useState(null);
-    const [isLoading, setLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         fetch('http://localhost:8080/api/employer')
             .then((res) => res.json())
             .then((company) => {
                 setEmployers(company)
-                setLoading(false)
+                setIsLoading(false)
             })
     }, []);
 

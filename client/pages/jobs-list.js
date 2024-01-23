@@ -9,22 +9,25 @@ import EmploymentModel from "../components/filter/EmploymentModel";
 import EmploymentType from "../components/filter/EmploymentType";
 import JobsAvailable from "../components/elements/JobsAvailable";
 import JobSearch from "./job-search";
+import JobsFromTheSameEmployer from "../components/elements/JobsFromTheSameEmployer";
 
 export default function JobList() {
 
     const router = useRouter();
+    const {categoryName} = router.query;
+    const API_BASE_URL = 'http://localhost:8080/api';
 
     const [currentPage, setCurrentPage] = useState(0);
     const [size, setSize] = useState(6)
     const [currentFilter, setCurrentFilter] = useState({
-        positionTitle: router.query.search,
-        offerCountry: router.query.country
+        positionTitle: router.query.search || '',
+        offerCountry: router.query.country || ''
     })
 
     const [jobOffersMiniature, setJobOffersMiniature] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
     const [currentSize, setCurrentSize] = useState(size)
-    const [isLoading, setLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
 
 
     const handleSearch = async ({ searchTerm, selectedCountry}) => {
@@ -38,12 +41,11 @@ export default function JobList() {
         }
     };
 
-    const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
-
-    const API_BASE_URL = 'http://localhost:8080/api';
-
     useEffect(() => {
+        fetchRowJobOffer().then(r => setIsLoading(false));
+    }, [currentPage, currentFilter]);
 
+    const fetchRowJobOffer = async () => {
         fetch(`${API_BASE_URL}/filterOffers/rowJobOfferFilteredPage?page=${currentPage}&size=${currentSize}`, {
             method: 'POST',
             headers: {
@@ -55,9 +57,20 @@ export default function JobList() {
             .then((data) => {
                 setJobOffersMiniature(data.content)
                 setTotalPages(data.totalPages)
-                setLoading(false)
             })
-    }, [currentPage, currentFilter]);
+    }
+
+    const fetchJobsFromOneEmployer = async () => {
+        fetch(`${API_BASE_URL}/filterOffers/jobsByTheSameEmployer/${encodeURIComponent(router.query.employerId)}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setJobOffersMiniature(data.content)
+                setTotalPages(data.totalPages)
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    }
 
     const handleNextPage = () => {
         if (currentPage < totalPages - 1) {

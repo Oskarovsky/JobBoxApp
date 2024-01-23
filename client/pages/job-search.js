@@ -1,10 +1,12 @@
 import {useEffect, useState} from 'react';
+import {useRouter} from "next/router";
 
 const JobSearch = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
     const [countryOptions, setCountryOptions] = useState([]);
 
+    const router = useRouter();
 
     useEffect(() => {
         // Fetch country data from your API
@@ -19,6 +21,7 @@ const JobSearch = ({ onSearch }) => {
     const handleSearch = (e) => {
         e.preventDefault();
         onSearch({ searchTerm, selectedCountry });
+        router.push(`/jobs-list?search=${searchTerm}&country=${selectedCountry}`);
     };
 
 

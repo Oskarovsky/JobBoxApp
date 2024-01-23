@@ -4,9 +4,8 @@ import CategorySlider from "./../components/sliders/Category";
 import Link from "next/link";
 import CategoryTab from "../components/elements/CategoryTab";
 import {JobProvider} from "../components/elements/JobContext";
-import JobSearch from "./job-search";
 import {useState} from "react";
-import JobSearchMain from "./job-search-main";
+import JobSearch from "./job-search";
 
 export default function Home() {
 
@@ -46,7 +45,7 @@ export default function Home() {
                                             <br className="d-none d-lg-block" />
                                         </div>
                                             <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
-                                                <JobSearchMain onSearch={handleSearch}/>
+                                                <JobSearch onSearch={handleSearch}/>
                                             </div>
                                         <div className="list-tags-banner mt-60 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
                                             <strong>Popular Searches:</strong>

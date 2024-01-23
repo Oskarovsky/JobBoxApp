@@ -1,27 +1,28 @@
 import React, {useState, useEffect} from "react";
 import Layout from "../../components/Layout/Layout";
-import Link from "next/link";
 import JobsFromTheSameEmployer from "../../components/elements/JobsFromTheSameEmployer";
+import {useRouter} from "next/router";
 
-const CompanyDetails = ({employerId}) => {
+const CompanyDetails = () => {
+    const router = useRouter();
+
     const [employer, setEmployer] = useState(null);
-    const [isLoading, setLoading] = useState(true);
-
-    //Tu jest sfiksowany api do poprawy, dzieki Oskar!
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // fetch(`http://localhost:8080/api/filterEmployer/byId/${encodeURIComponent(employerId)}`)
-        fetch(`http://localhost:8080/api/filterEmployer/byId/1`)
-            .then((response) => response.json())
-            .then((data) => {
-                setEmployer(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching employer data:", error);
-                setLoading(false);
-            });
-    }, [employerId]);
+        if (router.query.employerId) {
+            fetch(`http://localhost:8080/api/filterEmployer/byId/${router.query.employerId}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    setEmployer(data);
+                    setIsLoading(false);
+                })
+                .catch((error) => {
+                    console.error("Error fetching employer data:", error);
+                    setIsLoading(false);
+                });
+        }
+    }, []);
 
     if (isLoading) {
         return <p>Loading...</p>;
