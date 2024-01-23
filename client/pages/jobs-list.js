@@ -8,42 +8,42 @@ import RoleFilter from "../components/filter/RoleFilter";
 import EmploymentModel from "../components/filter/EmploymentModel";
 import EmploymentType from "../components/filter/EmploymentType";
 import JobsAvailable from "../components/elements/JobsAvailable";
-import RowJobOfferList from "../components/elements/RowJobOfferList";
 import JobSearch from "./job-search";
 
 export default function JobList() {
 
+    const router = useRouter();
+
     const [currentPage, setCurrentPage] = useState(0);
     const [size, setSize] = useState(6)
     const [currentFilter, setCurrentFilter] = useState({
-        positionTitle: '',
-        country: ''
+        positionTitle: router.query.search,
+        offerCountry: router.query.country
     })
-
-    const handleSearch = async (searchTerm, selectedCountry) => {
-        try {
-            setCurrentFilter({
-                positionTitle: searchTerm,
-                country: ''
-            });
-        } catch (error) {
-            console.error('Error fetching job offers:', error);
-        }
-    };
-
-    const router = useRouter();
-
-    const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
-
 
     const [jobOffersMiniature, setJobOffersMiniature] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
     const [currentSize, setCurrentSize] = useState(size)
     const [isLoading, setLoading] = useState(true)
 
+
+    const handleSearch = async ({ searchTerm, selectedCountry}) => {
+        try {
+            setCurrentFilter({
+                positionTitle: searchTerm,
+                offerCountry: selectedCountry
+            });
+        } catch (error) {
+            console.error('Error fetching job offers:', error);
+        }
+    };
+
+    const {categoryName} = router.query; // Pobierz categoryName z parametrów zapytania URL
+
     const API_BASE_URL = 'http://localhost:8080/api';
 
     useEffect(() => {
+
         fetch(`${API_BASE_URL}/filterOffers/rowJobOfferFilteredPage?page=${currentPage}&size=${currentSize}`, {
             method: 'POST',
             headers: {
@@ -207,8 +207,7 @@ export default function JobList() {
                                                                             <span
                                                                                 className="name-job">{jobOfferFrontEndEntity.employer.name}</span>
                                                                         </Link>
-                                                                        <span
-                                                                            className="location-small">{jobOfferFrontEndEntity.offerCity}, {jobOfferFrontEndEntity.offerCountry}</span>
+                                                                        <span className="location-small">{jobOfferFrontEndEntity.offerCity}, {jobOfferFrontEndEntity.offerCountry}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
