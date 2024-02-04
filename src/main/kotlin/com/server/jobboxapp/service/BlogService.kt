@@ -35,22 +35,4 @@ class BlogService(private val blogRepository: BlogRepository) {
         blogRepository.deleteById(id)
         return ResponseEntity.ok(id)
     }
-
-    fun updateHeadline(id: Long, headline:String) {
-        blogRepository.updateHeadline(id, headline)
-    }
-
-    fun updateText(id: Long, text:String) {
-        blogRepository.updateText(id, text)
-    }
-
-    fun updateAuthor(id: Long, author:String) {
-        blogRepository.updateAuthor(id, author)
-    }
-
-    fun updateUrlToImage(id: Long, urlToImage:String) {
-        blogRepository.updateUrlToImage(id, urlToImage)
-    }
-
-
 }

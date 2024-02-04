@@ -22,29 +22,4 @@ interface EmployerRepository : JpaRepository<Employer, Long> {
     @Modifying
     @Query("DELETE FROM employer e WHERE e.name = ?1", nativeQuery = true)
     fun deleteEmployerByEmployerName(employerName: String)
-
-    @Transactional
-    @Modifying
-    @Query("UPDATE Employer e SET e.name = ?2 WHERE e.id = ?1")
-    fun updateEmployerName(id: Long, employerName: String)
-
-    @Transactional
-    @Modifying
-    @Query("UPDATE Employer e SET e.industry = ?2 WHERE e.id = ?1")
-    fun updateIndustry(id: Long, industry: String)
-
-    @Transactional
-    @Modifying
-    @Query("UPDATE Employer e SET e.description = ?2 WHERE e.id = ?1")
-    fun updateEmployerDescription(id: Long, employerDescription: String)
-
-    @Transactional
-    @Modifying
-    @Query("UPDATE Employer e SET e.urlToWebsite = ?2 WHERE e.id = ?1")
-    fun updateUrlToWebsite(id: Long, urlToWebsite: String)
-
-//    @Transactional
-//    @Modifying
-//    @Query("UPDATE Employer e SET e.urlToImage = ?2 WHERE e.id = ?1")
-//    fun updaterUrlToImage(id: Long, urlToImage: String)
 }

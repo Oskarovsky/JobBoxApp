@@ -90,58 +90,6 @@ class JobOfferService(
         return ResponseEntity.ok(offerToUpdate)
     }
 
-    fun updatePositionTitle(id: Long, positionTitle: String) {
-        jobOfferRepository.updatePositionTitle(id, positionTitle)
-    }
-
-    fun updateExperienceLevel(id: Long, experienceLevel: String) {
-        jobOfferRepository.updateExperienceLevel(id, experienceLevel)
-    }
-
-    fun updateEmploymentType(id: Long, employmentType: String) {
-        jobOfferRepository.updateEmploymentType(id, employmentType)
-    }
-
-    fun updateEmploymentModel(id: Long, employmentModel: String) {
-        jobOfferRepository.updateEmploymentModel(id, employmentModel)
-    }
-
-    fun updateCategoryToBrowse(id: Long, categoryToBrowse: String) {
-        jobOfferRepository.updateCategoryToBrowse(id, categoryToBrowse)
-    }
-
-    fun updateTechnologyStack(id: Long, technologyStack: List<String>) {
-        jobOfferRepository.updateTechnologyStack(id, technologyStack)
-    }
-
-    fun updateJobOfferDescription(id: Long, jobOfferDescription: String) {
-        jobOfferRepository.updateJobOfferDescription(id, jobOfferDescription)
-    }
-
-    fun updateCountry(id: Long, country: String) {
-        jobOfferRepository.updateCountry(id, country)
-    }
-
-    fun updateCity(id: Long, city: String) {
-        jobOfferRepository.updateCity(id, city)
-    }
-
-    fun updatePostCode(id: Long, postCode: String) {
-        jobOfferRepository.updatePostCode(id, postCode)
-    }
-
-    fun updateStreet(id: Long, street: String) {
-        jobOfferRepository.updateStreet(id, street)
-    }
-
-    fun updateUrlToApply(id: Long, urlToApply: String) {
-        jobOfferRepository.updateUrlToApply(id, urlToApply)
-    }
-
-    fun updatePromotedFlag(id: Long, promotedFlag: Int) {
-        jobOfferRepository.updatePromotedFlag(id, promotedFlag)
-    }
-
     fun deleteOffer(id: Long): ResponseEntity<Long> {
         jobOfferRepository.deleteById(id)
         return ResponseEntity.ok(id)
