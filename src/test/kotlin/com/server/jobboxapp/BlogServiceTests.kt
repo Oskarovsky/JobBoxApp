@@ -3,7 +3,7 @@ package com.server.jobboxapp
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.server.jobboxapp.entity.BlogPost
+import com.server.jobboxapp.entity.blogpost.BlogPost
 import com.server.jobboxapp.repository.BlogRepository
 import com.server.jobboxapp.service.BlogService
 import org.junit.jupiter.api.Assertions
@@ -60,24 +60,9 @@ class BlogServiceTests {
         blogService.updateBlogPost(1, updatedBlogPost)
 
         Assertions.assertEquals("Nowy post4", blogService.returnBlogPostById(1).headline)
-        Assertions.assertEquals("text4", blogService.returnBlogPostById(1).text)
+        Assertions.assertEquals("text4", blogService.returnBlogPostById(1).blogText)
         Assertions.assertEquals("autor4", blogService.returnBlogPostById(1).author)
         Assertions.assertEquals("image4", blogService.returnBlogPostById(1).urlToImage)
-    }
-
-    @Test
-    fun testJpaNativeQuery() {
-        loadBlogPostsToDatabase()
-
-        blogService.updateHeadline(1, "Nowy post5")
-        blogService.updateText(1, "text5")
-        blogService.updateAuthor(1, "autor5")
-        blogService.updateUrlToImage(1, "image5")
-
-        Assertions.assertEquals("Nowy post5", blogService.returnBlogPostById(1).headline)
-        Assertions.assertEquals("text5", blogService.returnBlogPostById(1).text)
-        Assertions.assertEquals("autor5", blogService.returnBlogPostById(1).author)
-        Assertions.assertEquals("image5", blogService.returnBlogPostById(1).urlToImage)
     }
 
     fun loadBlogPostsList() {

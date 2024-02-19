@@ -62,39 +62,6 @@ class JobOfferServiceTests {
         Assertions.assertEquals(7, jobOfferService.returnAllOffers().size)
     }
 
-    @Test
-    fun testJpaQuery() {
-        loadEmployerDataToDatabase()
-        createOffersAndLoadToDatabase()
-
-        jobOfferService.updatePositionTitle(1, "Cloud Developer")
-        jobOfferService.updateExperienceLevel(1, "Senior")
-        jobOfferService.updateEmploymentType(1, "Full time")
-        jobOfferService.updateEmploymentModel(1, "On-site")
-        jobOfferService.updateCategoryToBrowse(1, "BackEnd")
-        jobOfferService.updateJobOfferDescription(1, "opis1")
-        jobOfferService.updateCountry(1, "Poland")
-        jobOfferService.updateCity(1, "Copenhagen")
-        jobOfferService.updatePostCode(1, "11111")
-        jobOfferService.updateStreet(1, "Techstrasse 456")
-        jobOfferService.updateUrlToApply(1, "url1")
-        jobOfferService.updatePromotedFlag(1, 1)
-
-        Assertions.assertEquals("Cloud Developer", jobOfferService.returnOfferById(1).positionTitle)
-        Assertions.assertEquals("Senior", jobOfferService.returnOfferById(1).experienceLevel)
-        Assertions.assertEquals("Full time", jobOfferService.returnOfferById(1).employmentType)
-        Assertions.assertEquals("On-site", jobOfferService.returnOfferById(1).employmentModel)
-        Assertions.assertEquals("BackEnd", jobOfferService.returnOfferById(1).categoryToBrowse)
-        Assertions.assertEquals("opis1", jobOfferService.returnOfferById(1).jobOfferDescription)
-        Assertions.assertEquals("Poland", jobOfferService.returnOfferById(1).country)
-        Assertions.assertEquals("Copenhagen", jobOfferService.returnOfferById(1).city)
-        Assertions.assertEquals("11111", jobOfferService.returnOfferById(1).postCode)
-        Assertions.assertEquals("Techstrasse 456", jobOfferService.returnOfferById(1).street)
-        Assertions.assertEquals("url1", jobOfferService.returnOfferById(1).urlToApply)
-        Assertions.assertEquals(1, jobOfferService.returnOfferById(1).promotedFlag)
-    }
-
-
 //    @Test
 //    fun updateTechnologyStack() {
 //        loadEmployerDataToDatabase()

@@ -1,22 +1,22 @@
 package com.server.jobboxapp.gateway
 
 import com.server.jobboxapp.entity.*
+import com.server.jobboxapp.entity.blogpost.BlogFrontEndEntity
+import com.server.jobboxapp.entity.blogpost.BlogPost
 import com.server.jobboxapp.service.BlogService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin(origins = ["*"])
 @RestController
 @RequestMapping("/api/blog")
-class BlogGateway(
-    private val blogService: BlogService
-) {
-    @GetMapping
-    @CrossOrigin(origins = ["*"])
-    fun getAllBlogPosts(): List<BlogPost> = blogService.returnAllBlogPosts()
-
-    @GetMapping("/{id}")
-    fun getBlogPostById(@PathVariable id: Long): BlogPost =
+class BlogGateway(private val blogService: BlogService) {
+    @GetMapping("byId/{id}")
+    fun getBlogPostById(@PathVariable id: Long): BlogFrontEndEntity =
         blogService.returnBlogPostById(id)
+    @GetMapping("/allBlogPosts")
+    fun getAllBlogPosts(): List<BlogFrontEndEntity> =
+        blogService.returnAllBlogPosts()
 
     @PostMapping("/createBlogPost", consumes = ["application/json"])
     fun createBlogPost(@RequestBody blogPost: BlogPost): ResponseEntity<BlogPost> = blogService.createBlogPost(blogPost)

@@ -30,7 +30,6 @@ enum class EmployerCountry(val title: String, val description: String) {
     UK("United Kingdom", ""),
     GERMANY("Germany", ""),
     REMOTE("Remote", "")
-
 }
 
 

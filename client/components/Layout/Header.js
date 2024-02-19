@@ -22,7 +22,7 @@ const Header = ({handleOpen, handleRemove, openClass}) => {
                             <div className="header-logo">
                                 <Link legacyBehavior href="/">
                                     <a className="d-flex">
-                                        <img alt="jobBox" src="assets/imgs/template/findjobintech/logo-no-background.png"/>
+                                        <img alt="jobBox" src="assets/imgs/template/findjobintech/logo-no-background.png" style={{ width: "400px", height: "50px" }} />
                                     </a>
                                 </Link>
                             </div>

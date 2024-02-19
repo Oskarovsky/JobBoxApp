@@ -11,6 +11,8 @@ data class JobOfferFrontEndEntity(
     val experienceLevel: String,
     val employmentModel: String,
     val employmentType: String,
+    val minSalaryBracket: Long,
+    val maxSalaryBracket: Long,
     val categoryToBrowse: String,
     val technologyStack: List<String>,
     val jobOfferDescription: JobOfferDescription,

@@ -26,6 +26,12 @@ data class JobOffer(
     var employmentModel: String,
 
     @Column(nullable = false)
+    var minSalaryBracket: Long,
+
+    @Column(nullable = false)
+    var maxSalaryBracket: Long,
+
+    @Column(nullable = false)
     var categoryToBrowse: String,
 
     @ElementCollection
@@ -69,6 +75,8 @@ data class OfferRequest(
     val experienceLevel: String,
     val employmentType: String,
     val employmentModel: String,
+    val minSalaryBracket: Long,
+    val maxSalaryBracket: Long,
     val categoryToBrowse: String,
     val technologyStack: List<String>,
     val jobOfferDescription: JobOfferDescription,

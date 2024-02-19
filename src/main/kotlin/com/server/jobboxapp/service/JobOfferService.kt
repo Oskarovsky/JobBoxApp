@@ -51,6 +51,8 @@ class JobOfferService(
             experienceLevel = offerRequest.experienceLevel,
             employmentType = offerRequest.employmentType,
             employmentModel = offerRequest.employmentModel,
+            minSalaryBracket = offerRequest.minSalaryBracket,
+            maxSalaryBracket = offerRequest.maxSalaryBracket,
             categoryToBrowse = offerRequest.categoryToBrowse,
             technologyStack = offerRequest.technologyStack,
             jobOfferDescription = offerRequest.jobOfferDescription,
@@ -79,6 +81,8 @@ class JobOfferService(
         offerToUpdate.categoryToBrowse = updatedOffer.categoryToBrowse
         offerToUpdate.technologyStack = updatedOffer.technologyStack
         offerToUpdate.jobOfferDescription = updatedOffer.jobOfferDescription
+        offerToUpdate.minSalaryBracket = updatedOffer.minSalaryBracket
+        offerToUpdate.maxSalaryBracket = updatedOffer.maxSalaryBracket
         offerToUpdate.country = updatedOffer.country
         offerToUpdate.city = updatedOffer.city
         offerToUpdate.street = updatedOffer.street

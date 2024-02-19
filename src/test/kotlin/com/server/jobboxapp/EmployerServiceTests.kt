@@ -63,25 +63,6 @@ class EmployerServiceTests {
         Assertions.assertEquals("Maersk", Employer.name)
     }
 
-
-//    @Test
-//    fun testJpaQuery() {
-//        loadEmployerDataToDatabase()
-//
-//        employerService.updateEmployerName(1, "Apple1")
-//        employerService.updateIndustry(1, "IT1")
-//        employerService.updateEmployerDescription(1, "opis1")
-//        employerService.updateUrlToWebsite(1, "apple.pl1")
-//        employerService.updateUrlToImage(1, "11.png")
-//
-//        Assertions.assertEquals("Apple1", employerService.returnEmployeeById(1).name)
-//        Assertions.assertEquals("IT1", employerService.returnEmployeeById(1).industry)
-//        Assertions.assertEquals("opis1", employerService.returnEmployeeById(1).description)
-//        Assertions.assertEquals("apple.pl1", employerService.returnEmployeeById(1).urlToWebsite)
-//        Assertions.assertEquals("11.png", employerService.returnEmployeeById(1).urlToImage)
-//    }
-
-
     @Test
     fun updateEmployerEntity() {
         loadEmployerDataToDatabase()

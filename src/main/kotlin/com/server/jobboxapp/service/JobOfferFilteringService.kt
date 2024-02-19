@@ -138,6 +138,8 @@ class JobOfferFilteringService(
             ExperienceLevel.valueOf(jobOffer.experienceLevel).title,
             EmploymentModel.valueOf(jobOffer.employmentModel).title,
             EmploymentType.valueOf(jobOffer.employmentType).title,
+            jobOffer.minSalaryBracket,
+            jobOffer.maxSalaryBracket,
             OfferCategory.valueOf(jobOffer.categoryToBrowse).title,
             jobOffer.technologyStack,
             jobOffer.jobOfferDescription,

@@ -80,3 +80,12 @@ GET http://localhost:8080/api/filterEmployer/all
 
 ### Filter frontEndEmployerByid
 GET http://localhost:8080/api/filterEmployer/byId/1
+
+### Get count of all employers
+GET http://localhost:8080/api/filterEmployer/countOfEmployersAvailable
+
+### Get all blogs
+GET http://localhost:8080/api/blog/allBlogPosts
+
+### Get blog by id
+GET http://localhost:8080/api/blog/byId/1
