@@ -65,8 +65,7 @@ const CategoryTab = () => {
                                             <div className="row">
                                                 <div className="col-lg-7 col-md-7">
                                                     <div className="d-flex">
-                                                        <img className="img-rounded"
-                                                             src="assets/imgs/brands/brand-1.png" alt="jobBox"/>
+                                                        <img className="img-rounded" src={`data:image/png;base64, ${singleJob.miniatureImage}`} alt="jobBox"/>
                                                         <div className="info-right-img">
                                                             <h6 className="color-brand-1 lh-14">{singleJob.employerName}</h6>
                                                             <span

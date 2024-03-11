@@ -10,8 +10,8 @@ const data = [
             postCode: "2000",
             street: "George Street",
             urlToWebsite: "http://www.educationdynamics.com",
-            urlToMiniatureImage: "http://www.educationdynamics.com/image.jpg",
-            urlToBackgroundImage: "http://www.educationdynamics.com/image.jpg"
+            miniatureImage: "http://www.educationdynamics.com/image.jpg",
+            backgroundImage: "http://www.educationdynamics.com/image.jpg"
         },
         employerIndustry: "Information Technology",
         jobOfferId: 2,

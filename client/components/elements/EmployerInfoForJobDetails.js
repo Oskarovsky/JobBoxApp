@@ -36,7 +36,7 @@ const EmployerInfoForJobDetails = ({ employerId }) => {
                 <Link href={`/company-details/${employer.id}`}>
                     <div className="avatar-sidebar">
                         <figure>
-                            <img alt="jobBox" src="/assets/imgs/page/job-single/avatar.png" />
+                            <img alt="jobBox" src={`data:image/png;base64, ${employer.miniatureImage}`} />
                         </figure>
                         <div className="sidebar-info">
                             <span className="sidebar-company">{employer.employerName}</span>

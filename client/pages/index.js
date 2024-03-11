@@ -29,17 +29,22 @@ export default function Home() {
         <>
         <JobProvider>
             <Layout>
-                <div className="bg-homepage1" />
+                <div className="bg-homepage4" />
                 <section className="section-box">
                     <div className="banner-hero hero-1 banner-homepage4">
                         <div className="banner-inner">
                             <div className="row">
-                                <div className="col-xl-7 col-lg-12 mx-auto">
+                                <div className="col-xl-7 col-lg-12">
                                     <div className="block-banner">
                                         <h1 className="heading-banner wow animate__animated animate__fadeInUp">
                                             <span className="color-brand-2">Find</span> your new  <span className="color-brand-2">job in tech</span> now!
                                             <br className="d-none d-lg-block" />
                                         </h1>
+                                        <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+                                            Each month, more than 3 million job seekers turn to website in their search for work,
+                                            <br className="d-none d-lg-block" />
+                                            making over 140,000 applications every single day
+                                        </div>
                                         <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                                             <br className="d-none d-lg-block" />
                                         </div>
@@ -69,6 +74,13 @@ export default function Home() {
                                             <Link href="/jobs-list?search=cloud&country=">
                                                 Cloud
                                             </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-xl-5 col-lg-12 d-none d-xl-block col-md-6">
+                                    <div className="banner-imgs">
+                                        <div className="block-1 shape-1">
+                                            <img className="img-responsive" alt="jobBox" src="assets/imgs/page/homepage4/banner.png" />
                                         </div>
                                     </div>
                                 </div>

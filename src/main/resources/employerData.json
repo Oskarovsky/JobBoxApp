@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Tech Solutions Inc.",
+    "industry": "INFORMATION_TECHNOLOGY",
+    "description": "Welcome to ! We are a dynamic and innovative company based in New York, USA. Our expertise lies in the field of Accounting and Finance. With a dedicated team, we have been serving our clients since July 2012, providing top-notch solutions and services. Located in the heart of Chicago, we offer remote-friendly opportunities to our employees. Join us and be a part of our journey towards success.Feel free to replace with the actual name of your company and make any necessary adjustments to match your company's information.]",
+    "country": "USA",
+    "city": "San Francisco",
+    "postCode": "94105",
+    "street": "Main Street",
+    "urlToWebsite": "http://www.techsolutions.com"
+  },
+  {
+    "name": "Finance Dynamics Ltd.",
+    "industry": "FINANCE",
+    "description": "Specializing in financial services",
+    "country": "UK",
+    "city": "London",
+    "postCode": "WC1E 6BT",
+    "street": "High Street",
+    "urlToWebsite": "http://www.financedynamics.com"
+  },
+  {
+    "name": "Global Logistics Group",
+    "industry": "LOGISTIC",
+    "description": "Providing efficient logistics solutions worldwide",
+    "country": "GERMANY",
+    "city": "Berlin",
+    "postCode": "10117",
+    "street": "Kurfürstendamm",
+    "urlToWebsite": "http://www.logisticsgroup.com"
+  },
+  {
+    "name": "Healthcare Innovations Ltd.",
+    "industry": "HEALTHCARE",
+    "description": "Innovating healthcare with cutting-edge solutions",
+    "country": "DENMARK",
+    "city": "Copenhagen",
+    "postCode": "M5J 2S1",
+    "street": "Bay Street",
+    "urlToWebsite": "http://www.healthcareinnovations.com"
+  },
+  {
+    "name": "Green Energy Solutions LLC",
+    "industry": "ENERGY",
+    "description": "Leading the way in sustainable energy solutions",
+    "country": "NORWAY",
+    "city": "Oslo",
+    "postCode": "1012JS",
+    "street": "Herengracht",
+    "urlToWebsite": "http://www.greenenergysolutions.com"
+  },
+  {
+    "name": "Food Delights International",
+    "industry": "FOOD",
+    "description": "Delivering international culinary experiences",
+    "country": "SWEDEN",
+    "city": "Stockholm",
+    "postCode": "75001",
+    "street": "Rue de Rivoli",
+    "urlToWebsite": "http://www.fooddelights.com"
+  },
+  {
+    "name": "Fashion Trends Ltd.",
+    "industry": "FASHION",
+    "description": "Setting trends in the fashion industry",
+    "country": "DENMARK",
+    "city": "Aarhus",
+    "postCode": "20121",
+    "street": "Via Montenapoleone",
+    "urlToWebsite": "http://www.fashiontrends.com"
+  },
+  {
+    "name": "Education Dynamics Group",
+    "industry": "EDUCATION",
+    "description": "Transforming education through dynamic solutions",
+    "country": "FINLAND",
+    "city": "Helsinki",
+    "postCode": "2000",
+    "street": "George Street",
+    "urlToWebsite": "http://www.educationdynamics.com"
+  },
+  {
+    "name": "Sports Unlimited Inc.",
+    "industry": "BUSINESS",
+    "description": "Unlimited possibilities in sports and recreation",
+    "country": "UK",
+    "city": "London",
+    "postCode": "08002",
+    "street": "Passeig de Gràcia",
+    "urlToWebsite": "http://www.sportsunlimited.com"
+  },
+  {
+    "name": "Artistic Creations Studio",
+    "industry": "BUSINESS",
+    "description": "Creating art that inspires and captivates",
+    "country": "USA",
+    "city": "New York",
+    "postCode": "100-0005",
+    "street": "Ginza",
+    "urlToWebsite": "http://www.artisticcreations.com"
+  },
+  {
+    "name": "Travel Adventures Ltd.",
+    "industry": "TRAVEL",
+    "description": "Embark on unforgettable travel adventures",
+    "country": "GERMANY",
+    "city": "Belrin",
+    "postCode": "20081-040",
+    "street": "Avenida Atlântica",
+    "urlToWebsite": "http://www.traveladventures.com"
+  },
+  {
+    "name": "Automotive Innovations Inc.",
+    "industry": "AUTOMOTIVE",
+    "description": "Driving innovation in the automotive industry",
+    "country": "GERMANY",
+    "city": "Stuttgart",
+    "postCode": "70173",
+    "street": "Königstraße",
+    "urlToWebsite": "http://www.automotiveinnovations.com"
+  }
+]

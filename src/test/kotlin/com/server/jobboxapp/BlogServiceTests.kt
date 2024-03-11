@@ -3,9 +3,9 @@ package com.server.jobboxapp
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.server.jobboxapp.entity.blogpost.BlogPost
-import com.server.jobboxapp.repository.BlogRepository
-import com.server.jobboxapp.service.BlogService
+import com.server.jobboxapp.blogpost.data.BlogPost
+import com.server.jobboxapp.blogpost.repository.BlogPostRepository
+import com.server.jobboxapp.blogpost.service.BlogService
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -16,64 +16,4 @@ import java.net.URL
 
 @SpringBootTest
 class BlogServiceTests {
-
-    lateinit var blogPostList: List<BlogPost>
-    lateinit var jsonMapper: ObjectMapper
-    lateinit var blogService: BlogService
-
-    @Autowired
-    lateinit var blogRepository: BlogRepository
-
-
-    @BeforeEach
-    fun setUp() {
-        jsonMapper = jacksonObjectMapper()
-        blogService = BlogService(blogRepository)
-        blogRepository.deleteAll()
-    }
-
-    @Test
-    fun loadThreeBlogPostsAndSaveThem() {
-        loadBlogPostsToDatabase()
-
-        Assertions.assertEquals(3, blogService.returnAllBlogPosts().count())
-    }
-
-    @Test
-    fun deleteBlogPosts() {
-        loadBlogPostsToDatabase()
-
-        blogService.deleteBlogPost(1)
-
-        Assertions.assertEquals(2, blogService.returnAllBlogPosts().size)
-    }
-
-
-    @Test
-    fun updateBlogPost() {
-        loadBlogPostsToDatabase()
-
-        val filePathWithOfferRequests = object {}.javaClass.getResource("/jobOfferDataTest.json")?.file
-        var updatedBlogPost =
-            jsonMapper.readValue<BlogPost>(File(filePathWithOfferRequests))
-
-        blogService.updateBlogPost(1, updatedBlogPost)
-
-        Assertions.assertEquals("Nowy post4", blogService.returnBlogPostById(1).headline)
-        Assertions.assertEquals("text4", blogService.returnBlogPostById(1).blogText)
-        Assertions.assertEquals("autor4", blogService.returnBlogPostById(1).author)
-        Assertions.assertEquals("image4", blogService.returnBlogPostById(1).urlToImage)
-    }
-
-    fun loadBlogPostsList() {
-        blogPostList =
-            jsonMapper.readValue(URL("file:///C:/Git/JobBoxApp/src/test/kotlin/resources/blogPosts.json"))
-    }
-
-    fun loadBlogPostsToDatabase() {
-        loadBlogPostsList()
-        blogPostList.stream().forEach {
-            blogService.createBlogPost(it)
-        }
-    }
 }

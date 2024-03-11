@@ -18,8 +18,8 @@ const EmployersList = () => {
             {employers.map((employerFrontEndEntity) => (
                 <div key={employerFrontEndEntity.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                     <div className="card-grid-1 hover-up wow animate__animated animate__fadeIn">
-                        <div className="image-box">
-                            <img src="assets/imgs/brands/brand-1.png" alt="jobBox" />
+                        <div className="image">
+                            <img src={`data:image/png;base64, ${employerFrontEndEntity.miniatureImage}`} alt="jobBox"/>
                         </div>
                         <div className="info-text mt-10">
                             <h5 className="font-bold">

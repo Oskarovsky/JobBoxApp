@@ -36,11 +36,11 @@ const CompanyDetails = () => {
             <div>
                 <div className="container">
                     <div className="banner-hero banner-image-single">
-                        <img src="/assets/imgs/page/company/img.png" alt="jobBox"/>
+                        <img src={`data:image/png;base64, ${employer.backgroundImage}`} alt="jobBox"/>
                     </div>
                     <div className="box-company-profile">
-                        <div className="image-compay">
-                            <img src="/assets/imgs/page/company/company.png" alt="jobBox"/>
+                        <div className="image">
+                            <img src={`data:image/png;base64, ${employer.miniatureImage}`} alt="jobBox"/>
                         </div>
                         <h2>{employer.employerName}</h2>
                     </div>

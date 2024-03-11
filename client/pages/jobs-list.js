@@ -231,9 +231,8 @@ export default function JobList() {
                                                         <div className="row">
                                                             <div className="col-lg-6 col-md-6 col-sm-12">
                                                                 <div className="card-grid-2-image-left">
-                                                                    <div className="image-box">
-                                                                        <img src="assets/imgs/brands/brand-1.png"
-                                                                             alt="jobBox"/>
+                                                                    <div className="image">
+                                                                        <img src={`data:image/png;base64, ${jobOfferFrontEndEntity.miniatureImage}`} alt="jobBox"/>
                                                                     </div>
                                                                     <div className="right-info">
                                                                         <Link

@@ -9,6 +9,6 @@ const data = [
             h3:"Strategies for Success in the IT Job Market in Denmark",
             endText: "For job seekers, understanding the local job market and its requirements is crucial. Proficiency in English is often sufficient in the IT sector, though learning Danish can enhance social integration and open up additional opportunities. Networking plays a significant role in job hunting in Denmark, with many positions filled through professional connections and recommendations. Engaging with local tech communities, attending industry events, and participating in hackathons can be effective strategies for making valuable contacts. The application process in Denmark typically involves a comprehensive CV and a cover letter tailored to the specific position, highlighting relevant skills and experiences. Many companies also appreciate a proactive approach, so speculative applications can sometimes lead to unexpected opportunities. In conclusion, Denmark offers a vibrant IT job market with ample opportunities for growth and innovation. By understanding the local landscape and leveraging networking, foreign professionals can find rewarding careers in this Scandinavian tech hub. With its high quality of life and emphasis on innovation, Denmark is an appealing destination for IT professionals looking to make a significant impact in their field."
         },        author: "Text generated with the help of artificial intelligence.",
-        urlToMiniature: "assets/imgs/page/blog/img1.png",
-        urlToImage: "assets/imgs/page/blog/img-single.png"
+        miniatureImage: "assets/imgs/page/blog/img1.png",
+        backgroundImage: "assets/imgs/page/blog/img-single.png"
     }];

@@ -45,7 +45,7 @@ export default function BlogGrid() {
                                                 <div className="text-center card-grid-3-image">
                                                     <Link href={`/${blogPost.id}`}>
                                                         <figure>
-                                                            <img alt="Blog Post" src={blogPost.urlToMiniature}/>
+                                                            <img src={`data:image/png;base64, ${blogPost.miniatureImage}`} alt="jobBox"/>
                                                         </figure>
                                                     </Link>
                                                 </div>

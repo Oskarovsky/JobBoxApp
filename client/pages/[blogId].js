@@ -38,7 +38,7 @@ const BlogId = () => {
             <Layout>
                 <section className="section-box">
                     <div>
-                        <img src={blogPostFrontEnd.urlToImage}/>
+                        <img src={`data:image/png;base64, ${blogPostFrontEnd.backgroundImage}`} />
                     </div>
                 </section>
                 <section className="section-box">
