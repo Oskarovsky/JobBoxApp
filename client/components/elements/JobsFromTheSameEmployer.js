@@ -24,7 +24,7 @@ const JobsFromTheSameEmployer = ({employerId}) => {
 
     return (
         <div className="box-related-job content-page">
-            <h5 className="mb-30">Job Offers</h5>
+            <h5 className="mb-30">Job Offers From The Same Employer</h5>
             <div className="box-list-jobs display-list">
                 {jobsFromTheSameEmployer.map((jobOfferFrontEndEntity) => (
                     <div key={jobOfferFrontEndEntity.id} className="col-xl-12 col-12">
@@ -33,8 +33,8 @@ const JobsFromTheSameEmployer = ({employerId}) => {
                             <div className="row">
                                 <div className="col-lg-6 col-md-6 col-sm-12">
                                     <div className="card-grid-2-image-left">
-                                        <div className="image-box">
-                                            <img src="/assets/imgs/brands/brand-6.png" alt="jobBox"/>
+                                        <div className="image">
+                                            <img src={`data:image/png;base64, ${jobOfferFrontEndEntity.miniatureImage}`} alt="jobBox"/>
                                         </div>
                                         <div className="right-info">
                                             <Link href="#">

@@ -15,7 +15,7 @@ export default function JobDetails({jobOfferFrontEndEntity}) {
                     <section className="section-box-2">
                         <div className="container">
                             <div className="banner-hero banner-image-single">
-                                <img src="/assets/imgs/page/job-single/thumb.png" alt="jobBox"/>
+                                <img src={`data:image/png;base64, ${jobOfferFrontEndEntity.backgroundImage}`} alt="jobBox"/>
                             </div>
                             <div className="row mt-10">
                                 <div className="col-lg-8 col-md-12">

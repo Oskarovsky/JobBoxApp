@@ -57,21 +57,19 @@ const CategoryTab = () => {
                                         </div>
                                         <div className="mt-20 border-bottom pb-20">
                                             {singleJob.technologyStack.map((tech, techIndex) => (
-                                                <Link key={techIndex} href="/jobs-grid">
-                                                    <span className="btn btn-grey-small bg-14 mb-5 mr-5">{tech}</span>
-                                                </Link>
+                                                // <Link key={techIndex} href="/jobs-grid">
+                                                <span key={techIndex} className="btn btn-grey-small bg-14 mb-5 mr-5">{tech}</span>
                                             ))}
                                         </div>
                                         <div className="card-2-bottom mt-20">
                                             <div className="row">
                                                 <div className="col-lg-7 col-md-7">
                                                     <div className="d-flex">
-                                                        <img className="img-rounded"
-                                                             src="assets/imgs/brands/brand-1.png" alt="jobBox"/>
+                                                        <img className="img-rounded" src={`data:image/png;base64, ${singleJob.miniatureImage}`} alt="jobBox"/>
                                                         <div className="info-right-img">
                                                             <h6 className="color-brand-1 lh-14">{singleJob.employerName}</h6>
                                                             <span
-                                                                className="card-location font-xxs pl-15 color-text-paragraph-2">{singleJob.offerCountry}, {singleJob.offerCity}</span>
+                                                                className="card-location font-xxs pl-15 color-text-paragraph-2">{singleJob.offerCity}, {singleJob.offerCountry}</span>
                                                         </div>
                                                     </div>
                                                 </div>

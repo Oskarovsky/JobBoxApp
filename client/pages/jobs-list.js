@@ -18,7 +18,7 @@ export default function JobList() {
     const API_BASE_URL = 'http://localhost:8080/api';
 
     const [currentPage, setCurrentPage] = useState(0);
-    const [size, setSize] = useState(6)
+    const [size, setSize] = useState(8)
     const [currentFilter, setCurrentFilter] = useState({
         positionTitle: router.query.search || '',
         offerCountry: router.query.country || ''
@@ -29,6 +29,10 @@ export default function JobList() {
     const [currentSize, setCurrentSize] = useState(size)
     const [isLoading, setIsLoading] = useState(true)
 
+    useEffect(() => {
+        console.log("useEffect")
+        console.log(jobOffersMiniature);
+    }, [jobOffersMiniature]);
 
     const handleSearch = async ({ searchTerm, selectedCountry}) => {
         try {
@@ -60,10 +64,27 @@ export default function JobList() {
             })
     }
 
+    useEffect(() => {
+        const loadData = async () => {
+            if (router.query.employerId) {
+                try {
+                    await fetchJobsFromOneEmployer();
+                    setIsLoading(false);
+                } catch (error) {
+                    console.error("Failed to fetch jobs from one employer:", error);
+                    setIsLoading(false);
+                }
+            }
+        };
+        loadData();
+    }, [router.query.employerId]);
+
+
     const fetchJobsFromOneEmployer = async () => {
-        fetch(`${API_BASE_URL}/filterOffers/jobsByTheSameEmployer/${encodeURIComponent(router.query.employerId)}`)
-            .then((response) => response.json())
+        fetch(`${API_BASE_URL}/filterOffers/jobsByTheSameEmployer/${encodeURIComponent(router.query.employerId)}`
+        ).then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 setJobOffersMiniature(data.content)
                 setTotalPages(data.totalPages)
             })
@@ -114,105 +135,104 @@ export default function JobList() {
                                             <div className="row">
                                                 <div className="col-xl-6 col-lg-5">
                                                     <span className="text-small text-showing">
-                                                        Showing <strong>41-60 </strong>of <strong>944 </strong>jobs
+                                                        Showing <strong>41-60 </strong>of filtered <strong>944 </strong>jobs
                                                     </span>
                                                 </div>
-                                                <div className="col-xl-6 col-lg-7 text-lg-end mt-sm-15">
-                                                    <div className="display-flex2">
-                                                        <div className="box-border mr-10">
-                                                            <span className="text-sortby">Show:</span>
-                                                            <div className="dropdown dropdown-sort">
-                                                                <button className="btn dropdown-toggle"
-                                                                        id="dropdownSort" type="button"
-                                                                        data-bs-toggle="dropdown" aria-expanded="false"
-                                                                        data-bs-display="static">
-                                                                    <span>12</span>
-                                                                    <i className="fi-rr-angle-small-down"/>
-                                                                </button>
-                                                                <ul className="dropdown-menu dropdown-menu-light"
-                                                                    aria-labelledby="dropdownSort">
-                                                                    <li>
-                                                                        <Link legacyBehavior href="#">
-                                                                            <a className="dropdown-item active">10</a>
-                                                                        </Link>
-                                                                    </li>
-                                                                    <li>
-                                                                        <Link legacyBehavior href="#">
-                                                                            <a className="dropdown-item">12</a>
-                                                                        </Link>
-                                                                    </li>
-                                                                    <li>
-                                                                        <Link legacyBehavior href="#">
-                                                                            <a className="dropdown-item">20</a>
-                                                                        </Link>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-border">
-                                                            <span className="text-sortby">Sort by:</span>
-                                                            <div className="dropdown dropdown-sort">
-                                                                <button className="btn dropdown-toggle"
-                                                                        id="dropdownSort2" type="button"
-                                                                        data-bs-toggle="dropdown" aria-expanded="false"
-                                                                        data-bs-display="static">
-                                                                    <span>Newest Post</span>
-                                                                    <i className="fi-rr-angle-small-down"/>
-                                                                </button>
-                                                                <ul className="dropdown-menu dropdown-menu-light"
-                                                                    aria-labelledby="dropdownSort2">
-                                                                    <li>
-                                                                        <Link legacyBehavior href="#">
-                                                                            <a className="dropdown-item active">Newest
-                                                                                Post</a>
-                                                                        </Link>
-                                                                    </li>
-                                                                    <li>
-                                                                        <Link legacyBehavior href="#">
-                                                                            <a className="dropdown-item">Oldest Post</a>
-                                                                        </Link>
-                                                                    </li>
-                                                                    <li>
-                                                                        <Link legacyBehavior href="#">
-                                                                            <a className="dropdown-item">Rating Post</a>
-                                                                        </Link>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box-view-type">
-                                                            <Link legacyBehavior
-                                                                  href={`/jobs-list${categoryName ? `?categoryName=${encodeURIComponent(categoryName)}` : ''}`}>
-                                                                <a className="view-type">
-                                                                    <img src="assets/imgs/template/icons/icon-list.svg"
-                                                                         alt="jobBox"/>
-                                                                </a>
-                                                            </Link>
-                                                            <Link legacyBehavior
-                                                                  href={`/jobs-grid${categoryName ? `?categoryName=${encodeURIComponent(categoryName)}` : ''}`}>
-                                                                <a className="view-type">
-                                                                    <img
-                                                                        src="assets/imgs/template/icons/icon-grid-hover.svg"
-                                                                        alt="jobBox"/>
-                                                                </a>
-                                                            </Link>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                {/*<div className="col-xl-6 col-lg-7 text-lg-end mt-sm-15">*/}
+                                                {/*    <div className="display-flex2">*/}
+                                                {/*        <div className="box-border mr-10">*/}
+                                                {/*            <span className="text-sortby">Show:</span>*/}
+                                                {/*            <div className="dropdown dropdown-sort">*/}
+                                                {/*                <button className="btn dropdown-toggle"*/}
+                                                {/*                        id="dropdownSort" type="button"*/}
+                                                {/*                        data-bs-toggle="dropdown" aria-expanded="false"*/}
+                                                {/*                        data-bs-display="static">*/}
+                                                {/*                    <span>12</span>*/}
+                                                {/*                    <i className="fi-rr-angle-small-down"/>*/}
+                                                {/*                </button>*/}
+                                                {/*                <ul className="dropdown-menu dropdown-menu-light"*/}
+                                                {/*                    aria-labelledby="dropdownSort">*/}
+                                                {/*                    <li>*/}
+                                                {/*                        <Link legacyBehavior href="#">*/}
+                                                {/*                            <a className="dropdown-item active">10</a>*/}
+                                                {/*                        </Link>*/}
+                                                {/*                    </li>*/}
+                                                {/*                    <li>*/}
+                                                {/*                        <Link legacyBehavior href="#">*/}
+                                                {/*                            <a className="dropdown-item">12</a>*/}
+                                                {/*                        </Link>*/}
+                                                {/*                    </li>*/}
+                                                {/*                    <li>*/}
+                                                {/*                        <Link legacyBehavior href="#">*/}
+                                                {/*                            <a className="dropdown-item">20</a>*/}
+                                                {/*                        </Link>*/}
+                                                {/*                    </li>*/}
+                                                {/*                </ul>*/}
+                                                {/*            </div>*/}
+                                                {/*        </div>*/}
+                                                {/*        <div className="box-border">*/}
+                                                {/*            <span className="text-sortby">Sort by:</span>*/}
+                                                {/*            <div className="dropdown dropdown-sort">*/}
+                                                {/*                <button className="btn dropdown-toggle"*/}
+                                                {/*                        id="dropdownSort2" type="button"*/}
+                                                {/*                        data-bs-toggle="dropdown" aria-expanded="false"*/}
+                                                {/*                        data-bs-display="static">*/}
+                                                {/*                    <span>Newest Post</span>*/}
+                                                {/*                    <i className="fi-rr-angle-small-down"/>*/}
+                                                {/*                </button>*/}
+                                                {/*                <ul className="dropdown-menu dropdown-menu-light"*/}
+                                                {/*                    aria-labelledby="dropdownSort2">*/}
+                                                {/*                    <li>*/}
+                                                {/*                        <Link legacyBehavior href="#">*/}
+                                                {/*                            <a className="dropdown-item active">Newest*/}
+                                                {/*                                Post</a>*/}
+                                                {/*                        </Link>*/}
+                                                {/*                    </li>*/}
+                                                {/*                    <li>*/}
+                                                {/*                        <Link legacyBehavior href="#">*/}
+                                                {/*                            <a className="dropdown-item">Oldest Post</a>*/}
+                                                {/*                        </Link>*/}
+                                                {/*                    </li>*/}
+                                                {/*                    <li>*/}
+                                                {/*                        <Link legacyBehavior href="#">*/}
+                                                {/*                            <a className="dropdown-item">Rating Post</a>*/}
+                                                {/*                        </Link>*/}
+                                                {/*                    </li>*/}
+                                                {/*                </ul>*/}
+                                                {/*            </div>*/}
+                                                {/*        </div>*/}
+                                                {/*        <div className="box-view-type">*/}
+                                                {/*            <Link legacyBehavior*/}
+                                                {/*                  href={`/jobs-list${categoryName ? `?categoryName=${encodeURIComponent(categoryName)}` : ''}`}>*/}
+                                                {/*                <a className="view-type">*/}
+                                                {/*                    <img src="assets/imgs/template/icons/icon-list.svg"*/}
+                                                {/*                         alt="jobBox"/>*/}
+                                                {/*                </a>*/}
+                                                {/*            </Link>*/}
+                                                {/*            <Link legacyBehavior*/}
+                                                {/*                  href={`/jobs-grid${categoryName ? `?categoryName=${encodeURIComponent(categoryName)}` : ''}`}>*/}
+                                                {/*                <a className="view-type">*/}
+                                                {/*                    <img*/}
+                                                {/*                        src="assets/imgs/template/icons/icon-grid-hover.svg"*/}
+                                                {/*                        alt="jobBox"/>*/}
+                                                {/*                </a>*/}
+                                                {/*            </Link>*/}
+                                                {/*        </div>*/}
+                                                {/*    </div>*/}
+                                                {/*</div>*/}
                                             </div>
                                         </div>
 
                                         <div className="row display-list">
-                                            {jobOffersMiniature.map((jobOfferFrontEndEntity) => (
+                                            {jobOffersMiniature?.map((jobOfferFrontEndEntity) => (
                                                 <div className="col-xl-12 col-12">
                                                     <div className="card-grid-2 hover-up">
                                                         <span className="flash"/>
                                                         <div className="row">
                                                             <div className="col-lg-6 col-md-6 col-sm-12">
                                                                 <div className="card-grid-2-image-left">
-                                                                    <div className="image-box">
-                                                                        <img src="assets/imgs/brands/brand-1.png"
-                                                                             alt="jobBox"/>
+                                                                    <div className="image">
+                                                                        <img src={`data:image/png;base64, ${jobOfferFrontEndEntity.miniatureImage}`} alt="jobBox"/>
                                                                     </div>
                                                                     <div className="right-info">
                                                                         <Link
@@ -266,8 +286,8 @@ export default function JobList() {
                                                     <li>
                                                         <Link legacyBehavior href="#">
                                                             {index === currentPage
-                                                                ? (<a className="pager-number active">{index}</a>)
-                                                                : (<a className="pager-number">{index}</a>)
+                                                                ? (<a className="pager-number active">{index+1}</a>)
+                                                                : (<a className="pager-number">{index+1}</a>)
                                                             }
                                                         </Link>
                                                     </li>

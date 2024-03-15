@@ -29,7 +29,7 @@ export default function Home() {
         <>
         <JobProvider>
             <Layout>
-                <div className="bg-homepage1" />
+                <div className="bg-homepage4" />
                 <section className="section-box">
                     <div className="banner-hero hero-1 banner-homepage4">
                         <div className="banner-inner">
@@ -41,7 +41,11 @@ export default function Home() {
                                             <br className="d-none d-lg-block" />
                                         </h1>
                                         <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
-                                          To na srodek, zmiana w wyszukiwaniu
+                                            Each month, more than 3 million job seekers turn to website in their search for work,
+                                            <br className="d-none d-lg-block" />
+                                            making over 140,000 applications every single day
+                                        </div>
+                                        <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                                             <br className="d-none d-lg-block" />
                                         </div>
                                             <div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
@@ -49,27 +53,34 @@ export default function Home() {
                                             </div>
                                         <div className="list-tags-banner mt-60 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
                                             <strong>Popular Searches:</strong>
-                                            <Link legacyBehavior href="#">
-                                                <a>Designer, </a>
+                                            <Link href="/jobs-list?search=Java&country=">
+                                                Java
                                             </Link>
-                                            <Link legacyBehavior href="#">
-                                                <a>Web, </a>
+                                            <Link href="/jobs-list?search=frontend&country=">
+                                                Frontend
                                             </Link>
-                                            <Link legacyBehavior href="#">
-                                                <a>IOS, </a>
+                                            <Link href="/jobs-list?search=architect&country=">
+                                              Architect
                                             </Link>
-                                            <Link legacyBehavior href="#">
-                                                <a>Developer, </a>
+                                            <Link href="/jobs-list?search=backend&country=">
+                                               Backend
                                             </Link>
-                                            <Link legacyBehavior href="#">
-                                                <a>PHP, </a>
+                                            <Link href="/jobs-list?search=engineer&country=">
+                                                Engineer
                                             </Link>
-                                            <Link legacyBehavior href="#">
-                                                <a>Senior, </a>
+                                            <Link href="/jobs-list?search=senior&country=">
+                                                Senior
                                             </Link>
-                                            <Link legacyBehavior href="#">
-                                                <a>Engineer, </a>
+                                            <Link href="/jobs-list?search=cloud&country=">
+                                                Cloud
                                             </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-xl-5 col-lg-12 d-none d-xl-block col-md-6">
+                                    <div className="banner-imgs">
+                                        <div className="block-1 shape-1">
+                                            <img className="img-responsive" alt="jobBox" src="assets/imgs/page/homepage4/banner.png" />
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +94,6 @@ export default function Home() {
                         <div className="container">
                             <div className="text-center">
                                 <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Browse by category</h2>
-                                <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Find the job that’s perfect for you. about 800+ new jobs everyday</p>
                             </div>
                             <div className="box-swiper mt-50">
                                 <CategorySlider />
@@ -95,7 +105,6 @@ export default function Home() {
                     <div className="container">
                         <div className="text-center">
                             <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs of the day</h2>
-                            <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Search and connect with the right candidates faster.</p>
                         </div>
                         <CategoryTab/>
                     </div>

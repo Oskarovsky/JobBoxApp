@@ -2989,7 +2989,7 @@ ul li:last-child .card-list-4 {
   right: 5px;
   height: 170px;
   width: 213px;
-  /*background: url(../imgs/page/job-single/right-job-head.svg) no-repeat left bottom;*/
+  background: url(../imgs/page/job-single/right-job-head.svg) no-repeat left bottom;
   background-size: contain;
 }
 .banner-hero.banner-single::before {
@@ -2999,7 +2999,7 @@ ul li:last-child .card-list-4 {
   left: -3px;
   height: 170px;
   width: 218px;
-  /*background: url(../imgs/page/job-single/left-job-head.svg) no-repeat left bottom;*/
+  background: url(../imgs/page/job-single/left-job-head.svg) no-repeat left bottom;
   background-size: contain;
   display: inline;
   top: auto;

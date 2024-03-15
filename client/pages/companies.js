@@ -8,20 +8,20 @@ import EmployerList from "../components/elements/EmployerList";
 
 export default function Companies() {
 
-    const [employers, setEmployers] = useState(null);
+    const [countOfCompanies, setCountOfComapnies] = useState(null);
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/employer')
+        fetch('http://localhost:8080/api/filterEmployer/countOfEmployersAvailable')
             .then((res) => res.json())
-            .then((company) => {
-                setEmployers(company)
+            .then((countOfCompanies) => {
+                setCountOfComapnies(countOfCompanies)
                 setIsLoading(false)
             })
     }, []);
 
     if (isLoading) return <p>Loading...</p>
-    if (!employers) return <p>Could not fetch companies</p>
+    if (!countOfCompanies) return <p>Could not fetch companies</p>
 
     return (
         <>
@@ -29,10 +29,10 @@ export default function Companies() {
                 <div>
                     <section className="section-box-2">
                         <div className="container">
-                            <div className="banner-hero banner-single banner-single-bg">
+                            <div className="banner-hero banner-company">
                                 <div className="block-banner text-center">
                                     <h3 className="wow animate__animated animate__fadeInUp">
-                                        <span className="color-brand-2">22 Companies</span> Available Now
+                                        Available number of companies: <span className="color-brand-2">{countOfCompanies.countOfEmployers} </span>
                                     </h3>
                                     {/*<div className="form-find text-start mt-40 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">*/}
                                     {/*    <form>*/}

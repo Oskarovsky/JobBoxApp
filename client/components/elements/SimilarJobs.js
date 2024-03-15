@@ -31,7 +31,7 @@ const SimilarJobs = ({ categoryName }) => {
                         <li key={jobOfferFrontEndEntity.id}>
                             <div className="card-list-4 wow animate__animated animate__fadeIn hover-up">
                                 <div className="image">
-                                    <img src={jobOfferFrontEndEntity.employer.urlToMiniatureImage} alt="jobBox" />
+                                    <img src={`data:image/png;base64, ${jobOfferFrontEndEntity.miniatureImage}`} alt="jobBox"/>
                                 </div>
                                 <div className="info-text">
                                     <h5 className="font-md font-bold color-brand-1">
